@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-29T20:21:32.635Z",
+  "updatedAt": "2026-09-29T21:15:19.331Z",
   "devices": [
     {
       "id": "BCAL_86L",
@@ -179,6 +179,52 @@
         "stamp": ""
       },
       "inspections": [],
+      "maintenances": [],
+      "deleted": false
+    },
+    {
+      "id": "BCAL_89_02",
+      "typeId": "binh",
+      "name": "Bình chịu áp lực",
+      "location": "Phòng máy nén khí phụ trợ xưởng 3",
+      "priceLevel": 1,
+      "archiveNo": 254,
+      "note": "",
+      "identity": {
+        "serial": "",
+        "year": "",
+        "manufacturer": "",
+        "size": "",
+        "weight": ""
+      },
+      "specs": {
+        "dien_ap": "",
+        "nang_suat": "",
+        "nhiet_do": "",
+        "dung_tich": "",
+        "ap_thiet_ke": "",
+        "ap_lam_viec": "",
+        "nhiet_do_thiet_ke": "",
+        "moi_chat": "",
+        "vat_lieu": ""
+      },
+      "photos": [
+        null,
+        null
+      ],
+      "inspectionSummary": {
+        "lastDate": "2026-09-24",
+        "nextDate": "2026-09-26",
+        "stamp": "002585"
+      },
+      "inspections": [
+        {
+          "date": "2026-09-24",
+          "unit": "Công ty ABC",
+          "expiry": "2026-09-26",
+          "stamp": "002585"
+        }
+      ],
       "maintenances": [],
       "deleted": false
     }
