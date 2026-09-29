@@ -1,0 +1,188 @@
+{
+  "version": 2,
+  "updatedAt": "2026-09-29T20:21:32.635Z",
+  "devices": [
+    {
+      "id": "BCAL_86L",
+      "typeId": "binh",
+      "name": "Bình chịu áp lực",
+      "location": "Xưởng 1",
+      "priceLevel": 1,
+      "archiveNo": 15,
+      "note": "",
+      "identity": {
+        "serial": "BCAL 15",
+        "year": "2016",
+        "manufacturer": "Hàn Quốc",
+        "size": "",
+        "weight": "1.5 tấn"
+      },
+      "specs": {
+        "dien_ap": "",
+        "nang_suat": "",
+        "nhiet_do": "",
+        "dung_tich": "",
+        "ap_thiet_ke": "",
+        "ap_lam_viec": "",
+        "nhiet_do_thiet_ke": "",
+        "moi_chat": "",
+        "vat_lieu": ""
+      },
+      "photos": [
+        "BCAL_86L_1.jpg",
+        null
+      ],
+      "inspectionSummary": {
+        "lastDate": "2025-02-28",
+        "nextDate": "2027-02-28",
+        "stamp": "002142"
+      },
+      "inspections": [
+        {
+          "date": "2025-02-28",
+          "unit": "Công ty cổ phần kiểm định 1",
+          "expiry": "2027-02-28",
+          "stamp": "002142"
+        }
+      ],
+      "maintenances": [],
+      "deleted": false
+    },
+    {
+      "id": "HTL_91000_01",
+      "typeId": "lanh",
+      "name": "Hệ thống lạnh",
+      "location": "Phòng bơm hút chân không xưởng 1",
+      "priceLevel": 1,
+      "archiveNo": 58,
+      "note": "",
+      "identity": {
+        "serial": "SWRS009812630",
+        "year": "2017",
+        "manufacturer": "Hàn Quốc",
+        "size": "PA_500A",
+        "weight": ""
+      },
+      "specs": {
+        "dien_ap": "",
+        "nang_suat": "",
+        "nhiet_do": "",
+        "cong_suat": "91000 Kcal",
+        "moi_chat_lanh": "R22",
+        "cao_ap": "",
+        "ha_ap": "",
+        "trung_ap": "",
+        "nhiet_do_kho": "",
+        "so_dan": ""
+      },
+      "photos": [
+        "HTL_91000_01_1.jpg",
+        null
+      ],
+      "inspectionSummary": {
+        "lastDate": "2026-06-10",
+        "nextDate": "2029-06-10",
+        "stamp": "150028"
+      },
+      "inspections": [
+        {
+          "date": "2026-06-10",
+          "unit": "Công ty kiểm định an toàn thiết bị CN 1",
+          "expiry": "2029-06-10",
+          "stamp": "150028"
+        }
+      ],
+      "maintenances": [],
+      "deleted": false
+    },
+    {
+      "id": "TM_01",
+      "typeId": "thangmay",
+      "name": "Thang máy",
+      "location": "Xưởng 3",
+      "priceLevel": 1,
+      "archiveNo": 49,
+      "note": "",
+      "identity": {
+        "serial": "VAT-00001",
+        "year": "2021",
+        "manufacturer": "Hàn Quốc",
+        "size": "TM00987",
+        "weight": ""
+      },
+      "specs": {
+        "dien_ap": "",
+        "nang_suat": "",
+        "nhiet_do": "",
+        "tai_trong_thang": "2000 KG",
+        "so_tang": "",
+        "so_diem_dung": "3",
+        "van_toc_thang": "",
+        "loai_dan_dong": "",
+        "kich_thuoc_cabin": "",
+        "so_nguoi": ""
+      },
+      "photos": [
+        null,
+        null
+      ],
+      "inspectionSummary": {
+        "lastDate": "2025-01-29",
+        "nextDate": "2028-01-29",
+        "stamp": "009801"
+      },
+      "inspections": [
+        {
+          "date": "2025-01-29",
+          "unit": "Công ty ABC",
+          "expiry": "2028-01-29",
+          "stamp": "009801"
+        }
+      ],
+      "maintenances": [],
+      "deleted": false
+    },
+    {
+      "id": "HTL_98000_01",
+      "typeId": "lanh",
+      "name": "Hệ thống lạnh",
+      "location": "Phòng hút chân không số 2 xưởng 1",
+      "priceLevel": 1,
+      "archiveNo": 252,
+      "note": "",
+      "identity": {
+        "serial": "HTL 098788",
+        "year": "2018",
+        "manufacturer": "Hàn Quốc",
+        "size": "",
+        "weight": ""
+      },
+      "specs": {
+        "dien_ap": "",
+        "nang_suat": "",
+        "nhiet_do": "",
+        "cong_suat": "",
+        "moi_chat_lanh": "",
+        "cao_ap": "",
+        "ha_ap": "",
+        "trung_ap": "",
+        "nhiet_do_kho": "",
+        "so_dan": ""
+      },
+      "photos": [
+        null,
+        null
+      ],
+      "inspectionSummary": {
+        "lastDate": "",
+        "nextDate": "",
+        "stamp": ""
+      },
+      "inspections": [],
+      "maintenances": [],
+      "deleted": false
+    }
+  ],
+  "legalDocs": [],
+  "priceConfig": {}
+}
