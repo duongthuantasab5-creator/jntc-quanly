@@ -144,12 +144,16 @@
         .folder-connect-icon { width: 50px; height: 50px; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-size: 24px; }
         .folder-connect-icon.disconnected { background: linear-gradient(135deg, #95a5a6, #7f8c8d); }
         .folder-connect-icon.connected { background: linear-gradient(135deg, #27ae60, #2ecc71); }
+        .folder-connect-icon.server { background: linear-gradient(135deg, #e67e22, #d35400); }
         .folder-connect-text h3 { font-size: 16px; color: #2c3e50; margin-bottom: 4px; }
         .folder-connect-text p { font-size: 13px; color: #7f8c8d; font-style: italic; }
         .btn-folder-connect { padding: 12px 24px; background: linear-gradient(135deg, #27ae60, #16a085); color: white; border: none; border-radius: 8px; font-weight: 700; font-size: 14px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
         .btn-folder-connect:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(39,174,96,0.4); }
         .btn-folder-reconnect { padding: 10px 18px; background: #3498db; color: white; border: none; border-radius: 8px; font-weight: 700; font-size: 13px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
         .btn-folder-reconnect:hover { background: #2980b9; }
+        .btn-server-connect { padding: 12px 24px; background: linear-gradient(135deg, #e67e22, #d35400); color: white; border: none; border-radius: 8px; font-weight: 700; font-size: 14px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
+        .btn-server-connect:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(230,126,34,0.4); }
+        .btn-server-connect.connected { background: linear-gradient(135deg, #27ae60, #16a085); }
         .data-warning { background: #fff3e0; border-left: 4px solid #f39c12; padding: 15px 20px; border-radius: 8px; margin-bottom: 20px; font-size: 14px; color: #7f5f00; }
 
         /* ==== LỌC NHANH ==== */
@@ -462,6 +466,43 @@
         #legal-view-modal .legal-view-row .v { color: #2c3e50; }
         #legal-view-modal .legal-view-tomtat { background: #f8f9fa; padding: 15px; border-radius: 8px; font-size: 14px; line-height: 1.6; white-space: pre-wrap; color: #333; margin-top: 10px; }
 
+        /* ==== MÀN HÌNH CÀI ĐẶT ==== */
+        #settings-screen { min-height: calc(100vh - 130px); background: #f4f7f9; padding: 25px 20px; }
+        .settings-container { max-width: 1200px; margin: 0 auto; }
+        .settings-title { text-align: center; color: #1a237e; font-size: 26px; font-weight: 900; margin-bottom: 10px; text-transform: uppercase; }
+        .settings-subtitle { text-align: center; color: #7f8c8d; font-size: 14px; margin-bottom: 30px; font-style: italic; }
+        .settings-section { background: white; border-radius: 12px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); margin-bottom: 25px; }
+        .settings-section-title { font-size: 18px; font-weight: 800; color: #2c3e50; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 3px solid #f39c12; display: flex; align-items: center; gap: 10px; }
+        .settings-section-title i { color: #f39c12; }
+        .settings-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #f0f0f0; flex-wrap: wrap; gap: 10px; }
+        .settings-row:last-child { border-bottom: none; }
+        .settings-row-label { font-weight: 600; color: #555; font-size: 14px; display: flex; align-items: center; gap: 8px; }
+        .settings-row-value { color: #2c3e50; font-weight: 700; font-size: 14px; }
+        .settings-status-ok { color: #27ae60; }
+        .settings-status-fail { color: #e74c3c; }
+        .settings-status-warn { color: #f39c12; }
+        .settings-btn { padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; font-weight: 700; font-size: 14px; display: inline-flex; align-items: center; gap: 8px; }
+        .settings-btn-blue { background: #2980b9; color: white; }
+        .settings-btn-green { background: #27ae60; color: white; }
+        .settings-btn-orange { background: #e67e22; color: white; }
+        .settings-btn-red { background: #e74c3c; color: white; }
+        .settings-btn-purple { background: #8e44ad; color: white; }
+        .settings-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+        .settings-info-box { background: #e3f2fd; padding: 15px; border-radius: 8px; margin-top: 15px; font-size: 13px; color: #1565c0; border-left: 4px solid #3498db; }
+        .settings-warn-box { background: #fff3e0; padding: 15px; border-radius: 8px; margin-top: 15px; font-size: 13px; color: #7f5f00; border-left: 4px solid #f39c12; }
+
+        .backup-list { max-height: 400px; overflow-y: auto; border: 1px solid #ddd; border-radius: 8px; margin-top: 15px; }
+        .backup-item { display: flex; justify-content: space-between; align-items: center; padding: 12px 15px; border-bottom: 1px solid #eee; cursor: pointer; transition: background 0.2s; }
+        .backup-item:hover { background: #f8f9fa; }
+        .backup-item.selected { background: #e3f2fd; border-left: 4px solid #3498db; }
+        .backup-item:last-child { border-bottom: none; }
+        .backup-time { font-weight: 700; color: #2c3e50; font-size: 14px; }
+        .backup-meta { font-size: 12px; color: #7f8c8d; margin-top: 3px; }
+        .backup-source { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 700; margin-left: 8px; }
+        .backup-source.local { background: #e8f5e9; color: #2e7d32; }
+        .backup-source.server { background: #fff3e0; color: #ef6c00; }
+        .backup-empty { padding: 40px 20px; text-align: center; color: #95a5a6; font-style: italic; }
+
         @media (max-width: 1200px) { .kpi-row { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 1100px) { .device-grid { grid-template-columns: repeat(3, 1fr); } }
         @media (max-width: 900px) {
@@ -521,8 +562,8 @@
         <button class="nav-btn" onclick="switchMainNav('overview-screen', this)"><i class="fas fa-chart-line"></i> Theo dõi tổng thể</button>
         <button class="nav-btn" onclick="switchMainNav('deleted-screen', this)"><i class="fas fa-trash-alt"></i> Thiết bị đã hủy</button>
         <button class="nav-btn" onclick="switchMainNav('legal-screen', this)"><i class="fas fa-balance-scale"></i> Pháp luật</button>
+        <button class="nav-btn" onclick="switchMainNav('settings-screen', this)"><i class="fas fa-cog"></i> Cài đặt</button>
     </div>
-
     <div id="dashboard-screen" class="screen active">
         <div class="main-banner">
             <div class="banner-left">
@@ -552,23 +593,37 @@
             <h2 class="overview-title"><i class="fas fa-chart-line"></i> Bảng Theo Dõi Tổng Thể</h2>
             <p class="overview-subtitle">Thống kê tình trạng kiểm định & dự toán chi phí theo mức giá</p>
 
-            <!-- KHỐI KẾT NỐI THƯ MỤC -->
+            <!-- KHỐI KẾT NỐI LOCAL -->
             <div class="folder-connect-box" id="folder-connect-box">
                 <div class="folder-connect-info">
                     <div class="folder-connect-icon disconnected" id="folder-icon"><i class="fas fa-folder-open"></i></div>
                     <div class="folder-connect-text">
-                        <h3 id="folder-status-title">Chưa kết nối thư mục dữ liệu</h3>
-                        <p id="folder-status-desc">Bấm nút bên phải để chọn thư mục <b>data/</b> — dữ liệu sẽ lưu vào file để có thể copy lên server</p>
+                        <h3 id="folder-status-title">💻 Chưa kết nối thư mục LOCAL</h3>
+                        <p id="folder-status-desc">Bấm nút bên phải để chọn thư mục <b>data/</b> trên máy tính — dữ liệu sẽ lưu vào file local</p>
                     </div>
                 </div>
                 <button class="btn-folder-connect" id="folder-btn" onclick="connectDataFolder()">
-                    <i class="fas fa-folder-plus"></i> Kết nối thư mục dữ liệu
+                    <i class="fas fa-folder-plus"></i> Kết nối LOCAL
+                </button>
+            </div>
+
+            <!-- KHỐI KẾT NỐI SERVER (Ổ Z:) -->
+            <div class="folder-connect-box" id="server-connect-box" style="border-left-color: #e67e22;">
+                <div class="folder-connect-info">
+                    <div class="folder-connect-icon disconnected" id="server-icon"><i class="fas fa-server"></i></div>
+                    <div class="folder-connect-text">
+                        <h3 id="server-status-title">🌐 Chưa kết nối thư mục SERVER</h3>
+                        <p id="server-status-desc">Bấm nút bên phải để chọn thư mục <b>data/</b> trên ổ mạng <b>(Z:)</b> — dữ liệu sẽ lưu lên server công ty</p>
+                    </div>
+                </div>
+                <button class="btn-server-connect" id="server-btn" onclick="connectServerFolder()">
+                    <i class="fas fa-server"></i> Kết nối SERVER (Z:)
                 </button>
             </div>
 
             <div id="data-warning-box" class="data-warning" style="display: none;">
                 <i class="fas fa-exclamation-triangle"></i>
-                <b>Chưa kết nối thư mục dữ liệu!</b> Mọi thay đổi sẽ không được lưu. Vui lòng bấm "Kết nối thư mục dữ liệu" ở trên.
+                <b>Chưa kết nối thư mục dữ liệu!</b> Mọi thay đổi sẽ chỉ lưu tạm vào bộ nhớ trình duyệt.
             </div>
 
             <div class="kpi-row">
@@ -715,6 +770,95 @@
         </div>
     </div>
 
+    <!-- ===== TAB CÀI ĐẶT (MỚI) ===== -->
+    <div id="settings-screen" class="screen">
+        <div class="settings-container">
+            <h2 class="settings-title"><i class="fas fa-cog"></i> Cài Đặt Hệ Thống</h2>
+            <p class="settings-subtitle">Quản lý kết nối dữ liệu, backup và bảo mật</p>
+
+            <!-- TRẠNG THÁI KẾT NỐI -->
+            <div class="settings-section">
+                <div class="settings-section-title"><i class="fas fa-plug"></i> Trạng thái kết nối</div>
+                <div class="settings-row">
+                    <div class="settings-row-label"><i class="fas fa-laptop"></i> LOCAL (Máy tính)</div>
+                    <div class="settings-row-value" id="settings-local-status"><span class="settings-status-fail">⚠️ Chưa kết nối</span></div>
+                </div>
+                <div class="settings-row">
+                    <div class="settings-row-label"><i class="fas fa-server"></i> SERVER (Ổ Z:)</div>
+                    <div class="settings-row-value" id="settings-server-status"><span class="settings-status-fail">⚠️ Chưa kết nối</span></div>
+                </div>
+                <div class="settings-info-box">
+                    <i class="fas fa-info-circle"></i> <b>Dữ liệu được lưu đồng thời vào 2 nơi:</b> LOCAL và SERVER. Nếu 1 nơi lỗi, nơi kia vẫn còn nguyên vẹn.
+                </div>
+            </div>
+
+            <!-- ĐỒNG BỘ -->
+            <div class="settings-section">
+                <div class="settings-section-title"><i class="fas fa-sync-alt"></i> Đồng bộ dữ liệu</div>
+                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                    <button class="settings-btn settings-btn-blue" onclick="manualSync()"><i class="fas fa-sync"></i> Đồng bộ ngay</button>
+                    <button class="settings-btn settings-btn-green" onclick="reconnectBoth()"><i class="fas fa-plug"></i> Kết nối lại</button>
+                    <button class="settings-btn settings-btn-orange" onclick="showSyncInfo()"><i class="fas fa-info-circle"></i> Thông tin đồng bộ</button>
+                </div>
+                <div class="settings-info-box" style="margin-top: 15px;">
+                    <b>Quy tắc đồng bộ:</b><br>
+                    • Khi mở app → So sánh Local vs Server → Dùng bản mới hơn<br>
+                    • Khi lưu → Ghi cả Local + Server<br>
+                    • Backup tự động 50 bản trên cả 2 nơi
+                </div>
+            </div>
+
+            <!-- BACKUP -->
+            <div class="settings-section">
+                <div class="settings-section-title"><i class="fas fa-history"></i> Backup & Khôi phục</div>
+                <div class="settings-row">
+                    <div class="settings-row-label">Tổng số bản backup</div>
+                    <div class="settings-row-value" id="settings-backup-count">0</div>
+                </div>
+                <div class="settings-row">
+                    <div class="settings-row-label">Backup mới nhất</div>
+                    <div class="settings-row-value" id="settings-backup-newest">—</div>
+                </div>
+                <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 15px;">
+                    <button class="settings-btn settings-btn-green" onclick="loadBackupList()"><i class="fas fa-list"></i> Xem danh sách backup</button>
+                    <button class="settings-btn settings-btn-red" onclick="openRestoreBackupModal()"><i class="fas fa-undo"></i> Khôi phục từ backup</button>
+                </div>
+                <div class="settings-warn-box" style="margin-top: 15px;">
+                    <i class="fas fa-exclamation-triangle"></i> <b>Khôi phục sẽ ghi đè dữ liệu hiện tại!</b> Chỉ sử dụng khi dữ liệu bị hỏng hoặc mất.
+                </div>
+            </div>
+
+            <!-- BẢO MẬT -->
+            <div class="settings-section">
+                <div class="settings-section-title"><i class="fas fa-shield-alt"></i> Bảo mật</div>
+                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                    <button class="settings-btn settings-btn-blue" onclick="openChangePassModal()"><i class="fas fa-key"></i> Đổi mật khẩu Admin</button>
+                    <button class="settings-btn settings-btn-purple" onclick="openChangePassModal(); switchPassTab('qr', document.querySelectorAll('.pass-tab')[1])"><i class="fas fa-qrcode"></i> Đổi mật khẩu QR</button>
+                </div>
+            </div>
+
+            <!-- THÔNG TIN HỆ THỐNG -->
+            <div class="settings-section">
+                <div class="settings-section-title"><i class="fas fa-info-circle"></i> Thông tin hệ thống</div>
+                <div class="settings-row">
+                    <div class="settings-row-label">Phiên bản</div>
+                    <div class="settings-row-value">2.0</div>
+                </div>
+                <div class="settings-row">
+                    <div class="settings-row-label">Số thiết bị hiện tại</div>
+                    <div class="settings-row-value" id="settings-device-count">0</div>
+                </div>
+                <div class="settings-row">
+                    <div class="settings-row-label">Số văn bản pháp luật</div>
+                    <div class="settings-row-value" id="settings-legal-count">0</div>
+                </div>
+                <div class="settings-row">
+                    <div class="settings-row-label">Cập nhật cuối</div>
+                    <div class="settings-row-value" id="settings-last-update">—</div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="list-screen" class="screen">
         <div class="content-wrapper">
             <div class="header-actions">
@@ -966,6 +1110,7 @@
             </div>
         </div>
     </div>
+
     <div id="change-pass-modal" class="modal">
         <div class="modal-content">
             <h3><i class="fas fa-key" style="color:#2980b9;"></i> ĐỔI MẬT KHẨU</h3>
@@ -1163,6 +1308,61 @@
         </div>
     </div>
 
+    <!-- MODAL DANH SÁCH BACKUP (MỚI) -->
+    <div id="backup-list-modal" class="modal">
+        <div class="modal-content" style="width:700px; max-width:95%;">
+            <h3><i class="fas fa-history" style="color:#27ae60;"></i> DANH SÁCH BACKUP</h3>
+            <div style="margin-bottom:10px; display:flex; gap:10px; align-items:center;">
+                <label style="font-weight:700; font-size:14px;">Nguồn:</label>
+                <select id="backup-source-select" onchange="loadBackupList()" style="padding:8px 12px; border:2px solid #ddd; border-radius:6px; font-size:14px;">
+                    <option value="local">💻 LOCAL (Máy tính)</option>
+                    <option value="server">🌐 SERVER (Ổ Z:)</option>
+                </select>
+                <button class="btn btn-save" onclick="loadBackupList()" style="margin-left:auto;"><i class="fas fa-sync"></i> Tải lại</button>
+            </div>
+            <div class="backup-list" id="backup-list-container">
+                <div class="backup-empty"><i class="fas fa-inbox" style="font-size:40px; display:block; margin-bottom:10px; opacity:0.3;"></i>Chưa có backup nào</div>
+            </div>
+            <div class="modal-actions" style="margin-top:15px;">
+                <button onclick="closeBackupListModal()" class="btn btn-cancel">Đóng</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL KHÔI PHỤC TỪ BACKUP (MỚI) -->
+    <div id="restore-backup-modal" class="modal">
+        <div class="modal-content" style="width:700px; max-width:95%;">
+            <h3><i class="fas fa-undo" style="color:#e74c3c;"></i> KHÔI PHỤC TỪ BACKUP</h3>
+            
+            <div style="background:#fff3e0; border-left:4px solid #f39c12; padding:12px 15px; border-radius:8px; margin-bottom:15px; font-size:14px; color:#7f5f00;">
+                <i class="fas fa-exclamation-triangle"></i> <b>Chọn bản backup để khôi phục.</b> Dữ liệu hiện tại sẽ bị GHI ĐÈ.
+            </div>
+
+            <div style="margin-bottom:10px; display:flex; gap:10px; align-items:center;">
+                <label style="font-weight:700; font-size:14px;">Nguồn:</label>
+                <select id="restore-backup-source" onchange="loadRestoreBackupList()" style="padding:8px 12px; border:2px solid #ddd; border-radius:6px; font-size:14px;">
+                    <option value="local">💻 LOCAL (Máy tính)</option>
+                    <option value="server">🌐 SERVER (Ổ Z:)</option>
+                </select>
+            </div>
+
+            <div class="backup-list" id="restore-backup-container">
+                <div class="backup-empty"><i class="fas fa-inbox" style="font-size:40px; display:block; margin-bottom:10px; opacity:0.3;"></i>Đang tải...</div>
+            </div>
+
+            <div style="background:#e8f5e9; padding:15px; border-radius:8px; margin-top:15px; font-size:13px; color:#2e7d32;" id="restore-backup-info">
+                <i class="fas fa-info-circle"></i> Chọn 1 bản backup ở trên để xem thông tin
+            </div>
+
+            <div class="modal-actions" style="margin-top:15px;">
+                <button onclick="closeRestoreBackupModal()" class="btn btn-cancel">Hủy</button>
+                <button onclick="confirmRestoreBackup()" class="btn btn-confirm-delete" id="confirm-restore-backup-btn" disabled style="opacity:0.5; cursor:not-allowed;">
+                    <i class="fas fa-undo"></i> Khôi phục
+                </button>
+            </div>
+        </div>
+    </div>
+
     <div id="qr-login-screen">
         <div class="qr-login-box">
             <img src="logo.png" alt="JNTC VINA" style="max-width:200px; margin-bottom:15px;" onerror="this.style.display='none'">
@@ -1198,13 +1398,24 @@ const DEFAULT_PASSWORDS = {
     qr_access: 'jntc@2020'
 };
 
-// Biến toàn cục cho File System Access API
+// Số bản backup giữ lại
+const MAX_BACKUPS = 50;
+
+// Biến toàn cục cho File System Access API — LOCAL
 let dataFolderHandle = null;
 let dataFileHandle = null;
 let uploadsFolderHandle = null;
 let legalDocsFolderHandle = null;
 let backupsFolderHandle = null;
 let folderConnected = false;
+
+// Biến toàn cục cho File System Access API — SERVER (ổ Z:)
+let serverFolderHandle = null;
+let serverDataFileHandle = null;
+let serverUploadsFolderHandle = null;
+let serverLegalDocsFolderHandle = null;
+let serverBackupsFolderHandle = null;
+let serverConnected = false;
 
 function getPasswords() {
     try {
@@ -1267,6 +1478,7 @@ function handleLogin() {
         document.getElementById('current-user').innerText = user.displayName;
         showScreen('dashboard-screen');
         tryAutoReconnect();
+        tryAutoReconnectServer();
     } else {
         errEl.style.display = 'block';
         document.getElementById('password').value = '';
@@ -1380,61 +1592,7 @@ let restoringDeviceId = null;
 let currentPassTab = 'admin';
 let editingLegalIndex = null;
 let uploadedLegalFile = null;
-
-function saveData() {
-    if (folderConnected && dataFileHandle) {
-        writeDataFile();
-    } else {
-        try {
-            localStorage.setItem('jntc_devices_backup', JSON.stringify(devices));
-            localStorage.setItem('jntc_legaldocs_backup', JSON.stringify(legalDocs));
-            localStorage.setItem('jntc_priceconfig_backup', JSON.stringify(priceConfig));
-        } catch (e) { console.error('Không lưu được localStorage:', e); }
-    }
-}
-
-async function writeDataFile() {
-    if (!dataFileHandle) return;
-    try {
-        const data = {
-            version: 2,
-            updatedAt: new Date().toISOString(),
-            devices: devices,
-            legalDocs: legalDocs,
-            priceConfig: priceConfig
-        };
-        const writable = await dataFileHandle.createWritable();
-        await writable.write(JSON.stringify(data, null, 2));
-        await writable.close();
-        console.log('✅ Đã ghi data.json');
-    } catch (e) {
-        console.error('Lỗi ghi data.json:', e);
-        alert('❌ Lỗi ghi file dữ liệu: ' + e.message);
-    }
-}
-
-async function readDataFile() {
-    if (!dataFileHandle) return false;
-    try {
-        const file = await dataFileHandle.getFile();
-        const text = await file.text();
-        if (!text || text.trim() === '') {
-            devices = [];
-            legalDocs = [];
-            priceConfig = {};
-            return true;
-        }
-        const data = JSON.parse(text);
-        devices = Array.isArray(data.devices) ? data.devices : [];
-        legalDocs = Array.isArray(data.legalDocs) ? data.legalDocs : [];
-        priceConfig = data.priceConfig || {};
-        return true;
-    } catch (e) {
-        console.error('Lỗi đọc data.json:', e);
-        alert('❌ Lỗi đọc file dữ liệu: ' + e.message);
-        return false;
-    }
-}
+let selectedBackupToRestore = null;
 
 // ============================================================
 //  ĐIỀU HƯỚNG
@@ -1451,6 +1609,9 @@ function switchMainNav(screenId, btn) {
     }
     if (screenId === 'legal-screen') {
         renderLegalList();
+    }
+    if (screenId === 'settings-screen') {
+        renderSettings();
     }
 }
 
@@ -1472,8 +1633,9 @@ function goBackToList() {
         showDeviceList(currentTypeId, t.name);
     } else goBackToDashboard();
 }
+
 // ============================================================
-//  FILE SYSTEM ACCESS API
+//  FILE SYSTEM ACCESS API — LOCAL
 // ============================================================
 async function connectDataFolder() {
     if (!window.showDirectoryPicker) {
@@ -1497,31 +1659,85 @@ async function connectDataFolder() {
         
         dataFileHandle = await folderHandle.getFileHandle('data.json', { create: true });
         
-        const ok = await readDataFile();
-        if (!ok) return;
-
         folderConnected = true;
 
         try { await saveFolderHandleToIndexedDB(folderHandle); } catch (e) { console.warn('Không lưu được handle:', e); }
 
         updateFolderUI(true, folderHandle.name);
 
+        // Đọc dữ liệu thông minh (local vs server)
+        await loadDataSmart();
+
         renderDashboard();
         renderOverview();
         renderLegalList();
+        renderSettings();
 
-        alert(`✅ Đã kết nối thư mục "${folderHandle.name}"\n\n` +
+        alert(`✅ Đã kết nối LOCAL: "${folderHandle.name}"\n\n` +
               `• File dữ liệu: data.json\n` +
               `• Ảnh upload: ${uploadsFolderHandle.name}/\n` +
               `• File pháp luật: ${legalDocsFolderHandle.name}/\n` +
-              `• Backup: ${backupsFolderHandle.name}/\n\n` +
-              `Từ giờ mọi thao tác sẽ ghi trực tiếp vào folder này.`);
+              `• Backup: ${backupsFolderHandle.name}/`);
     } catch (e) {
         if (e.name === 'AbortError') {
             console.log('Người dùng hủy chọn folder');
             return;
         }
         console.error('Lỗi kết nối folder:', e);
+        alert('❌ Lỗi: ' + e.message);
+    }
+}
+
+// ============================================================
+//  FILE SYSTEM ACCESS API — SERVER (Ổ Z:)
+// ============================================================
+async function connectServerFolder() {
+    if (!window.showDirectoryPicker) {
+        alert('❌ Trình duyệt không hỗ trợ File System Access API.\nVui lòng dùng Chrome hoặc Edge.');
+        return;
+    }
+
+    try {
+        const folderHandle = await window.showDirectoryPicker();
+        
+        if (folderHandle.name !== 'data') {
+            const ok = confirm(`⚠️ Bạn đã chọn folder: "${folderHandle.name}"\n\nKhuyến nghị chọn đúng folder "data" trên ổ mạng Z:\\data.\n\nBạn vẫn muốn dùng folder này?`);
+            if (!ok) return;
+        }
+
+        serverFolderHandle = folderHandle;
+        
+        serverUploadsFolderHandle = await folderHandle.getDirectoryHandle('uploads', { create: true });
+        serverLegalDocsFolderHandle = await folderHandle.getDirectoryHandle('legal_docs', { create: true });
+        serverBackupsFolderHandle = await folderHandle.getDirectoryHandle('backups', { create: true });
+        
+        serverDataFileHandle = await folderHandle.getFileHandle('data.json', { create: true });
+        
+        serverConnected = true;
+
+        try { await saveServerHandleToIndexedDB(folderHandle); } catch (e) { console.warn('Không lưu được server handle:', e); }
+
+        updateServerUI(true, folderHandle.name);
+
+        // Đọc dữ liệu thông minh (local vs server)
+        await loadDataSmart();
+
+        renderDashboard();
+        renderOverview();
+        renderLegalList();
+        renderSettings();
+
+        alert(`✅ Đã kết nối SERVER: "${folderHandle.name}"\n\n` +
+              `• File dữ liệu: data.json\n` +
+              `• Ảnh upload: ${serverUploadsFolderHandle.name}/\n` +
+              `• File pháp luật: ${serverLegalDocsFolderHandle.name}/\n` +
+              `• Backup: ${serverBackupsFolderHandle.name}/`);
+    } catch (e) {
+        if (e.name === 'AbortError') {
+            console.log('Người dùng hủy chọn folder');
+            return;
+        }
+        console.error('Lỗi kết nối server:', e);
         alert('❌ Lỗi: ' + e.message);
     }
 }
@@ -1539,22 +1755,54 @@ function updateFolderUI(connected, folderName) {
         icon.classList.remove('disconnected');
         icon.classList.add('connected');
         icon.innerHTML = '<i class="fas fa-folder-open"></i>';
-        title.innerText = `✅ Đã kết nối: ${folderName}`;
-        desc.innerHTML = 'Dữ liệu đang lưu trực tiếp vào file. Copy cả folder lên server để dùng chung.';
+        title.innerText = `✅ LOCAL đã kết nối: ${folderName}`;
+        desc.innerHTML = 'Dữ liệu đang lưu vào file trên máy tính.';
         btn.className = 'btn-folder-reconnect';
-        btn.innerHTML = '<i class="fas fa-sync-alt"></i> Kết nối lại / Đổi folder';
+        btn.innerHTML = '<i class="fas fa-sync-alt"></i> Đổi folder LOCAL';
         warning.style.display = 'none';
     } else {
         box.classList.remove('connected');
         icon.classList.remove('connected');
         icon.classList.add('disconnected');
         icon.innerHTML = '<i class="fas fa-folder-open"></i>';
-        title.innerText = 'Chưa kết nối thư mục dữ liệu';
-        desc.innerHTML = 'Bấm nút bên phải để chọn thư mục <b>data/</b> — dữ liệu sẽ lưu vào file để có thể copy lên server';
+        title.innerText = '💻 Chưa kết nối thư mục LOCAL';
+        desc.innerHTML = 'Bấm nút bên phải để chọn thư mục <b>data/</b> trên máy tính';
         btn.className = 'btn-folder-connect';
-        btn.innerHTML = '<i class="fas fa-folder-plus"></i> Kết nối thư mục dữ liệu';
-        warning.style.display = 'block';
+        btn.innerHTML = '<i class="fas fa-folder-plus"></i> Kết nối LOCAL';
+        if (!serverConnected) warning.style.display = 'block';
     }
+}
+
+function updateServerUI(connected, folderName) {
+    const box = document.getElementById('server-connect-box');
+    const icon = document.getElementById('server-icon');
+    const title = document.getElementById('server-status-title');
+    const desc = document.getElementById('server-status-desc');
+    const btn = document.getElementById('server-btn');
+
+    if (connected) {
+        box.style.borderLeftColor = '#27ae60';
+        box.classList.add('connected');
+        icon.classList.remove('disconnected');
+        icon.classList.add('connected');
+        icon.innerHTML = '<i class="fas fa-server"></i>';
+        title.innerText = `✅ SERVER đã kết nối: ${folderName}`;
+        desc.innerHTML = 'Dữ liệu đang lưu lên server công ty (ổ Z:).';
+        btn.className = 'btn-server-connect connected';
+        btn.innerHTML = '<i class="fas fa-sync-alt"></i> Đổi folder SERVER';
+    } else {
+        box.style.borderLeftColor = '#e67e22';
+        box.classList.remove('connected');
+        icon.classList.remove('connected');
+        icon.classList.add('disconnected');
+        icon.innerHTML = '<i class="fas fa-server"></i>';
+        title.innerText = '🌐 Chưa kết nối thư mục SERVER';
+        desc.innerHTML = 'Bấm nút bên phải để chọn thư mục <b>data/</b> trên ổ mạng <b>(Z:)</b>';
+        btn.className = 'btn-server-connect';
+        btn.innerHTML = '<i class="fas fa-server"></i> Kết nối SERVER (Z:)';
+    }
+    const warning = document.getElementById('data-warning-box');
+    if (warning) warning.style.display = (folderConnected || serverConnected) ? 'none' : 'block';
 }
 
 // ============================================================
@@ -1594,6 +1842,26 @@ async function loadFolderHandleFromIndexedDB() {
     });
 }
 
+async function saveServerHandleToIndexedDB(handle) {
+    const db = await openIDB();
+    return new Promise((resolve, reject) => {
+        const tx = db.transaction('handles', 'readwrite');
+        tx.objectStore('handles').put(handle, 'serverFolder');
+        tx.oncomplete = () => resolve();
+        tx.onerror = () => reject(tx.error);
+    });
+}
+
+async function loadServerHandleFromIndexedDB() {
+    const db = await openIDB();
+    return new Promise((resolve, reject) => {
+        const tx = db.transaction('handles', 'readonly');
+        const req = tx.objectStore('handles').get('serverFolder');
+        req.onsuccess = () => resolve(req.result);
+        req.onerror = () => reject(req.error);
+    });
+}
+
 async function tryAutoReconnect() {
     try {
         const handle = await loadFolderHandleFromIndexedDB();
@@ -1607,20 +1875,50 @@ async function tryAutoReconnect() {
             backupsFolderHandle = await handle.getDirectoryHandle('backups', { create: true });
             dataFileHandle = await handle.getFileHandle('data.json', { create: true });
             
-            const ok = await readDataFile();
-            if (ok) {
-                folderConnected = true;
-                updateFolderUI(true, handle.name);
-                renderDashboard();
-                renderOverview();
-                renderLegalList();
-                console.log('✅ Tự động kết nối lại folder thành công');
-            }
+            folderConnected = true;
+            updateFolderUI(true, handle.name);
+            
+            await loadDataSmart();
+            renderDashboard();
+            renderOverview();
+            renderLegalList();
+            renderSettings();
+            console.log('✅ Tự động kết nối lại LOCAL thành công');
         } else {
-            console.log('⚠️ Cần cấp quyền lại cho folder');
+            console.log('⚠️ LOCAL cần cấp quyền lại');
         }
     } catch (e) {
-        console.warn('Không tự động kết nối được:', e);
+        console.warn('Không tự động kết nối LOCAL được:', e);
+    }
+}
+
+async function tryAutoReconnectServer() {
+    try {
+        const handle = await loadServerHandleFromIndexedDB();
+        if (!handle) return;
+        
+        const perm = await handle.queryPermission({ mode: 'readwrite' });
+        if (perm === 'granted') {
+            serverFolderHandle = handle;
+            serverUploadsFolderHandle = await handle.getDirectoryHandle('uploads', { create: true });
+            serverLegalDocsFolderHandle = await handle.getDirectoryHandle('legal_docs', { create: true });
+            serverBackupsFolderHandle = await handle.getDirectoryHandle('backups', { create: true });
+            serverDataFileHandle = await handle.getFileHandle('data.json', { create: true });
+            
+            serverConnected = true;
+            updateServerUI(true, handle.name);
+            
+            await loadDataSmart();
+            renderDashboard();
+            renderOverview();
+            renderLegalList();
+            renderSettings();
+            console.log('✅ Tự động kết nối lại SERVER thành công');
+        } else {
+            console.log('⚠️ SERVER cần cấp quyền lại');
+        }
+    } catch (e) {
+        console.warn('Không tự động kết nối SERVER được:', e);
     }
 }
 
@@ -1638,21 +1936,419 @@ async function requestReconnect() {
             legalDocsFolderHandle = await handle.getDirectoryHandle('legal_docs', { create: true });
             backupsFolderHandle = await handle.getDirectoryHandle('backups', { create: true });
             dataFileHandle = await handle.getFileHandle('data.json', { create: true });
-            
-            const ok = await readDataFile();
-            if (ok) {
-                folderConnected = true;
-                updateFolderUI(true, handle.name);
-                renderDashboard();
-                renderOverview();
-                renderLegalList();
-                alert('✅ Đã kết nối lại thư mục: ' + handle.name);
-            }
+            folderConnected = true;
+            updateFolderUI(true, handle.name);
+            await loadDataSmart();
+            renderDashboard();
+            renderOverview();
+            renderLegalList();
+            renderSettings();
+            alert('✅ Đã kết nối lại LOCAL: ' + handle.name);
         }
     } catch (e) {
         console.warn('Không kết nối lại được:', e);
         await connectDataFolder();
     }
+}
+
+// ============================================================
+//  ⭐ ĐỌC DỮ LIỆU THÔNG MINH (LOCAL vs SERVER)
+// ============================================================
+async function loadDataSmart() {
+    let localData = null;
+    let serverData = null;
+    let localTime = 0;
+    let serverTime = 0;
+    
+    // 1. Đọc LOCAL
+    if (dataFileHandle) {
+        try {
+            const file = await dataFileHandle.getFile();
+            const text = await file.text();
+            if (text && text.trim()) {
+                localData = JSON.parse(text);
+                localTime = new Date(localData.updatedAt || 0).getTime();
+            }
+        } catch (e) {
+            console.warn('⚠️ LOCAL lỗi hoặc file rỗng:', e.message);
+        }
+    }
+    
+    // 2. Đọc SERVER
+    if (serverDataFileHandle) {
+        try {
+            const file = await serverDataFileHandle.getFile();
+            const text = await file.text();
+            if (text && text.trim()) {
+                serverData = JSON.parse(text);
+                serverTime = new Date(serverData.updatedAt || 0).getTime();
+            }
+        } catch (e) {
+            console.warn('⚠️ SERVER lỗi hoặc file rỗng:', e.message);
+        }
+    }
+    
+    // 3. So sánh và chọn
+    if (localData && serverData) {
+        // Cả 2 đều có dữ liệu → dùng bản mới hơn
+        if (localTime >= serverTime) {
+            applyData(localData);
+            console.log(`✅ Dùng LOCAL (mới hơn) — ${devices.length} thiết bị`);
+            // Nếu server cũ hơn → cập nhật server
+            if (serverTime < localTime) {
+                console.log('📤 Server cũ hơn → tự cập nhật server từ local');
+                await writeToServer(localData);
+            }
+        } else {
+            applyData(serverData);
+            console.log(`✅ Dùng SERVER (mới hơn) — ${devices.length} thiết bị`);
+            // Cập nhật local từ server
+            console.log('📥 Local cũ hơn → tự cập nhật local từ server');
+            await writeToLocal(serverData);
+        }
+    } else if (localData && !serverData) {
+        // Chỉ có LOCAL
+        applyData(localData);
+        console.log(`✅ Chỉ có LOCAL — ${devices.length} thiết bị`);
+        // Server trống/lỗi → hỏi user khôi phục
+        if (serverDataFileHandle && devices.length > 0) {
+            const ok = confirm(
+                `⚠️ File trên SERVER bị lỗi hoặc trống!\n\n` +
+                `LOCAL có ${devices.length} thiết bị.\n\n` +
+                `Bạn có muốn khôi phục SERVER từ LOCAL?`
+            );
+            if (ok) {
+                await writeToServer(localData);
+                alert('✅ Đã khôi phục SERVER từ LOCAL!');
+            }
+        }
+    } else if (!localData && serverData) {
+        // Chỉ có SERVER
+        applyData(serverData);
+        console.log(`✅ Chỉ có SERVER — ${devices.length} thiết bị`);
+        // Local trống → tự cập nhật local
+        if (dataFileHandle && devices.length > 0) {
+            await writeToLocal(serverData);
+            console.log('📥 Đã copy server → local');
+        }
+    } else {
+        // Cả 2 đều lỗi → thử backup
+        console.warn('⚠️ Cả LOCAL và SERVER đều lỗi/trống');
+        await tryRestoreFromBackupOnStartup();
+    }
+}
+
+function applyData(data) {
+    devices = Array.isArray(data.devices) ? data.devices : [];
+    legalDocs = Array.isArray(data.legalDocs) ? data.legalDocs : [];
+    priceConfig = data.priceConfig || {};
+}
+
+// ============================================================
+//  ⭐ GHI DỮ LIỆU SONG SONG (LOCAL + SERVER) + BACKUP
+// ============================================================
+function saveData() {
+    if (folderConnected || serverConnected) {
+        writeDataFile();
+    } else {
+        // Fallback: lưu localStorage tạm
+        try {
+            localStorage.setItem('jntc_devices_backup', JSON.stringify(devices));
+            localStorage.setItem('jntc_legaldocs_backup', JSON.stringify(legalDocs));
+            localStorage.setItem('jntc_priceconfig_backup', JSON.stringify(priceConfig));
+        } catch (e) { console.error('Không lưu được localStorage:', e); }
+    }
+}
+
+async function writeDataFile() {
+    const data = {
+        version: 2,
+        updatedAt: new Date().toISOString(),
+        devices: devices,
+        legalDocs: legalDocs,
+        priceConfig: priceConfig
+    };
+    
+    let localOK = false;
+    let serverOK = false;
+    
+    // 1. Ghi LOCAL + backup
+    if (dataFileHandle) {
+        localOK = await writeToLocal(data);
+        if (localOK && backupsFolderHandle) {
+            await writeBackupToFolder(backupsFolderHandle, data);
+        }
+    }
+    
+    // 2. Ghi SERVER + backup
+    if (serverDataFileHandle) {
+        serverOK = await writeToServer(data);
+        if (serverOK && serverBackupsFolderHandle) {
+            await writeBackupToFolder(serverBackupsFolderHandle, data);
+        }
+    }
+    
+    // 3. Log kết quả
+    if (localOK && serverOK) {
+        console.log('✅ Đã lưu cả LOCAL + SERVER');
+    } else if (localOK && !serverOK) {
+        console.warn('⚠️ Chỉ lưu LOCAL — SERVER lỗi');
+    } else if (!localOK && serverOK) {
+        console.warn('⚠️ Chỉ lưu SERVER — LOCAL lỗi');
+    } else if (!localOK && !serverOK) {
+        console.error('❌ Không lưu được ở đâu cả!');
+    }
+}
+
+async function writeToLocal(data) {
+    if (!dataFileHandle) return false;
+    try {
+        const writable = await dataFileHandle.createWritable();
+        await writable.write(JSON.stringify(data, null, 2));
+        await writable.close();
+        return true;
+    } catch (e) {
+        console.error('❌ Lỗi ghi LOCAL:', e);
+        return false;
+    }
+}
+
+async function writeToServer(data) {
+    if (!serverDataFileHandle) return false;
+    try {
+        const writable = await serverDataFileHandle.createWritable();
+        await writable.write(JSON.stringify(data, null, 2));
+        await writable.close();
+        return true;
+    } catch (e) {
+        console.error('❌ Lỗi ghi SERVER:', e);
+        return false;
+    }
+}
+
+// ============================================================
+//  ⭐ BACKUP TỰ ĐỘNG (Giữ 50 bản gần nhất)
+// ============================================================
+async function writeBackupToFolder(backupsFolder, data) {
+    try {
+        const now = new Date();
+        const timestamp = now.getFullYear() +
+            String(now.getMonth() + 1).padStart(2, '0') +
+            String(now.getDate()).padStart(2, '0') + '_' +
+            String(now.getHours()).padStart(2, '0') +
+            String(now.getMinutes()).padStart(2, '0') +
+            String(now.getSeconds()).padStart(2, '0');
+        
+        const backupName = `data_${timestamp}.json`;
+        const fh = await backupsFolder.getFileHandle(backupName, { create: true });
+        const writable = await fh.createWritable();
+        await writable.write(JSON.stringify(data, null, 2));
+        await writable.close();
+        
+        // Xóa backup cũ nếu vượt MAX_BACKUPS
+        await cleanOldBackups(backupsFolder);
+    } catch (e) {
+        console.warn('⚠️ Lỗi ghi backup:', e);
+    }
+}
+
+async function cleanOldBackups(backupsFolder) {
+    try {
+        const files = [];
+        for await (const entry of backupsFolder.values()) {
+            if (entry.kind === 'file' && entry.name.startsWith('data_') && entry.name.endsWith('.json')) {
+                files.push(entry.name);
+            }
+        }
+        
+        if (files.length <= MAX_BACKUPS) return;
+        
+        // Sắp xếp theo tên (đã có timestamp) → cũ nhất ở đầu
+        files.sort();
+        const toDelete = files.slice(0, files.length - MAX_BACKUPS);
+        
+        for (const name of toDelete) {
+            try {
+                await backupsFolder.removeEntry(name);
+            } catch (e) { console.warn('Không xóa được backup:', name); }
+        }
+        console.log(`🗑️ Đã xóa ${toDelete.length} backup cũ (giữ ${MAX_BACKUPS})`);
+    } catch (e) {
+        console.warn('Lỗi dọn backup:', e);
+    }
+}
+
+// ============================================================
+//  ⭐ DANH SÁCH BACKUP
+// ============================================================
+async function getBackupList(source) {
+    const folder = source === 'server' ? serverBackupsFolderHandle : backupsFolderHandle;
+    if (!folder) return [];
+    
+    const list = [];
+    try {
+        for await (const entry of folder.values()) {
+            if (entry.kind === 'file' && entry.name.startsWith('data_') && entry.name.endsWith('.json')) {
+                try {
+                    const file = await entry.getFile();
+                    const text = await file.text();
+                    const data = JSON.parse(text);
+                    list.push({
+                        name: entry.name,
+                        size: file.size,
+                        updatedAt: data.updatedAt,
+                        deviceCount: (data.devices || []).length,
+                        legalCount: (data.legalDocs || []).length,
+                        data: data
+                    });
+                } catch (e) {
+                    list.push({ name: entry.name, size: 0, error: true });
+                }
+            }
+        }
+        // Mới nhất lên đầu
+        list.sort((a, b) => b.name.localeCompare(a.name));
+    } catch (e) {
+        console.warn('Lỗi đọc danh sách backup:', e);
+    }
+    return list;
+}
+
+// ============================================================
+//  ⭐ KHÔI PHỤC TỪ BACKUP
+// ============================================================
+async function tryRestoreFromBackupOnStartup() {
+    console.log('🔄 Thử khôi phục từ backup...');
+    
+    // Thử local
+    if (backupsFolderHandle) {
+        const list = await getBackupList('local');
+        if (list.length > 0) {
+            const newest = list[0];
+            const ok = confirm(
+                `⚠️ Cả LOCAL và SERVER đều lỗi/trống!\n\n` +
+                `Tìm thấy backup LOCAL: ${newest.name}\n` +
+                `• ${newest.deviceCount} thiết bị\n` +
+                `• Cập nhật: ${formatDateTime(newest.updatedAt)}\n\n` +
+                `Khôi phục từ backup này?`
+            );
+            if (ok) {
+                applyData(newest.data);
+                await writeDataFile();
+                alert('✅ Đã khôi phục từ backup LOCAL!');
+                return;
+            }
+        }
+    }
+    
+    // Thử server
+    if (serverBackupsFolderHandle) {
+        const list = await getBackupList('server');
+        if (list.length > 0) {
+            const newest = list[0];
+            const ok = confirm(
+                `⚠️ Không có backup LOCAL!\n\n` +
+                `Tìm thấy backup SERVER: ${newest.name}\n` +
+                `• ${newest.deviceCount} thiết bị\n` +
+                `• Cập nhật: ${formatDateTime(newest.updatedAt)}\n\n` +
+                `Khôi phục từ backup này?`
+            );
+            if (ok) {
+                applyData(newest.data);
+                await writeDataFile();
+                alert('✅ Đã khôi phục từ backup SERVER!');
+                return;
+            }
+        }
+    }
+    
+    console.warn('❌ Không có backup nào để khôi phục');
+}
+
+function formatDateTime(iso) {
+    if (!iso) return '—';
+    try {
+        const d = new Date(iso);
+        return d.toLocaleString('vi-VN');
+    } catch (e) { return iso; }
+}
+
+async function restoreFromBackup(source, backupName) {
+    const folder = source === 'server' ? serverBackupsFolderHandle : backupsFolderHandle;
+    if (!folder) {
+        alert('❌ Chưa kết nối folder backup!');
+        return false;
+    }
+    
+    try {
+        const fh = await folder.getFileHandle(backupName);
+        const file = await fh.getFile();
+        const text = await file.text();
+        const data = JSON.parse(text);
+        
+        applyData(data);
+        await writeDataFile();
+        
+        renderDashboard();
+        renderOverview();
+        renderLegalList();
+        renderDeletedList();
+        renderSettings();
+        
+        return true;
+    } catch (e) {
+        alert('❌ Lỗi khôi phục: ' + e.message);
+        return false;
+    }
+}
+
+// ============================================================
+//  ⭐ ĐỒNG BỘ THỦ CÔNG
+// ============================================================
+async function manualSync() {
+    if (!folderConnected && !serverConnected) {
+        alert('⚠️ Chưa kết nối folder nào!\n\nVui lòng kết nối LOCAL hoặc SERVER trước.');
+        return;
+    }
+    
+    if (confirm('🔄 Đồng bộ ngay?\n\nApp sẽ đọc lại từ LOCAL và SERVER, sau đó dùng bản mới hơn.')) {
+        await loadDataSmart();
+        renderDashboard();
+        renderOverview();
+        renderLegalList();
+        renderDeletedList();
+        renderSettings();
+        alert('✅ Đã đồng bộ xong!');
+    }
+}
+
+async function reconnectBoth() {
+    alert('💡 Hướng dẫn kết nối lại:\n\n1. Bấm "Kết nối LOCAL" (nút xanh) → chọn folder data/\n2. Bấm "Kết nối SERVER (Z:)" (nút cam) → chọn folder data/\n\nSau khi kết nối xong, dữ liệu sẽ tự động đồng bộ.');
+}
+
+function showSyncInfo() {
+    alert(
+        `📋 THÔNG TIN ĐỒNG BỘ\n\n` +
+        `━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n` +
+        `🔄 KHI MỞ APP:\n` +
+        `1. Đọc data.json từ LOCAL\n` +
+        `2. Đọc data.json từ SERVER\n` +
+        `3. So sánh trường "updatedAt"\n` +
+        `4. Dùng bản MỚI HƠN\n` +
+        `5. Tự động copy bản mới → bản cũ\n\n` +
+        `━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n` +
+        `💾 KHI LƯU:\n` +
+        `1. Ghi LOCAL (nhanh)\n` +
+        `2. Ghi SERVER (chia sẻ)\n` +
+        `3. Tạo backup timestamped (cả 2 nơi)\n` +
+        `4. Xóa backup cũ (giữ ${MAX_BACKUPS} bản)\n\n` +
+        `━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n` +
+        `🛡️ BACKUP:\n` +
+        `• Mỗi lần lưu → tạo 1 backup\n` +
+        `• Giữ ${MAX_BACKUPS} bản gần nhất\n` +
+        `• Cả LOCAL + SERVER đều có\n` +
+        `• File: backups/data_YYYYMMDD_HHMMSS.json`
+    );
 }
 
 // ============================================================
@@ -2047,10 +2743,6 @@ function ensureXLSXLoaded() {
         document.head.appendChild(script);
     });
 }
-
-// ============================================================
-//  CHI TIẾT
-// ============================================================
 async function viewDeviceDetail(id) {
     currentDeviceId = id;
     const dev = devices.find(d => d.id === id);
@@ -2128,7 +2820,7 @@ function renderSpecGrid(dev) {
 }
 
 // ============================================================
-//  ẢNH THIẾT BỊ - Đọc/Ghi file riêng
+//  ẢNH THIẾT BỊ - Ghi song song LOCAL + SERVER
 // ============================================================
 async function renderPhotos(dev) {
     for (let i = 1; i <= 2; i++) {
@@ -2137,18 +2829,41 @@ async function renderPhotos(dev) {
         const remove = document.getElementById(`photo-remove-${i}`);
         const filename = dev.photos?.[i-1];
         
-        if (filename && folderConnected && uploadsFolderHandle) {
-            try {
-                const fh = await uploadsFolderHandle.getFileHandle(filename);
-                const file = await fh.getFile();
-                const url = URL.createObjectURL(file);
-                if (img.dataset.url) URL.revokeObjectURL(img.dataset.url);
-                img.dataset.url = url;
-                img.src = url;
-                img.style.display = 'block';
-                label.style.display = 'none';
-                remove.style.display = 'flex';
-            } catch (e) {
+        if (filename && (folderConnected || serverConnected)) {
+            // Ưu tiên đọc từ LOCAL, nếu không có thì đọc từ SERVER
+            let loaded = false;
+            
+            if (uploadsFolderHandle) {
+                try {
+                    const fh = await uploadsFolderHandle.getFileHandle(filename);
+                    const file = await fh.getFile();
+                    const url = URL.createObjectURL(file);
+                    if (img.dataset.url) URL.revokeObjectURL(img.dataset.url);
+                    img.dataset.url = url;
+                    img.src = url;
+                    img.style.display = 'block';
+                    label.style.display = 'none';
+                    remove.style.display = 'flex';
+                    loaded = true;
+                } catch (e) { /* Không có trong local → thử server */ }
+            }
+            
+            if (!loaded && serverUploadsFolderHandle) {
+                try {
+                    const fh = await serverUploadsFolderHandle.getFileHandle(filename);
+                    const file = await fh.getFile();
+                    const url = URL.createObjectURL(file);
+                    if (img.dataset.url) URL.revokeObjectURL(img.dataset.url);
+                    img.dataset.url = url;
+                    img.src = url;
+                    img.style.display = 'block';
+                    label.style.display = 'none';
+                    remove.style.display = 'flex';
+                    loaded = true;
+                } catch (e) { /* Không có cả 2 */ }
+            }
+            
+            if (!loaded) {
                 img.style.display = 'none';
                 label.style.display = 'block';
                 remove.style.display = 'none';
@@ -2165,8 +2880,8 @@ async function uploadPhoto(event, slot) {
     const file = event.target.files[0];
     if (!file) return;
     
-    if (!folderConnected) {
-        alert('⚠️ Chưa kết nối thư mục dữ liệu!\nVui lòng vào tab "Theo dõi tổng thể" → bấm "Kết nối thư mục dữ liệu" trước.');
+    if (!folderConnected && !serverConnected) {
+        alert('⚠️ Chưa kết nối thư mục dữ liệu!\nVui lòng vào tab "Theo dõi tổng thể" → kết nối LOCAL hoặc SERVER trước.');
         event.target.value = '';
         return;
     }
@@ -2181,17 +2896,40 @@ async function uploadPhoto(event, slot) {
         const ext = 'jpg';
         const filename = `${dev.id.replace(/[^a-zA-Z0-9-]/g, '_')}_${slot}.${ext}`;
         
-        const fh = await uploadsFolderHandle.getFileHandle(filename, { create: true });
-        const writable = await fh.createWritable();
-        await writable.write(compressed);
-        await writable.close();
+        let localOK = false, serverOK = false;
         
-        if (!dev.photos) dev.photos = [null, null];
-        dev.photos[slot-1] = filename;
-        saveData();
+        // 1. Ghi LOCAL
+        if (uploadsFolderHandle) {
+            try {
+                const fh = await uploadsFolderHandle.getFileHandle(filename, { create: true });
+                const writable = await fh.createWritable();
+                await writable.write(compressed);
+                await writable.close();
+                localOK = true;
+                console.log(`✅ Ảnh LOCAL: ${filename}`);
+            } catch (e) { console.warn('Lỗi ảnh local:', e); }
+        }
         
-        await renderPhotos(dev);
-        console.log(`✅ Đã upload ảnh: ${filename}`);
+        // 2. Ghi SERVER
+        if (serverUploadsFolderHandle) {
+            try {
+                const fh = await serverUploadsFolderHandle.getFileHandle(filename, { create: true });
+                const writable = await fh.createWritable();
+                await writable.write(compressed);
+                await writable.close();
+                serverOK = true;
+                console.log(`✅ Ảnh SERVER: ${filename}`);
+            } catch (e) { console.warn('Lỗi ảnh server:', e); }
+        }
+        
+        if (localOK || serverOK) {
+            if (!dev.photos) dev.photos = [null, null];
+            dev.photos[slot-1] = filename;
+            saveData();
+            await renderPhotos(dev);
+        } else {
+            alert('❌ Không lưu được ảnh vào nơi nào!');
+        }
     } catch (e) {
         alert('❌ Lỗi upload ảnh: ' + e.message);
         console.error(e);
@@ -2205,12 +2943,16 @@ async function removePhoto(event, slot) {
     if (!dev || !dev.photos) return;
     
     const filename = dev.photos[slot-1];
-    if (filename && folderConnected && uploadsFolderHandle) {
+    if (filename) {
         if (!confirm('Xóa ảnh này?')) return;
-        try {
-            await uploadsFolderHandle.removeEntry(filename);
-        } catch (e) {
-            console.warn('Không xóa được file:', e);
+        
+        // Xóa LOCAL
+        if (uploadsFolderHandle) {
+            try { await uploadsFolderHandle.removeEntry(filename); } catch (e) { console.warn(e); }
+        }
+        // Xóa SERVER
+        if (serverUploadsFolderHandle) {
+            try { await serverUploadsFolderHandle.removeEntry(filename); } catch (e) { console.warn(e); }
         }
     }
     
@@ -2286,7 +3028,7 @@ function deleteInspection(idx) {
 }
 
 // ============================================================
-//  BẢO DƯỠNG - Ảnh lưu file riêng
+//  BẢO DƯỠNG - Ảnh lưu song song
 // ============================================================
 async function renderMaintenances(dev) {
     const list = document.getElementById('maintenance-list');
@@ -2301,14 +3043,26 @@ async function renderMaintenances(dev) {
         card.className = 'maintenance-card';
         
         let imgs = '';
-        if (m.images && m.images.length && folderConnected && uploadsFolderHandle) {
+        if (m.images && m.images.length) {
             for (const fn of m.images) {
-                try {
-                    const fh = await uploadsFolderHandle.getFileHandle(fn);
-                    const file = await fh.getFile();
-                    const url = URL.createObjectURL(file);
-                    imgs += `<img src="${url}" onclick="window.open(this.src)">`;
-                } catch (e) { }
+                let loaded = false;
+                if (uploadsFolderHandle) {
+                    try {
+                        const fh = await uploadsFolderHandle.getFileHandle(fn);
+                        const file = await fh.getFile();
+                        const url = URL.createObjectURL(file);
+                        imgs += `<img src="${url}" onclick="window.open(this.src)">`;
+                        loaded = true;
+                    } catch (e) { }
+                }
+                if (!loaded && serverUploadsFolderHandle) {
+                    try {
+                        const fh = await serverUploadsFolderHandle.getFileHandle(fn);
+                        const file = await fh.getFile();
+                        const url = URL.createObjectURL(file);
+                        imgs += `<img src="${url}" onclick="window.open(this.src)">`;
+                    } catch (e) { }
+                }
             }
         }
         
@@ -2332,8 +3086,8 @@ async function addMaintenance() {
     const fileInput = document.getElementById('maint-image');
     if (!date || !content) return alert('⚠️ Nhập ngày và nội dung bảo dưỡng!');
     
-    if (!folderConnected) {
-        alert('⚠️ Chưa kết nối thư mục dữ liệu!\nVui lòng vào tab "Theo dõi tổng thể" → kết nối trước.');
+    if (!folderConnected && !serverConnected) {
+        alert('⚠️ Chưa kết nối thư mục dữ liệu!');
         return;
     }
     
@@ -2352,10 +3106,25 @@ async function addMaintenance() {
                 const ts = Date.now();
                 const filename = `maint_${dev.id.replace(/[^a-zA-Z0-9-]/g, '_')}_${ts}_${i}.jpg`;
                 
-                const fh = await uploadsFolderHandle.getFileHandle(filename, { create: true });
-                const writable = await fh.createWritable();
-                await writable.write(cf);
-                await writable.close();
+                // Ghi LOCAL
+                if (uploadsFolderHandle) {
+                    try {
+                        const fh = await uploadsFolderHandle.getFileHandle(filename, { create: true });
+                        const writable = await fh.createWritable();
+                        await writable.write(cf);
+                        await writable.close();
+                    } catch (e) { console.warn(e); }
+                }
+                
+                // Ghi SERVER
+                if (serverUploadsFolderHandle) {
+                    try {
+                        const fh = await serverUploadsFolderHandle.getFileHandle(filename, { create: true });
+                        const writable = await fh.createWritable();
+                        await writable.write(cf);
+                        await writable.close();
+                    } catch (e) { console.warn(e); }
+                }
                 
                 imgs.push(filename);
             } catch (e) { console.error('Lỗi nén/lưu ảnh:', e); }
@@ -2380,9 +3149,14 @@ async function deleteMaintenance(idx) {
     const dev = devices.find(d => d.id === currentDeviceId);
     const m = dev.maintenances[idx];
     
-    if (m.images && m.images.length && folderConnected && uploadsFolderHandle) {
+    if (m.images && m.images.length) {
         for (const fn of m.images) {
-            try { await uploadsFolderHandle.removeEntry(fn); } catch (e) { console.warn(e); }
+            if (uploadsFolderHandle) {
+                try { await uploadsFolderHandle.removeEntry(fn); } catch (e) { }
+            }
+            if (serverUploadsFolderHandle) {
+                try { await serverUploadsFolderHandle.removeEntry(fn); } catch (e) { }
+            }
         }
     }
     
@@ -2462,6 +3236,7 @@ function saveNewDevice() {
     document.getElementById('new-dev-location').value = '';
     document.getElementById('new-dev-archive').value = '';
 }
+
 // ============================================================
 //  OVERVIEW
 // ============================================================
@@ -2557,6 +3332,209 @@ function saveAllPrices() {
     saveData();
     renderOverview();
     alert('✅ Đã lưu bảng giá!');
+}
+
+// ============================================================
+//  ⭐ MÀN HÌNH CÀI ĐẶT
+// ============================================================
+function renderSettings() {
+    // Trạng thái LOCAL
+    const localStatus = document.getElementById('settings-local-status');
+    if (localStatus) {
+        if (folderConnected) {
+            localStatus.innerHTML = `<span class="settings-status-ok">✅ ${dataFolderHandle?.name || 'data'}</span>`;
+        } else {
+            localStatus.innerHTML = `<span class="settings-status-fail">⚠️ Chưa kết nối</span>`;
+        }
+    }
+    
+    // Trạng thái SERVER
+    const serverStatus = document.getElementById('settings-server-status');
+    if (serverStatus) {
+        if (serverConnected) {
+            serverStatus.innerHTML = `<span class="settings-status-ok">✅ ${serverFolderHandle?.name || 'data'}</span>`;
+        } else {
+            serverStatus.innerHTML = `<span class="settings-status-fail">⚠️ Chưa kết nối</span>`;
+        }
+    }
+    
+    // Số thiết bị + văn bản
+    const deviceCountEl = document.getElementById('settings-device-count');
+    if (deviceCountEl) deviceCountEl.innerText = devices.filter(d => !d.deleted).length;
+    const legalCountEl = document.getElementById('settings-legal-count');
+    if (legalCountEl) legalCountEl.innerText = legalDocs.length;
+    
+    // Cập nhật cuối
+    const lastUpdateEl = document.getElementById('settings-last-update');
+    if (lastUpdateEl) {
+        lastUpdateEl.innerText = new Date().toLocaleString('vi-VN');
+    }
+    
+    // Cập nhật số backup
+    updateBackupCount();
+}
+
+async function updateBackupCount() {
+    const countEl = document.getElementById('settings-backup-count');
+    const newestEl = document.getElementById('settings-backup-newest');
+    if (!countEl || !newestEl) return;
+    
+    const list = await getBackupList('local');
+    countEl.innerText = list.length;
+    
+    if (list.length > 0) {
+        const newest = list[0];
+        newestEl.innerText = formatDateTime(newest.updatedAt);
+    } else {
+        newestEl.innerText = '—';
+    }
+}
+
+// ============================================================
+//  ⭐ DANH SÁCH BACKUP
+// ============================================================
+async function loadBackupList() {
+    const container = document.getElementById('backup-list-container');
+    const sourceSelect = document.getElementById('backup-source-select');
+    if (!container || !sourceSelect) return;
+    
+    const source = sourceSelect.value;
+    const list = await getBackupList(source);
+    
+    if (list.length === 0) {
+        container.innerHTML = '<div class="backup-empty"><i class="fas fa-inbox" style="font-size:40px; display:block; margin-bottom:10px; opacity:0.3;"></i>Chưa có backup nào</div>';
+        return;
+    }
+    
+    container.innerHTML = '';
+    list.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'backup-item';
+        const sourceLabel = source === 'local' ? '💻 LOCAL' : '🌐 SERVER';
+        div.innerHTML = `
+            <div>
+                <div class="backup-time">${item.name}</div>
+                <div class="backup-meta">${item.deviceCount || 0} thiết bị · ${item.legalCount || 0} văn bản · ${(item.size/1024).toFixed(1)} KB</div>
+            </div>
+            <span class="backup-source ${source}">${sourceLabel}</span>
+        `;
+        container.appendChild(div);
+    });
+}
+
+function openBackupListModal() {
+    document.getElementById('backup-list-modal').classList.add('active');
+    loadBackupList();
+}
+
+function closeBackupListModal() {
+    document.getElementById('backup-list-modal').classList.remove('active');
+}
+
+// ============================================================
+//  ⭐ KHÔI PHỤC TỪ BACKUP
+// ============================================================
+function openRestoreBackupModal() {
+    document.getElementById('restore-backup-modal').classList.add('active');
+    selectedBackupToRestore = null;
+    loadRestoreBackupList();
+}
+
+function closeRestoreBackupModal() {
+    document.getElementById('restore-backup-modal').classList.remove('active');
+    selectedBackupToRestore = null;
+}
+
+async function loadRestoreBackupList() {
+    const container = document.getElementById('restore-backup-container');
+    const sourceSelect = document.getElementById('restore-backup-source');
+    const infoEl = document.getElementById('restore-backup-info');
+    const confirmBtn = document.getElementById('confirm-restore-backup-btn');
+    if (!container || !sourceSelect) return;
+    
+    const source = sourceSelect.value;
+    const list = await getBackupList(source);
+    
+    if (list.length === 0) {
+        container.innerHTML = '<div class="backup-empty"><i class="fas fa-inbox" style="font-size:40px; display:block; margin-bottom:10px; opacity:0.3;"></i>Chưa có backup nào</div>';
+        if (infoEl) infoEl.innerHTML = '<i class="fas fa-info-circle"></i> Không có backup nào để khôi phục';
+        if (confirmBtn) { confirmBtn.disabled = true; confirmBtn.style.opacity = '0.5'; confirmBtn.style.cursor = 'not-allowed'; }
+        return;
+    }
+    
+    container.innerHTML = '';
+    list.forEach((item, idx) => {
+        const div = document.createElement('div');
+        div.className = 'backup-item';
+        div.onclick = () => selectBackupForRestore(idx, item, source);
+        div.innerHTML = `
+            <div>
+                <div class="backup-time">${item.name}</div>
+                <div class="backup-meta">${item.deviceCount || 0} thiết bị · ${item.legalCount || 0} văn bản · ${formatDateTime(item.updatedAt)}</div>
+            </div>
+            <span class="backup-source ${source}">${source === 'local' ? '💻 LOCAL' : '🌐 SERVER'}</span>
+        `;
+        container.appendChild(div);
+    });
+    
+    if (infoEl) infoEl.innerHTML = '<i class="fas fa-info-circle"></i> Chọn 1 bản backup ở trên để xem thông tin';
+    if (confirmBtn) { confirmBtn.disabled = true; confirmBtn.style.opacity = '0.5'; confirmBtn.style.cursor = 'not-allowed'; }
+}
+
+let currentRestoreData = null;
+let currentRestoreSource = null;
+
+function selectBackupForRestore(idx, item, source) {
+    // Bỏ chọn cũ
+    document.querySelectorAll('#restore-backup-container .backup-item').forEach(el => el.classList.remove('selected'));
+    // Chọn mới
+    document.querySelectorAll('#restore-backup-container .backup-item')[idx].classList.add('selected');
+    
+    currentRestoreData = item;
+    currentRestoreSource = source;
+    
+    const infoEl = document.getElementById('restore-backup-info');
+    const confirmBtn = document.getElementById('confirm-restore-backup-btn');
+    
+    if (infoEl) {
+        infoEl.innerHTML = `
+            <b>📋 Thông tin backup đã chọn:</b><br>
+            • File: <b>${item.name}</b><br>
+            • Nguồn: <b>${source === 'local' ? 'LOCAL' : 'SERVER'}</b><br>
+            • Số thiết bị: <b>${item.deviceCount || 0}</b><br>
+            • Số văn bản pháp luật: <b>${item.legalCount || 0}</b><br>
+            • Cập nhật: <b>${formatDateTime(item.updatedAt)}</b>
+        `;
+    }
+    if (confirmBtn) { confirmBtn.disabled = false; confirmBtn.style.opacity = '1'; confirmBtn.style.cursor = 'pointer'; }
+}
+
+async function confirmRestoreBackup() {
+    if (!currentRestoreData) return;
+    
+    const ok = confirm(
+        `⚠️ XÁC NHẬN KHÔI PHỤC\n\n` +
+        `Bạn sắp khôi phục từ backup:\n` +
+        `• File: ${currentRestoreData.name}\n` +
+        `• Nguồn: ${currentRestoreSource === 'local' ? 'LOCAL' : 'SERVER'}\n` +
+        `• Số thiết bị: ${currentRestoreData.deviceCount}\n` +
+        `• Cập nhật: ${formatDateTime(currentRestoreData.updatedAt)}\n\n` +
+        `⚠️ DỮ LIỆU HIỆN TẠI SẼ BỊ GHI ĐÈ!\n\n` +
+        `Tiếp tục khôi phục?`
+    );
+    if (!ok) return;
+    
+    applyData(currentRestoreData.data);
+    await writeDataFile();
+    
+    renderDashboard();
+    renderOverview();
+    renderLegalList();
+    renderDeletedList();
+    renderSettings();
+    
+    closeRestoreBackupModal();
+    alert('✅ Đã khôi phục thành công từ backup!');
 }
 
 // ============================================================
@@ -2853,7 +3831,7 @@ async function saveLegalDoc() {
     }
     
     if (fileInput.files.length > 0) {
-        if (!folderConnected || !legalDocsFolderHandle) {
+        if (!folderConnected && !serverConnected) {
             alert('⚠️ Chưa kết nối thư mục dữ liệu!\nVui lòng kết nối ở tab "Theo dõi tổng thể" trước.');
             return;
         }
@@ -2863,17 +3841,34 @@ async function saveLegalDoc() {
             const ext = file.name.split('.').pop();
             const safeName = soHieu.replace(/[^a-zA-Z0-9-]/g, '_') + '.' + ext;
             
+            // Xóa file cũ nếu đang sửa
             if (editingLegalIndex >= 0) {
                 const oldFileName = legalDocs[editingLegalIndex]?.fileName;
                 if (oldFileName && oldFileName !== safeName) {
-                    try { await legalDocsFolderHandle.removeEntry(oldFileName); } catch (e) {}
+                    if (legalDocsFolderHandle) { try { await legalDocsFolderHandle.removeEntry(oldFileName); } catch (e) {} }
+                    if (serverLegalDocsFolderHandle) { try { await serverLegalDocsFolderHandle.removeEntry(oldFileName); } catch (e) {} }
                 }
             }
             
-            const fh = await legalDocsFolderHandle.getFileHandle(safeName, { create: true });
-            const writable = await fh.createWritable();
-            await writable.write(file);
-            await writable.close();
+            // Ghi LOCAL
+            if (legalDocsFolderHandle) {
+                try {
+                    const fh = await legalDocsFolderHandle.getFileHandle(safeName, { create: true });
+                    const writable = await fh.createWritable();
+                    await writable.write(file);
+                    await writable.close();
+                } catch (e) { console.warn('Lỗi ghi file pháp luật LOCAL:', e); }
+            }
+            
+            // Ghi SERVER
+            if (serverLegalDocsFolderHandle) {
+                try {
+                    const fh = await serverLegalDocsFolderHandle.getFileHandle(safeName, { create: true });
+                    const writable = await fh.createWritable();
+                    await writable.write(file);
+                    await writable.close();
+                } catch (e) { console.warn('Lỗi ghi file pháp luật SERVER:', e); }
+            }
             
             doc.fileName = safeName;
         } catch (e) {
@@ -2926,8 +3921,9 @@ async function deleteLegalDoc(index) {
     if (!doc) return;
     if (!confirm(`Xóa văn bản "${doc.soHieu}"?\n\n${doc.fileName ? '⚠️ File đính kèm cũng sẽ bị xóa.' : ''}`)) return;
     
-    if (doc.fileName && folderConnected && legalDocsFolderHandle) {
-        try { await legalDocsFolderHandle.removeEntry(doc.fileName); } catch (e) {}
+    if (doc.fileName) {
+        if (legalDocsFolderHandle) { try { await legalDocsFolderHandle.removeEntry(doc.fileName); } catch (e) {} }
+        if (serverLegalDocsFolderHandle) { try { await serverLegalDocsFolderHandle.removeEntry(doc.fileName); } catch (e) {} }
     }
     
     legalDocs.splice(index, 1);
@@ -2936,12 +3932,20 @@ async function deleteLegalDoc(index) {
 }
 
 async function downloadLegalFile(fileName) {
-    if (!folderConnected || !legalDocsFolderHandle) {
+    if (!legalDocsFolderHandle && !serverLegalDocsFolderHandle) {
         alert('⚠️ Chưa kết nối thư mục dữ liệu!');
         return;
     }
     try {
-        const fh = await legalDocsFolderHandle.getFileHandle(fileName);
+        let fh = null;
+        if (legalDocsFolderHandle) {
+            try { fh = await legalDocsFolderHandle.getFileHandle(fileName); } catch (e) {}
+        }
+        if (!fh && serverLegalDocsFolderHandle) {
+            try { fh = await serverLegalDocsFolderHandle.getFileHandle(fileName); } catch (e) {}
+        }
+        if (!fh) throw new Error('Không tìm thấy file');
+        
         const file = await fh.getFile();
         const url = URL.createObjectURL(file);
         const a = document.createElement('a');
@@ -3211,31 +4215,7 @@ function exitQrView() {
 }
 
 // ============================================================
-//  ⭐ NẠP DỮ LIỆU TỪ data.json KHI CHẠY TRÊN SERVER
-// ============================================================
-async function loadDataFromServer() {
-    if (folderConnected) return false;
-    
-    try {
-        const res = await fetch('data.json?v=' + Date.now());
-        if (!res.ok) {
-            console.log('ℹ️ Không tìm thấy data.json trên server');
-            return false;
-        }
-        const data = await res.json();
-        devices = Array.isArray(data.devices) ? data.devices : [];
-        legalDocs = Array.isArray(data.legalDocs) ? data.legalDocs : [];
-        priceConfig = data.priceConfig || {};
-        console.log(`✅ Nạp từ server: ${devices.length} thiết bị, ${legalDocs.length} văn bản`);
-        return true;
-    } catch (e) {
-        console.warn('⚠️ Không đọc được data.json:', e);
-        return false;
-    }
-}
-
-// ============================================================
-//  ⭐ KHÓA PHIÊN QR — KHÔNG CHO ĐỔI URL SANG THIẾT BỊ KHÁC
+//  ⭐ KHÓA PHIÊN QR
 // ============================================================
 let qrLockInterval = null;
 
@@ -3266,7 +4246,7 @@ function lockQrSession(deviceId) {
 //  ⭐ XUẤT data.json (để upload lên GitHub)
 // ============================================================
 async function exportDeployPackage() {
-    if (!folderConnected) {
+    if (!folderConnected && !serverConnected) {
         if (!confirm('⚠️ Chưa kết nối thư mục dữ liệu!\n\nVẫn muốn xuất data.json với dữ liệu hiện tại trong bộ nhớ?')) return;
     }
     
@@ -3274,7 +4254,7 @@ async function exportDeployPackage() {
         if (!confirm('⚠️ Chưa có thiết bị nào. Vẫn xuất file?')) return;
     }
     
-    if (folderConnected && dataFileHandle) {
+    if (dataFileHandle) {
         await writeDataFile();
     }
     
@@ -3462,12 +4442,15 @@ document.addEventListener('DOMContentLoaded', async function() {
         document.getElementById('main-nav').style.display = 'flex';
         document.getElementById('current-user').innerText = user.displayName;
         showScreen('dashboard-screen');
-        tryAutoReconnect();
+        await tryAutoReconnect();
+        await tryAutoReconnectServer();
     } else {
-        tryAutoReconnect();
+        await tryAutoReconnect();
+        await tryAutoReconnectServer();
     }
     renderDashboard();
     updateFolderUI(false);
+    updateServerUI(false);
 });
 
 window.addEventListener('popstate', function(e) {
@@ -3477,6 +4460,30 @@ window.addEventListener('popstate', function(e) {
         history.pushState(null, '', location.href);
     }
 });
+
+// ============================================================
+//  ⭐ NẠP DỮ LIỆU TỪ data.json KHI CHẠY TRÊN SERVER (Cloudflare)
+// ============================================================
+async function loadDataFromServer() {
+    if (folderConnected) return false;
+    
+    try {
+        const res = await fetch('data.json?v=' + Date.now());
+        if (!res.ok) {
+            console.log('ℹ️ Không tìm thấy data.json trên server (Cloudflare)');
+            return false;
+        }
+        const data = await res.json();
+        devices = Array.isArray(data.devices) ? data.devices : [];
+        legalDocs = Array.isArray(data.legalDocs) ? data.legalDocs : [];
+        priceConfig = data.priceConfig || {};
+        console.log(`✅ Nạp từ Cloudflare: ${devices.length} thiết bị, ${legalDocs.length} văn bản`);
+        return true;
+    } catch (e) {
+        console.warn('⚠️ Không đọc được data.json:', e);
+        return false;
+    }
+}
 
 // ============================================================
 //  IMPORT EXCEL
