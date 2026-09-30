@@ -85,6 +85,7 @@
         .kpi-card.warn { border-color: #f39c12; }
         .kpi-card.pending { border-color: #95a5a6; }
         .kpi-card.danger { border-color: #e74c3c; }
+        .kpi-card.cert { border-color: #e67e22; }
         .kpi-label { font-size: 12px; color: #7f8c8d; text-transform: uppercase; font-weight: 700; margin-bottom: 8px; }
         .kpi-value { font-size: 32px; font-weight: 900; color: #2c3e50; }
         .kpi-card.total .kpi-value { color: #3498db; }
@@ -92,6 +93,7 @@
         .kpi-card.warn .kpi-value { color: #f39c12; }
         .kpi-card.pending .kpi-value { color: #7f8c8d; }
         .kpi-card.danger .kpi-value { color: #e74c3c; }
+        .kpi-card.cert .kpi-value { color: #e67e22; }
         .kpi-note { font-size: 12px; color: #95a5a6; margin-top: 5px; }
         .tracking-table { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.06); margin-bottom: 30px; }
         .tracking-table table { width: 100%; border-collapse: collapse; }
@@ -110,6 +112,7 @@
         .badge-pending { background: #f5f5f5; color: #757575; }
         .badge-danger { background: #ffebee; color: #c62828; }
         .badge-cost { background: #f3e5f5; color: #7b1fa2; font-weight: 700; }
+        .badge-cert { background: #fff3e0; color: #e65100; }
         .price-section { background: white; border-radius: 12px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); margin-bottom: 30px; }
         .price-title { font-size: 18px; font-weight: 800; color: #2c3e50; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 3px solid #f39c12; display: flex; align-items: center; gap: 10px; }
         .price-title i { color: #f39c12; }
@@ -137,7 +140,6 @@
         #import-result.error { background: #ffebee; color: #c62828; border-left: 4px solid #e74c3c; }
         #import-result.info { background: #e3f2fd; color: #1565c0; border-left: 4px solid #3498db; }
 
-        /* ==== KẾT NỐI THƯ MỤC ==== */
         .folder-connect-box { background: white; border-radius: 12px; padding: 20px 25px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; border-left: 5px solid #95a5a6; }
         .folder-connect-box.connected { border-left-color: #27ae60; background: linear-gradient(135deg, #f0fff4, #ffffff); }
         .folder-connect-info { display: flex; align-items: center; gap: 15px; }
@@ -156,7 +158,6 @@
         .btn-server-connect.connected { background: linear-gradient(135deg, #27ae60, #16a085); }
         .data-warning { background: #fff3e0; border-left: 4px solid #f39c12; padding: 15px 20px; border-radius: 8px; margin-bottom: 20px; font-size: 14px; color: #7f5f00; }
 
-        /* ==== LỌC NHANH ==== */
         .quick-filters { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
         .quick-filter-btn { padding: 8px 16px; border: 2px solid #ddd; background: white; border-radius: 8px; font-size: 13px; font-weight: 700; cursor: pointer; color: #555; transition: all 0.2s; }
         .quick-filter-btn:hover { border-color: #f39c12; color: #e67e22; }
@@ -194,7 +195,7 @@
         .table-container { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
 
         .device-list-wrap { background: white; border-radius: 12px; overflow-x: auto; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        table.device-list { width: 100%; border-collapse: collapse; min-width: 1700px; font-size: 13px; }
+        table.device-list { width: 100%; border-collapse: collapse; min-width: 1800px; font-size: 13px; }
         table.device-list th, table.device-list td { padding: 10px 8px; border-bottom: 1px solid #eee; text-align: center; vertical-align: middle; }
         table.device-list th { background: #f39c12; color: white; font-weight: 700; font-size: 12px; text-transform: uppercase; position: sticky; top: 0; z-index: 5; white-space: nowrap; }
         table.device-list th.col-sticky-1 { position: sticky; left: 0; z-index: 6; background: #e67e22; }
@@ -214,10 +215,7 @@
         .date-ok { color: #27ae60; font-weight: 700; }
         .date-warn { color: #ef6c00; font-weight: 700; }
         .date-danger { color: #c62828; font-weight: 700; }
-        .spec-main-cell { font-weight: 600; color: #2c3e50; white-space: nowrap; }
-
-        /* ==== CỘT TRẠNG THÁI ==== */
-        .status-badge { display: inline-block; padding: 4px 10px; border-radius: 15px; font-size: 12px; font-weight: 700; white-space: nowrap; }
+        .spec-main-cell { font-weight: 600; color: #2c3e50; white-space: nowrap; }        .status-badge { display: inline-block; padding: 4px 10px; border-radius: 15px; font-size: 12px; font-weight: 700; white-space: nowrap; }
         .status-ok { background: #e8f5e9; color: #2e7d32; border: 1px solid #a5d6a7; }
         .status-warn { background: #fff3e0; color: #ef6c00; border: 1px solid #ffcc80; }
         .status-danger { background: #ffebee; color: #c62828; border: 1px solid #ef9a9a; }
@@ -418,7 +416,6 @@
 
         .info-banner { background: #fff8e1; border-left: 4px solid #f39c12; padding: 12px 15px; border-radius: 8px; margin-bottom: 20px; font-size: 13px; color: #7f5f00; }
 
-        /* ==== PHÁP LUẬT ==== */
         #legal-screen { min-height: calc(100vh - 130px); background: #f4f7f9; padding: 25px 20px; }
         .legal-container { max-width: 1400px; margin: 0 auto; }
         .legal-title { text-align: center; color: #1a237e; font-size: 26px; font-weight: 900; margin-bottom: 10px; text-transform: uppercase; }
@@ -466,7 +463,6 @@
         #legal-view-modal .legal-view-row .v { color: #2c3e50; }
         #legal-view-modal .legal-view-tomtat { background: #f8f9fa; padding: 15px; border-radius: 8px; font-size: 14px; line-height: 1.6; white-space: pre-wrap; color: #333; margin-top: 10px; }
 
-        /* ==== MÀN HÌNH CÀI ĐẶT ==== */
         #settings-screen { min-height: calc(100vh - 130px); background: #f4f7f9; padding: 25px 20px; }
         .settings-container { max-width: 1200px; margin: 0 auto; }
         .settings-title { text-align: center; color: #1a237e; font-size: 26px; font-weight: 900; margin-bottom: 10px; text-transform: uppercase; }
@@ -503,6 +499,132 @@
         .backup-source.server { background: #fff3e0; color: #ef6c00; }
         .backup-empty { padding: 40px 20px; text-align: center; color: #95a5a6; font-style: italic; }
 
+        /* ============================================================
+           CSS MỚI: CHUÔNG THÔNG BÁO + GIẤY CHỨNG NHẬN + VIEWER
+           ============================================================ */
+
+        .jntc-bell-wrapper { position: relative; display: inline-flex; align-items: center; }
+        .jntc-bell-btn { background: rgba(255, 255, 255, 0.95); border: 3px solid #e67e22; width: 56px; height: 56px; border-radius: 50%; cursor: pointer; display: flex; justify-content: center; align-items: center; font-size: 24px; color: #e67e22; box-shadow: 0 4px 15px rgba(230, 126, 34, 0.4); position: relative; transition: all 0.2s; }
+        .jntc-bell-btn:hover { transform: scale(1.08); box-shadow: 0 6px 20px rgba(230, 126, 34, 0.6); }
+        .jntc-bell-btn.jntc-bell-safe { border-color: #27ae60; color: #27ae60; box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4); }
+        .jntc-bell-btn.jntc-bell-warn { border-color: #f39c12; color: #f39c12; box-shadow: 0 4px 15px rgba(243, 156, 18, 0.5); }
+        .jntc-bell-btn.jntc-bell-urgent { border-color: #ea580c; color: #ea580c; box-shadow: 0 4px 15px rgba(234, 88, 12, 0.6); animation: jntcShake 2s infinite; }
+        .jntc-bell-btn.jntc-bell-danger { border-color: #dc2626; color: #dc2626; box-shadow: 0 4px 15px rgba(220, 38, 38, 0.7); animation: jntcShake 1.2s infinite; }
+        @keyframes jntcShake { 0%, 100% { transform: rotate(0deg); } 10%, 30%, 50% { transform: rotate(-8deg); } 20%, 40%, 60% { transform: rotate(8deg); } 70% { transform: rotate(0deg); } }
+        .jntc-bell-count { position: absolute; top: -6px; right: -6px; background: #dc2626; color: white; font-size: 12px; font-weight: 900; min-width: 22px; height: 22px; border-radius: 11px; display: flex; justify-content: center; align-items: center; padding: 0 6px; border: 2px solid white; box-shadow: 0 2px 8px rgba(220, 38, 38, 0.6); animation: jntcPulse 1.5s infinite; }
+        @keyframes jntcPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.15); } }
+        .jntc-bell-dropdown { position: absolute; top: calc(100% + 12px); right: 0; width: 420px; max-width: 92vw; max-height: 560px; background: white; border-radius: 14px; box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3); z-index: 9999; display: none; overflow: hidden; border-top: 4px solid #e67e22; }
+        .jntc-bell-dropdown.jntc-open { display: block; animation: jntcSlideDown 0.2s ease; }
+        @keyframes jntcSlideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+        .jntc-bell-header { padding: 14px 18px; background: linear-gradient(135deg, #f39c12, #e67e22); color: white; display: flex; justify-content: space-between; align-items: center; font-weight: 800; font-size: 15px; }
+        .jntc-bell-close { background: rgba(255, 255, 255, 0.25); border: none; color: white; width: 28px; height: 28px; border-radius: 50%; cursor: pointer; font-size: 14px; display: flex; justify-content: center; align-items: center; }
+        .jntc-bell-close:hover { background: rgba(255, 255, 255, 0.4); }
+        .jntc-bell-filters { display: flex; gap: 6px; padding: 10px 14px; background: #f8f9fa; border-bottom: 1px solid #eee; flex-wrap: wrap; }
+        .jntc-bell-filter-btn { padding: 6px 12px; border: 1.5px solid #ddd; background: white; border-radius: 20px; font-size: 12px; font-weight: 700; cursor: pointer; color: #555; }
+        .jntc-bell-filter-btn.active { background: #f39c12; color: white; border-color: #f39c12; }
+        .jntc-bell-body { max-height: 400px; overflow-y: auto; padding: 6px 0; }
+        .jntc-bell-group-title { padding: 10px 18px 6px; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: #7f8c8d; border-top: 1px solid #f0f0f0; margin-top: 4px; }
+        .jntc-bell-group-title.jntc-group-danger { color: #dc2626; }
+        .jntc-bell-group-title.jntc-group-urgent { color: #ea580c; }
+        .jntc-bell-group-title.jntc-group-warn { color: #f39c12; }
+        .jntc-bell-item { padding: 11px 18px; display: flex; gap: 12px; align-items: flex-start; border-bottom: 1px solid #f5f5f5; transition: background 0.15s; }
+        .jntc-bell-item:hover { background: #fff8e1; }
+        .jntc-bell-item-icon { width: 34px; height: 34px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 15px; color: white; flex-shrink: 0; }
+        .jntc-bell-item-icon.jntc-icon-danger { background: #dc2626; }
+        .jntc-bell-item-icon.jntc-icon-urgent { background: #ea580c; }
+        .jntc-bell-item-icon.jntc-icon-warn { background: #f39c12; }
+        .jntc-bell-item-content { flex: 1; min-width: 0; }
+        .jntc-bell-item-title { font-size: 13.5px; font-weight: 700; color: #2c3e50; margin-bottom: 3px; }
+        .jntc-bell-item-meta { font-size: 11.5px; color: #7f8c8d; margin-bottom: 6px; }
+        .jntc-bell-item-actions { display: flex; gap: 6px; flex-wrap: wrap; }
+        .jntc-bell-item-btn { padding: 4px 10px; border: 1.5px solid #3498db; background: white; color: #3498db; border-radius: 6px; font-size: 11.5px; font-weight: 700; cursor: pointer; }
+        .jntc-bell-item-btn:hover { background: #3498db; color: white; }
+        .jntc-bell-item-btn.jntc-btn-done { border-color: #27ae60; color: #27ae60; }
+        .jntc-bell-item-btn.jntc-btn-done:hover { background: #27ae60; color: white; }
+        .jntc-bell-empty { padding: 40px 20px; text-align: center; color: #95a5a6; font-style: italic; font-size: 14px; }
+        .jntc-bell-footer { padding: 12px 18px; background: #f8f9fa; border-top: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: #7f8c8d; }
+        .jntc-bell-footer button { padding: 6px 12px; background: #8e44ad; color: white; border: none; border-radius: 6px; font-size: 12px; font-weight: 700; cursor: pointer; }
+
+        .jntc-cert-section { padding: 20px 30px; background: #fffbf5; border-bottom: 2px solid #eee; border-top: 3px solid #e67e22; }
+        .jntc-cert-title { font-size: 16px; font-weight: 800; color: #2c3e50; text-transform: uppercase; margin-bottom: 15px; padding-bottom: 8px; border-bottom: 3px solid #e67e22; display: flex; align-items: center; gap: 10px; justify-content: space-between; flex-wrap: wrap; }
+        .jntc-cert-title > span { display: flex; align-items: center; gap: 10px; }
+        .jntc-cert-title i { color: #e67e22; }
+        .jntc-cert-add-btn { padding: 9px 18px; background: linear-gradient(135deg, #e67e22, #d35400); color: white; border: none; border-radius: 8px; font-weight: 700; font-size: 13px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
+        .jntc-cert-add-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 15px rgba(230, 126, 34, 0.4); }
+        .jntc-cert-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 12px; }
+        .jntc-cert-card { background: white; border-radius: 10px; padding: 14px 16px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06); border-left: 5px solid #27ae60; display: flex; flex-direction: column; gap: 8px; }
+        .jntc-cert-card.jntc-cert-safe { border-left-color: #27ae60; }
+        .jntc-cert-card.jntc-cert-warning { border-left-color: #f39c12; background: #fffbf0; }
+        .jntc-cert-card.jntc-cert-urgent { border-left-color: #ea580c; background: #fff5ec; }
+        .jntc-cert-card.jntc-cert-expired { border-left-color: #dc2626; background: #fff0f0; }
+        .jntc-cert-card.jntc-cert-unknown { border-left-color: #6b7280; }
+        .jntc-cert-card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
+        .jntc-cert-card-name { font-size: 14px; font-weight: 800; color: #2c3e50; display: flex; align-items: center; gap: 6px; }
+        .jntc-cert-card-name i { color: #e67e22; }
+        .jntc-cert-badge { display: inline-flex; align-items: center; gap: 4px; padding: 3px 9px; border-radius: 12px; font-size: 11px; font-weight: 800; white-space: nowrap; }
+        .jntc-cert-badge.jntc-badge-safe { background: #e8f5e9; color: #2e7d32; }
+        .jntc-cert-badge.jntc-badge-warn { background: #fff3e0; color: #ef6c00; }
+        .jntc-cert-badge.jntc-badge-urgent { background: #ffedd5; color: #c2410c; }
+        .jntc-cert-badge.jntc-badge-danger { background: #ffebee; color: #c62828; }
+        .jntc-cert-badge.jntc-badge-unknown { background: #f5f5f5; color: #757575; }
+        .jntc-cert-meta { font-size: 12px; color: #555; line-height: 1.6; }
+        .jntc-cert-meta b { color: #2c3e50; }
+        .jntc-cert-file { display: flex; align-items: center; gap: 8px; padding: 8px 10px; background: #f8f9fa; border-radius: 6px; font-size: 12px; color: #2980b9; word-break: break-all; }
+        .jntc-cert-file i { font-size: 16px; flex-shrink: 0; }
+        .jntc-cert-file.jntc-file-pdf i { color: #dc2626; }
+        .jntc-cert-file.jntc-file-excel i { color: #16a34a; }
+        .jntc-cert-file.jntc-file-img i { color: #8b5cf6; }
+        .jntc-cert-actions { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px; }
+        .jntc-cert-action-btn { padding: 5px 10px; border: 1.5px solid #ddd; background: white; border-radius: 6px; font-size: 11.5px; font-weight: 700; cursor: pointer; color: #555; display: inline-flex; align-items: center; gap: 4px; }
+        .jntc-cert-action-btn:hover { background: #f8f9fa; }
+        .jntc-cert-action-btn.jntc-view { border-color: #3498db; color: #3498db; }
+        .jntc-cert-action-btn.jntc-view:hover { background: #3498db; color: white; }
+        .jntc-cert-action-btn.jntc-download { border-color: #16a34a; color: #16a34a; }
+        .jntc-cert-action-btn.jntc-download:hover { background: #16a34a; color: white; }
+        .jntc-cert-action-btn.jntc-edit { border-color: #f39c12; color: #f39c12; }
+        .jntc-cert-action-btn.jntc-edit:hover { background: #f39c12; color: white; }
+        .jntc-cert-action-btn.jntc-del { border-color: #dc2626; color: #dc2626; }
+        .jntc-cert-action-btn.jntc-del:hover { background: #dc2626; color: white; }
+        .jntc-cert-empty { padding: 30px 20px; text-align: center; color: #95a5a6; font-style: italic; font-size: 13px; background: white; border-radius: 10px; border: 2px dashed #ddd; }
+
+        #jntc-cert-modal .modal-content { width: 620px; max-width: 95%; }
+        #jntc-cert-modal .form-group { margin-bottom: 14px; }
+        #jntc-cert-modal .form-group label { display: block; font-size: 13px; font-weight: 700; color: #555; margin-bottom: 6px; }
+        #jntc-cert-modal .form-group label .required { color: #e74c3c; }
+        #jntc-cert-modal .form-group input,
+        #jntc-cert-modal .form-group select,
+        #jntc-cert-modal .form-group textarea { width: 100%; padding: 10px 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 14px; font-family: inherit; }
+        #jntc-cert-modal .form-group input:focus,
+        #jntc-cert-modal .form-group select:focus,
+        #jntc-cert-modal .form-group textarea:focus { border-color: #e67e22; outline: none; }
+        #jntc-cert-modal .jntc-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        #jntc-cert-modal .jntc-file-drop { border: 2px dashed #e67e22; border-radius: 10px; padding: 20px; text-align: center; background: #fffbf5; cursor: pointer; transition: all 0.2s; }
+        #jntc-cert-modal .jntc-file-drop:hover { background: #fff5e6; border-color: #d35400; }
+        #jntc-cert-modal .jntc-file-drop i { font-size: 32px; color: #e67e22; display: block; margin-bottom: 8px; }
+        #jntc-cert-modal .jntc-file-drop .jntc-file-hint { font-size: 12px; color: #7f8c8d; margin-top: 6px; font-style: italic; }
+        #jntc-cert-modal .jntc-file-selected { display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: #e8f5e9; border-radius: 8px; font-size: 13px; color: #2e7d32; font-weight: 600; }
+
+        .jntc-viewer-badge { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; background: linear-gradient(135deg, #3498db, #2980b9); color: white; border-radius: 20px; font-size: 12px; font-weight: 800; box-shadow: 0 2px 8px rgba(52, 152, 219, 0.4); }
+        .jntc-viewer-badge i { font-size: 13px; }
+        .jntc-nav-locked { opacity: 0.4; cursor: not-allowed !important; pointer-events: none; }
+        .jntc-role-blocked { display: none !important; }
+        .jntc-admin-only { display: inline-flex; }
+        body.jntc-role-viewer .jntc-admin-only,
+        body.jntc-role-qr .jntc-admin-only { display: none !important; }
+        body.jntc-role-viewer .jntc-cert-add-btn,
+        body.jntc-role-qr .jntc-cert-add-btn { display: none !important; }
+        body.jntc-role-viewer .jntc-cert-action-btn.jntc-edit,
+        body.jntc-role-viewer .jntc-cert-action-btn.jntc-del,
+        body.jntc-role-qr .jntc-cert-action-btn.jntc-edit,
+        body.jntc-role-qr .jntc-cert-action-btn.jntc-del { display: none !important; }
+        body.jntc-role-viewer .btn-add,
+        body.jntc-role-viewer .btn-delete,
+        body.jntc-role-viewer .btn-import,
+        body.jntc-role-qr .btn-add,
+        body.jntc-role-qr .btn-delete,
+        body.jntc-role-qr .btn-import { display: none !important; }
+        .jntc-role-indicator { padding: 4px 10px; border-radius: 15px; font-size: 11px; font-weight: 800; text-transform: uppercase; }
+
         @media (max-width: 1200px) { .kpi-row { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 1100px) { .device-grid { grid-template-columns: repeat(3, 1fr); } }
         @media (max-width: 900px) {
@@ -523,6 +645,12 @@
             .tracking-table { overflow-x: auto; }
             .tracking-table table { min-width: 800px; }
         }
+        @media (max-width: 700px) {
+            .jntc-bell-dropdown { width: 92vw; right: -10px; }
+            .jntc-cert-list { grid-template-columns: 1fr; }
+            #jntc-cert-modal .jntc-form-row { grid-template-columns: 1fr; }
+            .jntc-bell-btn { width: 48px; height: 48px; font-size: 20px; }
+        }
         @media (max-width: 500px) { .device-grid { grid-template-columns: 1fr; } .kpi-row { grid-template-columns: 1fr; } .deleted-kpi-row { grid-template-columns: 1fr; } }
         @media print { 
             .company-header, .header-actions, .add-form, .btn, .main-nav, .no-print { display: none !important; } 
@@ -534,7 +662,6 @@
     </style>
 </head>
 <body>
-
     <div id="login-screen">
         <div class="login-box">
             <img src="logo.png" alt="JNTC VINA Logo" class="logo-jntc-real"
@@ -551,6 +678,7 @@
     <div class="company-header" id="company-header" style="display: none;">
         <img src="logo.png" alt="JNTC VINA" class="company-header-logo" onerror="this.style.display='none'">
         <div class="user-info">
+            <span id="jntc-role-badge-container"></span>
             <span><i class="fas fa-user-circle"></i> <b id="current-user">admin</b></span>
             <button class="btn-change-pass" onclick="openChangePassModal()"><i class="fas fa-key"></i> Đổi mật khẩu</button>
             <button class="btn-logout" onclick="handleLogout()"><i class="fas fa-sign-out-alt"></i> Đăng xuất</button>
@@ -564,6 +692,7 @@
         <button class="nav-btn" onclick="switchMainNav('legal-screen', this)"><i class="fas fa-balance-scale"></i> Pháp luật</button>
         <button class="nav-btn" onclick="switchMainNav('settings-screen', this)"><i class="fas fa-cog"></i> Cài đặt</button>
     </div>
+    
     <div id="dashboard-screen" class="screen active">
         <div class="main-banner">
             <div class="banner-left">
@@ -573,7 +702,57 @@
                     <div class="banner-subtitle">An toàn thiết bị - Ổn định sản xuất - Phát triển bền vững</div>
                 </div>
             </div>
-            <div class="banner-slogan"><span>AN TOÀN<br>LÀ TRÊN HẾT</span></div>
+            <div style="display: flex; align-items: center; gap: 12px;">
+                <div class="jntc-bell-wrapper" id="jntc-bell-wrapper">
+                    <button class="jntc-bell-btn jntc-bell-safe" id="jntc-bell-btn" 
+                            onclick="toggleBellDropdown(event)" 
+                            title="Thông báo cảnh báo">
+                        <i class="fas fa-bell"></i>
+                        <span class="jntc-bell-count" id="jntc-bell-count" style="display:none;">0</span>
+                    </button>
+                    
+                    <div class="jntc-bell-dropdown" id="jntc-bell-dropdown" onclick="event.stopPropagation()">
+                        <div class="jntc-bell-header">
+                            <span><i class="fas fa-bell"></i> THÔNG BÁO CẢNH BÁO</span>
+                            <button class="jntc-bell-close" onclick="closeBellDropdown()">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        
+                        <div style="padding: 10px 18px 4px; font-size: 13px; color: #555;">
+                            Tổng: <b id="jntc-bell-total" style="color:#dc2626;">0</b> cảnh báo
+                        </div>
+                        
+                        <div class="jntc-bell-filters">
+                            <button class="jntc-bell-filter-btn active" data-bell-filter="all" onclick="filterBellAlerts('all')">
+                                Tất cả (<span id="jntc-bell-filter-all-count">0</span>)
+                            </button>
+                            <button class="jntc-bell-filter-btn" data-bell-filter="device" onclick="filterBellAlerts('device')">
+                                <i class="fas fa-tools"></i> Thiết bị (<span id="jntc-bell-filter-device-count">0</span>)
+                            </button>
+                            <button class="jntc-bell-filter-btn" data-bell-filter="cert" onclick="filterBellAlerts('cert')">
+                                <i class="fas fa-file-alt"></i> Giấy CN (<span id="jntc-bell-filter-cert-count">0</span>)
+                            </button>
+                        </div>
+                        
+                        <div class="jntc-bell-body" id="jntc-bell-body">
+                            <div class="jntc-bell-empty">
+                                <i class="fas fa-check-circle" style="font-size: 40px; color: #27ae60; display: block; margin-bottom: 10px;"></i>
+                                Không có cảnh báo nào
+                            </div>
+                        </div>
+                        
+                        <div class="jntc-bell-footer">
+                            <span id="jntc-bell-footer-info">Cập nhật: —</span>
+                            <button onclick="markAllAlertsAsRead()" title="Ẩn tất cả cảnh báo 7 ngày">
+                                <i class="fas fa-check-double"></i> Đã xem tất cả
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="banner-slogan"><span>AN TOÀN<br>LÀ TRÊN HẾT</span></div>
+            </div>
         </div>
         <div class="sub-slogan"><i class="fas fa-shield-alt"></i> Hệ thống quản lý tập trung — Kiểm soát toàn diện — Vận hành hiệu quả</div>
         <div class="device-grid" id="device-grid"></div>
@@ -587,13 +766,11 @@
             <div class="process-item"><div class="process-item-icon"><i class="fas fa-leaf"></i></div><div class="process-item-text">Hiệu quả bền vững</div></div>
         </div>
     </div>
-
     <div id="overview-screen" class="screen">
         <div class="overview-container">
             <h2 class="overview-title"><i class="fas fa-chart-line"></i> Bảng Theo Dõi Tổng Thể</h2>
             <p class="overview-subtitle">Thống kê tình trạng kiểm định & dự toán chi phí theo mức giá</p>
 
-            <!-- KHỐI KẾT NỐI LOCAL -->
             <div class="folder-connect-box" id="folder-connect-box">
                 <div class="folder-connect-info">
                     <div class="folder-connect-icon disconnected" id="folder-icon"><i class="fas fa-folder-open"></i></div>
@@ -607,7 +784,6 @@
                 </button>
             </div>
 
-            <!-- KHỐI KẾT NỐI SERVER (Ổ Z:) -->
             <div class="folder-connect-box" id="server-connect-box" style="border-left-color: #e67e22;">
                 <div class="folder-connect-info">
                     <div class="folder-connect-icon disconnected" id="server-icon"><i class="fas fa-server"></i></div>
@@ -626,24 +802,25 @@
                 <b>Chưa kết nối thư mục dữ liệu!</b> Mọi thay đổi sẽ chỉ lưu tạm vào bộ nhớ trình duyệt.
             </div>
 
-            <div class="kpi-row">
+            <div class="kpi-row" style="grid-template-columns: repeat(6, 1fr);">
                 <div class="kpi-card total"><div class="kpi-label"><i class="fas fa-box"></i> Tổng thiết bị</div><div class="kpi-value" id="kpi-total">0</div><div class="kpi-note">Tất cả 8 loại</div></div>
                 <div class="kpi-card ok"><div class="kpi-label"><i class="fas fa-check-circle"></i> Đã kiểm định</div><div class="kpi-value" id="kpi-ok">0</div><div class="kpi-note">Còn hiệu lực</div></div>
                 <div class="kpi-card warn"><div class="kpi-label"><i class="fas fa-exclamation-triangle"></i> Sắp đến hạn</div><div class="kpi-value" id="kpi-warn">0</div><div class="kpi-note">Trong vòng 90 ngày</div></div>
                 <div class="kpi-card pending"><div class="kpi-label"><i class="fas fa-clock"></i> Chưa kiểm định</div><div class="kpi-value" id="kpi-pending">0</div><div class="kpi-note">Chưa nhập ngày KĐ</div></div>
                 <div class="kpi-card danger"><div class="kpi-label"><i class="fas fa-times-circle"></i> Hết hạn</div><div class="kpi-value" id="kpi-danger">0</div><div class="kpi-note">Cần xử lý ngay</div></div>
+                <div class="kpi-card cert"><div class="kpi-label"><i class="fas fa-file-certificate"></i> Giấy CN cảnh báo</div><div class="kpi-value" id="kpi-cert-alert">0</div><div class="kpi-note">Sắp/hết hạn (90 ngày)</div></div>
             </div>
 
             <div class="action-bar">
                 <button class="btn btn-import" onclick="openImportModal()"><i class="fas fa-file-import"></i> Import Excel</button>
                 <button class="btn btn-export" onclick="exportTemplate()"><i class="fas fa-file-download"></i> Tải file mẫu</button>
                 <button class="btn btn-save" onclick="saveAllPrices()"><i class="fas fa-save"></i> Lưu bảng giá</button>
-                <button class="btn" style="background:#9b59b6; color:white;" onclick="exportDeployPackage()"><i class="fas fa-box-open"></i> Xuất data.json</button>
+                <button class="btn jntc-admin-only" style="background:#9b59b6; color:white;" onclick="exportDeployPackage()"><i class="fas fa-box-open"></i> Xuất data.json</button>
             </div>
 
             <div class="tracking-table">
                 <table>
-                    <thead><tr><th class="left" style="width:18%;">Loại thiết bị</th><th>Tổng số</th><th>Đã KĐ</th><th>Sắp hạn (90 ngày)</th><th>Chưa KĐ</th><th>Hết hạn</th><th>Chi tiết theo mức</th><th>Chi phí dự kiến</th></tr></thead>
+                    <thead><tr><th class="left" style="width:16%;">Loại thiết bị</th><th>Tổng số</th><th>Đã KĐ</th><th>Sắp hạn (90 ngày)</th><th>Chưa KĐ</th><th>Hết hạn</th><th>Giấy CN cảnh báo</th><th>Chi tiết theo mức</th><th>Chi phí dự kiến</th></tr></thead>
                     <tbody id="tracking-tbody"></tbody>
                     <tfoot><tr style="background:#f8f9fa; font-weight:700;">
                         <td class="left" style="font-size:15px; color:#2c3e50;"><i class="fas fa-calculator"></i> TỔNG CỘNG</td>
@@ -652,6 +829,7 @@
                         <td><span class="badge badge-warn" id="foot-warn">0</span></td>
                         <td><span class="badge badge-pending" id="foot-pending">0</span></td>
                         <td><span class="badge badge-danger" id="foot-danger">0</span></td>
+                        <td><span class="badge badge-cert" id="foot-cert">0</span></td>
                         <td>-</td>
                         <td><span class="badge badge-cost" id="foot-cost">0 đ</span></td>
                     </tr></tfoot>
@@ -680,6 +858,7 @@
             </div>
         </div>
     </div>
+    
     <div id="deleted-screen" class="screen">
         <div class="deleted-container">
             <h2 class="deleted-title"><i class="fas fa-trash-alt"></i> Thiết Bị Đã Hủy</h2>
@@ -732,8 +911,6 @@
             </div>
         </div>
     </div>
-
-    <!-- ===== TAB PHÁP LUẬT ===== -->
     <div id="legal-screen" class="screen">
         <div class="legal-container">
             <h2 class="legal-title"><i class="fas fa-balance-scale"></i> Văn Bản Pháp Luật</h2>
@@ -744,7 +921,7 @@
                     <i class="fas fa-search"></i>
                     <input type="text" id="legal-search-input" placeholder="Tìm theo số hiệu hoặc tên văn bản..." oninput="renderLegalList()">
                 </div>
-                <button class="btn-add-legal" onclick="openLegalModal()">
+                <button class="btn-add-legal jntc-admin-only" onclick="openLegalModal()">
                     <i class="fas fa-plus"></i> Thêm văn bản
                 </button>
             </div>
@@ -770,13 +947,11 @@
         </div>
     </div>
 
-    <!-- ===== TAB CÀI ĐẶT (MỚI) ===== -->
     <div id="settings-screen" class="screen">
         <div class="settings-container">
             <h2 class="settings-title"><i class="fas fa-cog"></i> Cài Đặt Hệ Thống</h2>
             <p class="settings-subtitle">Quản lý kết nối dữ liệu, backup và bảo mật</p>
 
-            <!-- TRẠNG THÁI KẾT NỐI -->
             <div class="settings-section">
                 <div class="settings-section-title"><i class="fas fa-plug"></i> Trạng thái kết nối</div>
                 <div class="settings-row">
@@ -792,7 +967,6 @@
                 </div>
             </div>
 
-            <!-- ĐỒNG BỘ -->
             <div class="settings-section">
                 <div class="settings-section-title"><i class="fas fa-sync-alt"></i> Đồng bộ dữ liệu</div>
                 <div style="display: flex; gap: 10px; flex-wrap: wrap;">
@@ -808,7 +982,6 @@
                 </div>
             </div>
 
-            <!-- BACKUP -->
             <div class="settings-section">
                 <div class="settings-section-title"><i class="fas fa-history"></i> Backup & Khôi phục</div>
                 <div class="settings-row">
@@ -828,7 +1001,6 @@
                 </div>
             </div>
 
-            <!-- BẢO MẬT -->
             <div class="settings-section">
                 <div class="settings-section-title"><i class="fas fa-shield-alt"></i> Bảo mật</div>
                 <div style="display: flex; gap: 10px; flex-wrap: wrap;">
@@ -837,7 +1009,6 @@
                 </div>
             </div>
 
-            <!-- THÔNG TIN HỆ THỐNG -->
             <div class="settings-section">
                 <div class="settings-section-title"><i class="fas fa-info-circle"></i> Thông tin hệ thống</div>
                 <div class="settings-row">
@@ -869,11 +1040,10 @@
                     <button onclick="exportFilteredList()" class="btn btn-export-filtered"><i class="fas fa-file-export"></i> Xuất DS đang lọc</button>
                     <button onclick="exportDeviceListExcel()" class="btn btn-excel"><i class="fas fa-file-excel"></i> Xuất Excel</button>
                     <button onclick="openQrPrintModal()" class="btn btn-qr"><i class="fas fa-qrcode"></i> In QR hàng loạt</button>
-                    <button onclick="openAddDeviceModal()" class="btn btn-add"><i class="fas fa-plus"></i> Thêm thiết bị</button>
+                    <button onclick="openAddDeviceModal()" class="btn btn-add jntc-admin-only"><i class="fas fa-plus"></i> Thêm thiết bị</button>
                 </div>
             </div>
 
-            <!-- THANH TÌM KIẾM + LỌC NHANH -->
             <div class="search-bar-wrapper">
                 <div style="position:relative; margin-bottom:12px;">
                     <i class="fas fa-search" style="position:absolute; left:15px; top:50%; transform:translateY(-50%); color:#7f8c8d; font-size:16px; pointer-events:none;"></i>
@@ -917,6 +1087,7 @@
                             <th class="sortable" data-sort="size" style="width:100px;">Mã hiệu <i class="fas fa-sort sort-icon"></i></th>
                             <th class="sortable" data-sort="serial" style="width:120px;">Số chế tạo <i class="fas fa-sort sort-icon"></i></th>
                             <th class="sortable" data-sort="status" style="width:120px;">Trạng thái KĐ <i class="fas fa-sort sort-icon"></i></th>
+                            <th class="sortable" data-sort="cert" style="width:120px;">Giấy CN <i class="fas fa-sort sort-icon"></i></th>
                             <th class="sortable" data-sort="spec" id="col-main-spec" style="width:120px;">Thông số chính <i class="fas fa-sort sort-icon"></i></th>
                             <th class="sortable" data-sort="lastDate" style="width:120px;">Ngày KĐ gần nhất <i class="fas fa-sort sort-icon"></i></th>
                             <th class="sortable" data-sort="nextDate" style="width:120px;">Hạn KĐ <i class="fas fa-sort sort-icon"></i></th>
@@ -941,7 +1112,7 @@
                 <div style="display:flex; gap:8px;">
                     <button onclick="showQrForDevice(currentDeviceId)" class="btn btn-qr"><i class="fas fa-qrcode"></i> Xem QR</button>
                     <button onclick="window.print()" class="btn btn-print"><i class="fas fa-print"></i> In phiếu</button>
-                    <button onclick="saveAllChanges()" class="btn btn-save"><i class="fas fa-save"></i> Lưu tất cả</button>
+                    <button onclick="saveAllChanges()" class="btn btn-save jntc-admin-only"><i class="fas fa-save"></i> Lưu tất cả</button>
                 </div>
             </div>
             <div class="device-sheet">
@@ -989,6 +1160,23 @@
                         </div>
                     </div>
                 </div>
+                
+                <div class="jntc-cert-section" id="jntc-cert-section">
+                    <div class="jntc-cert-title">
+                        <span><i class="fas fa-file-certificate"></i> GIẤY CHỨNG NHẬN HỢP CHUẨN / HỢP QUY</span>
+                        <button class="jntc-cert-add-btn jntc-admin-only" onclick="openCertModal()">
+                            <i class="fas fa-plus"></i> Thêm giấy chứng nhận
+                        </button>
+                    </div>
+                    
+                    <div class="jntc-cert-list" id="jntc-cert-list">
+                        <div class="jntc-cert-empty">
+                            <i class="fas fa-inbox" style="font-size: 32px; display: block; margin-bottom: 8px; opacity: 0.4;"></i>
+                            Chưa có giấy chứng nhận nào
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="spec-section">
                     <div class="section-title"><i class="fas fa-cogs"></i> Thông số kỹ thuật chi tiết</div>
                     <div class="spec-grid" id="spec-grid"></div>
@@ -1005,7 +1193,7 @@
                         <thead><tr><th style="width:60px;">STT</th><th>Ngày KĐ</th><th>Đơn vị kiểm định</th><th>Hạn KĐ</th><th>Số tem</th><th style="width:80px;">Xóa</th></tr></thead>
                         <tbody id="inspection-tbody"></tbody>
                     </table>
-                    <div class="add-form" style="margin-top:15px;">
+                    <div class="add-form">
                         <h4><i class="fas fa-plus-circle"></i> Thêm kỳ kiểm định mới</h4>
                         <div class="form-row">
                             <div class="form-group"><label>Ngày KĐ:</label><input type="date" id="insp-date"></div>
@@ -1233,7 +1421,127 @@
         </div>
     </div>
 
-    <!-- MODAL THÊM/SỬA VĂN BẢN PHÁP LUẬT -->
+    <div id="jntc-cert-modal" class="modal">
+        <div class="modal-content">
+            <h3><i class="fas fa-file-certificate" style="color:#e67e22;"></i> <span id="jntc-cert-modal-title">THÊM GIẤY CHỨNG NHẬN</span></h3>
+
+            <div class="form-group">
+                <label>Tên giấy chứng nhận <span class="required">*</span></label>
+                <input type="text" id="jntc-cert-name" placeholder="VD: Giấy chứng nhận hợp chuẩn / Giấy chứng nhận hợp quy / Catalogue...">
+            </div>
+
+            <div class="jntc-form-row">
+                <div class="form-group">
+                    <label>Loại giấy</label>
+                    <select id="jntc-cert-type">
+                        <option value="hopchuan">Giấy chứng nhận hợp chuẩn</option>
+                        <option value="hopquy">Giấy chứng nhận hợp quy</option>
+                        <option value="catalogue">Catalogue / Tài liệu kỹ thuật</option>
+                        <option value="khac">Khác</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Đơn vị cấp</label>
+                    <input type="text" id="jntc-cert-issuer" placeholder="VD: SGS / QUACERT / Bộ KHCN">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Số giấy chứng nhận</label>
+                <input type="text" id="jntc-cert-number" placeholder="VD: 1234/QĐ-KĐ">
+            </div>
+
+            <div class="jntc-form-row">
+                <div class="form-group">
+                    <label>Ngày cấp</label>
+                    <input type="date" id="jntc-cert-issued">
+                </div>
+                <div class="form-group">
+                    <label>Ngày hết hạn <span class="required">*</span></label>
+                    <input type="date" id="jntc-cert-expiry">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Ghi chú</label>
+                <textarea id="jntc-cert-note" rows="2" placeholder="Ghi chú thêm về giấy chứng nhận..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>File đính kèm (PDF / Excel / Ảnh, tối đa 10 MB) <span class="required">*</span></label>
+                <div class="jntc-file-drop" id="jntc-cert-drop" onclick="document.getElementById('jntc-cert-file').click()">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <div style="font-weight: 700; color: #2c3e50;">Bấm để chọn file</div>
+                    <div class="jntc-file-hint">Hoặc kéo thả file vào đây</div>
+                </div>
+                <input type="file" id="jntc-cert-file" accept=".pdf,.xls,.xlsx,.jpg,.jpeg,.png" style="display:none;" onchange="handleCertFileSelect(event)">
+                <div id="jntc-cert-file-preview" style="display:none; margin-top: 10px;">
+                    <div class="jntc-file-selected">
+                        <i class="fas fa-file" id="jntc-cert-file-icon"></i>
+                        <div style="flex: 1;">
+                            <div id="jntc-cert-file-name" style="font-weight: 700;"></div>
+                            <div id="jntc-cert-file-size" style="font-size: 11px; opacity: 0.8;"></div>
+                        </div>
+                        <button onclick="clearCertFileSelection()" style="background:none; border:none; color:#c0392b; font-size: 18px; cursor: pointer;">
+                            <i class="fas fa-times-circle"></i>
+                        </button>
+                    </div>
+                </div>
+                <div id="jntc-cert-file-old" style="display:none; margin-top: 10px; padding: 8px 12px; background: #f8f9fa; border-radius: 6px; font-size: 12px; color: #7f8c8d;">
+                    <i class="fas fa-paperclip"></i> File hiện tại: <b id="jntc-cert-file-oldname">—</b> (chọn file mới để thay thế)
+                </div>
+            </div>
+
+            <div class="modal-actions" style="margin-top: 20px;">
+                <button onclick="closeCertModal()" class="btn btn-cancel">Hủy</button>
+                <button onclick="saveCert()" class="btn btn-save"><i class="fas fa-save"></i> <span id="jntc-cert-save-label">Lưu giấy chứng nhận</span></button>
+            </div>
+        </div>
+    </div>
+
+    <div id="jntc-cert-view-modal" class="modal">
+        <div class="modal-content" style="width: 92vw; max-width: 1200px; height: 92vh; max-height: 92vh; padding: 15px; display: flex; flex-direction: column;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                <h3 style="margin: 0; color: #2c3e50; font-size: 16px;">
+                    <i class="fas fa-file-alt" style="color:#e67e22;"></i>
+                    <span id="jntc-cert-view-title">Xem file</span>
+                </h3>
+                <div style="display: flex; gap: 8px;">
+                    <button onclick="downloadCurrentCertFile()" class="btn btn-save" style="padding: 8px 14px; font-size: 13px;">
+                        <i class="fas fa-download"></i> Tải về
+                    </button>
+                    <button onclick="closeCertViewModal()" class="btn btn-cancel" style="padding: 8px 14px; font-size: 13px;">
+                        <i class="fas fa-times"></i> Đóng
+                    </button>
+                </div>
+            </div>
+            <div id="jntc-cert-view-content" style="flex: 1; overflow: auto; background: #f4f7f9; border-radius: 8px; display: flex; justify-content: center; align-items: flex-start; padding: 10px;">
+                <div style="text-align: center; padding: 40px; color: #95a5a6;">
+                    <i class="fas fa-spinner fa-spin" style="font-size: 40px;"></i>
+                    <p style="margin-top: 15px;">Đang tải file...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="jntc-cert-delete-modal" class="modal">
+        <div class="modal-content" style="width: 440px; text-align: center;">
+            <h3 style="color: #c0392b;"><i class="fas fa-exclamation-triangle"></i> XÓA GIẤY CHỨNG NHẬN</h3>
+            <p style="font-size: 14px; color: #555; margin-bottom: 15px;">
+                Bạn có chắc muốn xóa giấy chứng nhận này?<br>
+                <span style="color: #c0392b; font-weight: 700;">File đính kèm cũng sẽ bị xóa khỏi cả LOCAL và SERVER.</span>
+            </p>
+            <div style="background: #fff3e0; padding: 15px; border-radius: 8px; margin-bottom: 20px; text-align: left; font-size: 13px;">
+                <div style="margin-bottom: 6px;"><b>Tên:</b> <span id="jntc-cert-del-name">—</span></div>
+                <div><b>File:</b> <span id="jntc-cert-del-file">—</span></div>
+            </div>
+            <div class="modal-actions" style="justify-content: center;">
+                <button onclick="closeCertDeleteModal()" class="btn btn-cancel">Hủy</button>
+                <button onclick="confirmDeleteCert()" class="btn btn-confirm-delete"><i class="fas fa-trash-alt"></i> Xóa</button>
+            </div>
+        </div>
+    </div>
+
     <div id="legal-modal" class="modal">
         <div class="modal-content">
             <h3><i class="fas fa-balance-scale" style="color:#2980b9;"></i> <span id="legal-modal-title">THÊM VĂN BẢN PHÁP LUẬT</span></h3>
@@ -1297,7 +1605,6 @@
         </div>
     </div>
 
-    <!-- MODAL XEM VĂN BẢN PHÁP LUẬT -->
     <div id="legal-view-modal" class="modal">
         <div class="modal-content">
             <h3><i class="fas fa-file-alt" style="color:#2980b9;"></i> CHI TIẾT VĂN BẢN</h3>
@@ -1308,7 +1615,6 @@
         </div>
     </div>
 
-    <!-- MODAL DANH SÁCH BACKUP (MỚI) -->
     <div id="backup-list-modal" class="modal">
         <div class="modal-content" style="width:700px; max-width:95%;">
             <h3><i class="fas fa-history" style="color:#27ae60;"></i> DANH SÁCH BACKUP</h3>
@@ -1329,7 +1635,6 @@
         </div>
     </div>
 
-    <!-- MODAL KHÔI PHỤC TỪ BACKUP (MỚI) -->
     <div id="restore-backup-modal" class="modal">
         <div class="modal-content" style="width:700px; max-width:95%;">
             <h3><i class="fas fa-undo" style="color:#e74c3c;"></i> KHÔI PHỤC TỪ BACKUP</h3>
@@ -1380,41 +1685,54 @@
     </div>
 
     <div id="qr-print-area"></div>
-
 <script>
 // ============================================================
 //  CẤU HÌNH
 // ============================================================
-// Domain Cloudflare cố định — QR luôn trỏ về đây
 const CLOUDFLARE_DOMAIN = 'https://jntc-quanly.pages.dev/';
 
 const QR_BASE_URL = window.location.origin + window.location.pathname;
 const QR_ACCESS_USER = 'jntc_at';
 
-// ⚠️ ĐỔI MẬT KHẨU MẶC ĐỊNH — BẮT BUỘC trước khi deploy!
 const DEFAULT_PASSWORDS = {
     admin: 'Admin@JNTC2025',
     jntc: 'Jntc@2025KyThuat',
+    jntc_view: 'Jntc@View2026',
     qr_access: 'jntc@2020'
 };
 
-// Số bản backup giữ lại
 const MAX_BACKUPS = 50;
 
-// Biến toàn cục cho File System Access API — LOCAL
+const CERT_CONFIG = {
+    MAX_SIZE_MB: 10,
+    MAX_SIZE_BYTES: 10 * 1024 * 1024,
+    ALLOWED_EXT: ['pdf', 'xls', 'xlsx', 'jpg', 'jpeg', 'png'],
+    FOLDER_NAME: 'certificates',
+    WARN_DAYS: 90,
+    URGENT_DAYS: 30
+};
+
+const CERT_TYPE_LABELS = {
+    hopchuan: 'Giấy chứng nhận hợp chuẩn',
+    hopquy: 'Giấy chứng nhận hợp quy',
+    catalogue: 'Catalogue / Tài liệu kỹ thuật',
+    khac: 'Giấy tờ khác'
+};
+
 let dataFolderHandle = null;
 let dataFileHandle = null;
 let uploadsFolderHandle = null;
 let legalDocsFolderHandle = null;
 let backupsFolderHandle = null;
+let certsFolderHandle = null;
 let folderConnected = false;
 
-// Biến toàn cục cho File System Access API — SERVER (ổ Z:)
 let serverFolderHandle = null;
 let serverDataFileHandle = null;
 let serverUploadsFolderHandle = null;
 let serverLegalDocsFolderHandle = null;
 let serverBackupsFolderHandle = null;
+let serverCertsFolderHandle = null;
 let serverConnected = false;
 
 function getPasswords() {
@@ -1439,8 +1757,9 @@ function getQrAccessPass() {
 function getAdminUsers() {
     const passwords = getPasswords();
     return [
-        { username: 'admin', password: passwords.admin, displayName: 'Quản trị viên' },
-        { username: 'jntc', password: passwords.jntc, displayName: 'Kỹ thuật viên JNTC' }
+        { username: 'admin', password: passwords.admin, displayName: 'Quản trị viên', role: 'admin' },
+        { username: 'jntc', password: passwords.jntc, displayName: 'Kỹ thuật viên JNTC', role: 'editor' },
+        { username: 'jntc_view', password: passwords.jntc_view, displayName: 'Chỉ xem', role: 'viewer' }
     ];
 }
 
@@ -1454,6 +1773,44 @@ const MAIN_SPEC_COLUMN = {
     chongsét: { label: 'Cấp bảo vệ',       key: 'cap_bao_ve' },
     duongong: { label: 'Đường kính ống',   key: 'duong_kinh' }
 };
+
+const PERMISSIONS = {
+    admin:  { view: true, add: true,  edit: true,  delete: true,  upload: true,  backup: true,  settings: true,  import: true,  export: true },
+    editor: { view: true, add: true,  edit: true,  delete: true,  upload: true,  backup: false, settings: true,  import: true,  export: true },
+    viewer: { view: true, add: false, edit: false, delete: false, upload: false, backup: false, settings: false, import: false, export: false },
+    qr:     { view: true, add: false, edit: false, delete: false, upload: false, backup: false, settings: false, import: false, export: false }
+};
+
+let currentUserRole = 'admin';
+
+function can(action) {
+    return PERMISSIONS[currentUserRole]?.[action] === true;
+}
+
+function applyRoleUI() {
+    document.body.classList.remove('jntc-role-admin', 'jntc-role-editor', 'jntc-role-viewer', 'jntc-role-qr');
+    document.body.classList.add('jntc-role-' + currentUserRole);
+    
+    const badgeContainer = document.getElementById('jntc-role-badge-container');
+    if (badgeContainer) {
+        if (currentUserRole === 'viewer') {
+            badgeContainer.innerHTML = '<span class="jntc-viewer-badge"><i class="fas fa-eye"></i> Chỉ xem</span>';
+        } else if (currentUserRole === 'admin') {
+            badgeContainer.innerHTML = '<span class="jntc-viewer-badge" style="background:linear-gradient(135deg,#e74c3c,#c0392b);"><i class="fas fa-crown"></i> Admin</span>';
+        } else if (currentUserRole === 'editor') {
+            badgeContainer.innerHTML = '<span class="jntc-viewer-badge" style="background:linear-gradient(135deg,#27ae60,#16a085);"><i class="fas fa-user-edit"></i> Kỹ thuật</span>';
+        } else {
+            badgeContainer.innerHTML = '';
+        }
+    }
+    
+    const navBtns = document.querySelectorAll('.main-nav .nav-btn');
+    navBtns.forEach(btn => {
+        if (btn.innerText.includes('Cài đặt') && !can('settings')) {
+            btn.classList.add('jntc-nav-locked');
+        }
+    });
+}
 
 function handleLogin() {
     const params = new URLSearchParams(location.search);
@@ -1476,9 +1833,15 @@ function handleLogin() {
         document.getElementById('company-header').style.display = 'flex';
         document.getElementById('main-nav').style.display = 'flex';
         document.getElementById('current-user').innerText = user.displayName;
+        
+        currentUserRole = user.role || 'admin';
+        applyRoleUI();
+        
         showScreen('dashboard-screen');
         tryAutoReconnect();
         tryAutoReconnectServer();
+        
+        setTimeout(() => { updateBellBadge(); startBellAutoRefresh(); }, 500);
     } else {
         errEl.style.display = 'block';
         document.getElementById('password').value = '';
@@ -1576,9 +1939,6 @@ function getSpecFields(typeId) {
     return [...SPEC_FIELDS.common, ...(SPEC_FIELDS[typeId] || [])];
 }
 
-// ============================================================
-//  DỮ LIỆU TOÀN CỤC
-// ============================================================
 let devices = [];
 let legalDocs = [];
 let priceConfig = {};
@@ -1594,10 +1954,23 @@ let editingLegalIndex = null;
 let uploadedLegalFile = null;
 let selectedBackupToRestore = null;
 
-// ============================================================
-//  ĐIỀU HƯỚNG
-// ============================================================
+let jntcCertEditingId = null;
+let jntcCertFileBuffer = null;
+let jntcCertOldFile = null;
+let jntcCertDeleting = null;
+let jntcCertViewing = null;
+
+let jntcBellFilter = 'all';
+let jntcBellAutoRefreshTimer = null;
+let currentRestoreData = null;
+let currentRestoreSource = null;
+
 function switchMainNav(screenId, btn) {
+    if (screenId === 'settings-screen' && !can('settings')) {
+        alert('🔒 Bạn không có quyền truy cập tab Cài đặt.\nVui lòng liên hệ Admin.');
+        return;
+    }
+    
     document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
     if (btn) btn.classList.add('active');
     showScreen(screenId);
@@ -1612,6 +1985,9 @@ function switchMainNav(screenId, btn) {
     }
     if (screenId === 'settings-screen') {
         renderSettings();
+    }
+    if (screenId === 'dashboard-screen') {
+        updateBellBadge();
     }
 }
 
@@ -1634,9 +2010,6 @@ function goBackToList() {
     } else goBackToDashboard();
 }
 
-// ============================================================
-//  FILE SYSTEM ACCESS API — LOCAL
-// ============================================================
 async function connectDataFolder() {
     if (!window.showDirectoryPicker) {
         alert('❌ Trình duyệt không hỗ trợ File System Access API.\nVui lòng dùng Chrome hoặc Edge.');
@@ -1656,6 +2029,7 @@ async function connectDataFolder() {
         uploadsFolderHandle = await folderHandle.getDirectoryHandle('uploads', { create: true });
         legalDocsFolderHandle = await folderHandle.getDirectoryHandle('legal_docs', { create: true });
         backupsFolderHandle = await folderHandle.getDirectoryHandle('backups', { create: true });
+        certsFolderHandle = await folderHandle.getDirectoryHandle('certificates', { create: true });
         
         dataFileHandle = await folderHandle.getFileHandle('data.json', { create: true });
         
@@ -1665,19 +2039,20 @@ async function connectDataFolder() {
 
         updateFolderUI(true, folderHandle.name);
 
-        // Đọc dữ liệu thông minh (local vs server)
         await loadDataSmart();
 
         renderDashboard();
         renderOverview();
         renderLegalList();
         renderSettings();
+        updateBellBadge();
 
         alert(`✅ Đã kết nối LOCAL: "${folderHandle.name}"\n\n` +
               `• File dữ liệu: data.json\n` +
-              `• Ảnh upload: ${uploadsFolderHandle.name}/\n` +
-              `• File pháp luật: ${legalDocsFolderHandle.name}/\n` +
-              `• Backup: ${backupsFolderHandle.name}/`);
+              `• Ảnh upload: uploads/\n` +
+              `• File pháp luật: legal_docs/\n` +
+              `• Giấy chứng nhận: certificates/\n` +
+              `• Backup: backups/`);
     } catch (e) {
         if (e.name === 'AbortError') {
             console.log('Người dùng hủy chọn folder');
@@ -1688,9 +2063,6 @@ async function connectDataFolder() {
     }
 }
 
-// ============================================================
-//  FILE SYSTEM ACCESS API — SERVER (Ổ Z:)
-// ============================================================
 async function connectServerFolder() {
     if (!window.showDirectoryPicker) {
         alert('❌ Trình duyệt không hỗ trợ File System Access API.\nVui lòng dùng Chrome hoặc Edge.');
@@ -1710,6 +2082,7 @@ async function connectServerFolder() {
         serverUploadsFolderHandle = await folderHandle.getDirectoryHandle('uploads', { create: true });
         serverLegalDocsFolderHandle = await folderHandle.getDirectoryHandle('legal_docs', { create: true });
         serverBackupsFolderHandle = await folderHandle.getDirectoryHandle('backups', { create: true });
+        serverCertsFolderHandle = await folderHandle.getDirectoryHandle('certificates', { create: true });
         
         serverDataFileHandle = await folderHandle.getFileHandle('data.json', { create: true });
         
@@ -1719,19 +2092,20 @@ async function connectServerFolder() {
 
         updateServerUI(true, folderHandle.name);
 
-        // Đọc dữ liệu thông minh (local vs server)
         await loadDataSmart();
 
         renderDashboard();
         renderOverview();
         renderLegalList();
         renderSettings();
+        updateBellBadge();
 
         alert(`✅ Đã kết nối SERVER: "${folderHandle.name}"\n\n` +
               `• File dữ liệu: data.json\n` +
-              `• Ảnh upload: ${serverUploadsFolderHandle.name}/\n` +
-              `• File pháp luật: ${serverLegalDocsFolderHandle.name}/\n` +
-              `• Backup: ${serverBackupsFolderHandle.name}/`);
+              `• Ảnh upload: uploads/\n` +
+              `• File pháp luật: legal_docs/\n` +
+              `• Giấy chứng nhận: certificates/\n` +
+              `• Backup: backups/`);
     } catch (e) {
         if (e.name === 'AbortError') {
             console.log('Người dùng hủy chọn folder');
@@ -1805,9 +2179,6 @@ function updateServerUI(connected, folderName) {
     if (warning) warning.style.display = (folderConnected || serverConnected) ? 'none' : 'block';
 }
 
-// ============================================================
-//  INDEXEDDB - Lưu handle để tự khôi phục lần sau
-// ============================================================
 function openIDB() {
     return new Promise((resolve, reject) => {
         const req = indexedDB.open('JNTC_FSA', 1);
@@ -1873,6 +2244,7 @@ async function tryAutoReconnect() {
             uploadsFolderHandle = await handle.getDirectoryHandle('uploads', { create: true });
             legalDocsFolderHandle = await handle.getDirectoryHandle('legal_docs', { create: true });
             backupsFolderHandle = await handle.getDirectoryHandle('backups', { create: true });
+            certsFolderHandle = await handle.getDirectoryHandle('certificates', { create: true });
             dataFileHandle = await handle.getFileHandle('data.json', { create: true });
             
             folderConnected = true;
@@ -1883,6 +2255,7 @@ async function tryAutoReconnect() {
             renderOverview();
             renderLegalList();
             renderSettings();
+            updateBellBadge();
             console.log('✅ Tự động kết nối lại LOCAL thành công');
         } else {
             console.log('⚠️ LOCAL cần cấp quyền lại');
@@ -1903,6 +2276,7 @@ async function tryAutoReconnectServer() {
             serverUploadsFolderHandle = await handle.getDirectoryHandle('uploads', { create: true });
             serverLegalDocsFolderHandle = await handle.getDirectoryHandle('legal_docs', { create: true });
             serverBackupsFolderHandle = await handle.getDirectoryHandle('backups', { create: true });
+            serverCertsFolderHandle = await handle.getDirectoryHandle('certificates', { create: true });
             serverDataFileHandle = await handle.getFileHandle('data.json', { create: true });
             
             serverConnected = true;
@@ -1913,9 +2287,8 @@ async function tryAutoReconnectServer() {
             renderOverview();
             renderLegalList();
             renderSettings();
+            updateBellBadge();
             console.log('✅ Tự động kết nối lại SERVER thành công');
-        } else {
-            console.log('⚠️ SERVER cần cấp quyền lại');
         }
     } catch (e) {
         console.warn('Không tự động kết nối SERVER được:', e);
@@ -1935,6 +2308,7 @@ async function requestReconnect() {
             uploadsFolderHandle = await handle.getDirectoryHandle('uploads', { create: true });
             legalDocsFolderHandle = await handle.getDirectoryHandle('legal_docs', { create: true });
             backupsFolderHandle = await handle.getDirectoryHandle('backups', { create: true });
+            certsFolderHandle = await handle.getDirectoryHandle('certificates', { create: true });
             dataFileHandle = await handle.getFileHandle('data.json', { create: true });
             folderConnected = true;
             updateFolderUI(true, handle.name);
@@ -1943,6 +2317,7 @@ async function requestReconnect() {
             renderOverview();
             renderLegalList();
             renderSettings();
+            updateBellBadge();
             alert('✅ Đã kết nối lại LOCAL: ' + handle.name);
         }
     } catch (e) {
@@ -1950,17 +2325,12 @@ async function requestReconnect() {
         await connectDataFolder();
     }
 }
-
-// ============================================================
-//  ⭐ ĐỌC DỮ LIỆU THÔNG MINH (LOCAL vs SERVER)
-// ============================================================
 async function loadDataSmart() {
     let localData = null;
     let serverData = null;
     let localTime = 0;
     let serverTime = 0;
     
-    // 1. Đọc LOCAL
     if (dataFileHandle) {
         try {
             const file = await dataFileHandle.getFile();
@@ -1974,7 +2344,6 @@ async function loadDataSmart() {
         }
     }
     
-    // 2. Đọc SERVER
     if (serverDataFileHandle) {
         try {
             const file = await serverDataFileHandle.getFile();
@@ -1988,13 +2357,10 @@ async function loadDataSmart() {
         }
     }
     
-    // 3. So sánh và chọn
     if (localData && serverData) {
-        // Cả 2 đều có dữ liệu → dùng bản mới hơn
         if (localTime >= serverTime) {
             applyData(localData);
             console.log(`✅ Dùng LOCAL (mới hơn) — ${devices.length} thiết bị`);
-            // Nếu server cũ hơn → cập nhật server
             if (serverTime < localTime) {
                 console.log('📤 Server cũ hơn → tự cập nhật server từ local');
                 await writeToServer(localData);
@@ -2002,15 +2368,12 @@ async function loadDataSmart() {
         } else {
             applyData(serverData);
             console.log(`✅ Dùng SERVER (mới hơn) — ${devices.length} thiết bị`);
-            // Cập nhật local từ server
             console.log('📥 Local cũ hơn → tự cập nhật local từ server');
             await writeToLocal(serverData);
         }
     } else if (localData && !serverData) {
-        // Chỉ có LOCAL
         applyData(localData);
         console.log(`✅ Chỉ có LOCAL — ${devices.length} thiết bị`);
-        // Server trống/lỗi → hỏi user khôi phục
         if (serverDataFileHandle && devices.length > 0) {
             const ok = confirm(
                 `⚠️ File trên SERVER bị lỗi hoặc trống!\n\n` +
@@ -2023,16 +2386,13 @@ async function loadDataSmart() {
             }
         }
     } else if (!localData && serverData) {
-        // Chỉ có SERVER
         applyData(serverData);
         console.log(`✅ Chỉ có SERVER — ${devices.length} thiết bị`);
-        // Local trống → tự cập nhật local
         if (dataFileHandle && devices.length > 0) {
             await writeToLocal(serverData);
             console.log('📥 Đã copy server → local');
         }
     } else {
-        // Cả 2 đều lỗi → thử backup
         console.warn('⚠️ Cả LOCAL và SERVER đều lỗi/trống');
         await tryRestoreFromBackupOnStartup();
     }
@@ -2042,16 +2402,32 @@ function applyData(data) {
     devices = Array.isArray(data.devices) ? data.devices : [];
     legalDocs = Array.isArray(data.legalDocs) ? data.legalDocs : [];
     priceConfig = data.priceConfig || {};
+    migrateCertificateFields();
 }
 
-// ============================================================
-//  ⭐ GHI DỮ LIỆU SONG SONG (LOCAL + SERVER) + BACKUP
-// ============================================================
+function migrateCertificateFields() {
+    let changed = false;
+    devices.forEach(dev => {
+        if (!Array.isArray(dev.certificates)) {
+            dev.certificates = [];
+            changed = true;
+        }
+    });
+    if (changed) {
+        console.log('🔄 Đã migration: thêm trường certificates cho thiết bị cũ');
+    }
+    return changed;
+}
+
 function saveData() {
+    if (currentUserRole === 'viewer' || currentUserRole === 'qr') {
+        console.warn('⚠️ Role viewer/qr không được lưu dữ liệu');
+        return;
+    }
+    
     if (folderConnected || serverConnected) {
         writeDataFile();
     } else {
-        // Fallback: lưu localStorage tạm
         try {
             localStorage.setItem('jntc_devices_backup', JSON.stringify(devices));
             localStorage.setItem('jntc_legaldocs_backup', JSON.stringify(legalDocs));
@@ -2072,7 +2448,6 @@ async function writeDataFile() {
     let localOK = false;
     let serverOK = false;
     
-    // 1. Ghi LOCAL + backup
     if (dataFileHandle) {
         localOK = await writeToLocal(data);
         if (localOK && backupsFolderHandle) {
@@ -2080,7 +2455,6 @@ async function writeDataFile() {
         }
     }
     
-    // 2. Ghi SERVER + backup
     if (serverDataFileHandle) {
         serverOK = await writeToServer(data);
         if (serverOK && serverBackupsFolderHandle) {
@@ -2088,7 +2462,6 @@ async function writeDataFile() {
         }
     }
     
-    // 3. Log kết quả
     if (localOK && serverOK) {
         console.log('✅ Đã lưu cả LOCAL + SERVER');
     } else if (localOK && !serverOK) {
@@ -2098,6 +2471,8 @@ async function writeDataFile() {
     } else if (!localOK && !serverOK) {
         console.error('❌ Không lưu được ở đâu cả!');
     }
+    
+    setTimeout(() => updateBellBadge(), 100);
 }
 
 async function writeToLocal(data) {
@@ -2126,9 +2501,6 @@ async function writeToServer(data) {
     }
 }
 
-// ============================================================
-//  ⭐ BACKUP TỰ ĐỘNG (Giữ 50 bản gần nhất)
-// ============================================================
 async function writeBackupToFolder(backupsFolder, data) {
     try {
         const now = new Date();
@@ -2145,7 +2517,6 @@ async function writeBackupToFolder(backupsFolder, data) {
         await writable.write(JSON.stringify(data, null, 2));
         await writable.close();
         
-        // Xóa backup cũ nếu vượt MAX_BACKUPS
         await cleanOldBackups(backupsFolder);
     } catch (e) {
         console.warn('⚠️ Lỗi ghi backup:', e);
@@ -2163,7 +2534,6 @@ async function cleanOldBackups(backupsFolder) {
         
         if (files.length <= MAX_BACKUPS) return;
         
-        // Sắp xếp theo tên (đã có timestamp) → cũ nhất ở đầu
         files.sort();
         const toDelete = files.slice(0, files.length - MAX_BACKUPS);
         
@@ -2178,9 +2548,6 @@ async function cleanOldBackups(backupsFolder) {
     }
 }
 
-// ============================================================
-//  ⭐ DANH SÁCH BACKUP
-// ============================================================
 async function getBackupList(source) {
     const folder = source === 'server' ? serverBackupsFolderHandle : backupsFolderHandle;
     if (!folder) return [];
@@ -2206,7 +2573,6 @@ async function getBackupList(source) {
                 }
             }
         }
-        // Mới nhất lên đầu
         list.sort((a, b) => b.name.localeCompare(a.name));
     } catch (e) {
         console.warn('Lỗi đọc danh sách backup:', e);
@@ -2214,13 +2580,9 @@ async function getBackupList(source) {
     return list;
 }
 
-// ============================================================
-//  ⭐ KHÔI PHỤC TỪ BACKUP
-// ============================================================
 async function tryRestoreFromBackupOnStartup() {
     console.log('🔄 Thử khôi phục từ backup...');
     
-    // Thử local
     if (backupsFolderHandle) {
         const list = await getBackupList('local');
         if (list.length > 0) {
@@ -2241,7 +2603,6 @@ async function tryRestoreFromBackupOnStartup() {
         }
     }
     
-    // Thử server
     if (serverBackupsFolderHandle) {
         const list = await getBackupList('server');
         if (list.length > 0) {
@@ -2294,6 +2655,7 @@ async function restoreFromBackup(source, backupName) {
         renderLegalList();
         renderDeletedList();
         renderSettings();
+        updateBellBadge();
         
         return true;
     } catch (e) {
@@ -2302,9 +2664,6 @@ async function restoreFromBackup(source, backupName) {
     }
 }
 
-// ============================================================
-//  ⭐ ĐỒNG BỘ THỦ CÔNG
-// ============================================================
 async function manualSync() {
     if (!folderConnected && !serverConnected) {
         alert('⚠️ Chưa kết nối folder nào!\n\nVui lòng kết nối LOCAL hoặc SERVER trước.');
@@ -2318,6 +2677,7 @@ async function manualSync() {
         renderLegalList();
         renderDeletedList();
         renderSettings();
+        updateBellBadge();
         alert('✅ Đã đồng bộ xong!');
     }
 }
@@ -2351,9 +2711,6 @@ function showSyncInfo() {
     );
 }
 
-// ============================================================
-//  DASHBOARD
-// ============================================================
 function renderDashboard() {
     const grid = document.getElementById('device-grid');
     if (!grid) return;
@@ -2371,9 +2728,6 @@ function renderDashboard() {
     });
 }
 
-// ============================================================
-//  TRẠNG THÁI KIỂM ĐỊNH
-// ============================================================
 function getInspectionStatus(dev) {
     const nextDateStr = dev.inspectionSummary?.nextDate;
     if (!nextDateStr) return { code: 'pending', text: 'Chưa KĐ', days: null };
@@ -2404,9 +2758,333 @@ function escapeHtml(s) {
     return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
 
-// ============================================================
-//  DANH SÁCH
-// ============================================================
+function formatMoney(num) { return num.toLocaleString('vi-VN'); }
+
+function getCertBadge(cert) {
+    if (!cert || !cert.expiryDate) {
+        return {
+            level: 'unknown', color: '#6b7280', bgColor: '#f5f5f5',
+            icon: '❓', text: 'Chưa có hạn', priority: 0, daysLeft: null
+        };
+    }
+    
+    const now = new Date();
+    now.setHours(0, 0, 0, 0);
+    const expiry = new Date(cert.expiryDate);
+    expiry.setHours(0, 0, 0, 0);
+    
+    const diffDays = Math.ceil((expiry - now) / (1000 * 60 * 60 * 24));
+    
+    if (diffDays < 0) {
+        return {
+            level: 'expired', color: '#dc2626', bgColor: '#ffebee',
+            icon: '❌', text: `Hết hạn ${Math.abs(diffDays)} ngày`,
+            priority: 4, daysLeft: diffDays
+        };
+    }
+    if (diffDays <= CERT_CONFIG.URGENT_DAYS) {
+        return {
+            level: 'urgent', color: '#ea580c', bgColor: '#ffedd5',
+            icon: '🔔', text: `Sắp hết hạn (còn ${diffDays} ngày)`,
+            priority: 3, daysLeft: diffDays
+        };
+    }
+    if (diffDays <= CERT_CONFIG.WARN_DAYS) {
+        return {
+            level: 'warning', color: '#f39c12', bgColor: '#fff3e0',
+            icon: '⚠️', text: `Sắp hết hạn (còn ${diffDays} ngày)`,
+            priority: 2, daysLeft: diffDays
+        };
+    }
+    return {
+        level: 'safe', color: '#27ae60', bgColor: '#e8f5e9',
+        icon: '✅', text: `Còn ${diffDays} ngày`,
+        priority: 1, daysLeft: diffDays
+    };
+}
+
+function getDeviceCertBadge(dev) {
+    const certs = dev.certificates || [];
+    
+    if (certs.length === 0) {
+        return {
+            level: 'none', color: '#6b7280', icon: '📭',
+            text: 'Chưa có giấy CN', count: 0, totalCerts: 0, priority: 0
+        };
+    }
+    
+    let highest = null;
+    certs.forEach(c => {
+        const b = getCertBadge(c);
+        if (!highest || b.priority > highest.priority) {
+            highest = b;
+        }
+    });
+    
+    const counts = { expired: 0, urgent: 0, warning: 0, safe: 0, unknown: 0 };
+    certs.forEach(c => {
+        const b = getCertBadge(c);
+        counts[b.level]++;
+    });
+    
+    return {
+        level: highest.level,
+        color: highest.color,
+        icon: highest.icon,
+        text: highest.text,
+        count: counts[highest.level] || 0,
+        totalCerts: certs.length,
+        priority: highest.priority,
+        counts: counts
+    };
+}
+
+function formatFileSize(bytes) {
+    if (!bytes && bytes !== 0) return '—';
+    if (bytes < 1024) return bytes + ' B';
+    if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+    return (bytes / (1024 * 1024)).toFixed(2) + ' MB';
+}
+
+function getFileIconInfo(filename) {
+    if (!filename) return { icon: 'fa-file', class: '' };
+    const ext = filename.split('.').pop().toLowerCase();
+    if (ext === 'pdf') return { icon: 'fa-file-pdf', class: 'jntc-file-pdf' };
+    if (ext === 'xls' || ext === 'xlsx') return { icon: 'fa-file-excel', class: 'jntc-file-excel' };
+    if (['jpg', 'jpeg', 'png', 'gif', 'webp'].includes(ext)) return { icon: 'fa-file-image', class: 'jntc-file-img' };
+    if (['doc', 'docx'].includes(ext)) return { icon: 'fa-file-word', class: '' };
+    return { icon: 'fa-file', class: '' };
+}
+
+function validateCertFile(file) {
+    if (!file) return { ok: false, error: 'Chưa chọn file' };
+    
+    const ext = file.name.split('.').pop().toLowerCase();
+    if (!CERT_CONFIG.ALLOWED_EXT.includes(ext)) {
+        return {
+            ok: false,
+            error: `Định dạng "${ext}" không được phép. Chỉ chấp nhận: PDF, Excel, Ảnh.`
+        };
+    }
+    
+    if (file.size > CERT_CONFIG.MAX_SIZE_BYTES) {
+        return {
+            ok: false,
+            error: `File quá lớn (${formatFileSize(file.size)}). Tối đa ${CERT_CONFIG.MAX_SIZE_MB} MB.`
+        };
+    }
+    
+    return { ok: true };
+}
+
+function makeSafeCertFilename(deviceId, certId, originalName) {
+    const ext = originalName.split('.').pop().toLowerCase();
+    const safeDevId = String(deviceId || '').replace(/[^a-zA-Z0-9-]/g, '_');
+    const safeCertId = String(certId || '').replace(/[^a-zA-Z0-9-]/g, '_');
+    return `${safeDevId}_${safeCertId}.${ext}`;
+}
+
+function formatDateCertVN(iso) {
+    if (!iso) return '—';
+    const parts = iso.split('-');
+    if (parts.length !== 3) return iso;
+    return `${parts[2]}/${parts[1]}/${parts[0]}`;
+}
+
+async function writeCertFileToFolders(filename, fileBlob) {
+    const result = { local: false, server: false, errors: [] };
+    
+    if (certsFolderHandle) {
+        try {
+            const fh = await certsFolderHandle.getFileHandle(filename, { create: true });
+            const writable = await fh.createWritable();
+            await writable.write(fileBlob);
+            await writable.close();
+            result.local = true;
+        } catch (e) {
+            result.errors.push('Local: ' + e.message);
+            console.error('❌ Lỗi ghi cert LOCAL:', e);
+        }
+    }
+    
+    if (serverCertsFolderHandle) {
+        try {
+            const fh = await serverCertsFolderHandle.getFileHandle(filename, { create: true });
+            const writable = await fh.createWritable();
+            await writable.write(fileBlob);
+            await writable.close();
+            result.server = true;
+        } catch (e) {
+            result.errors.push('Server: ' + e.message);
+            console.error('❌ Lỗi ghi cert SERVER:', e);
+        }
+    }
+    
+    return result;
+}
+
+async function deleteCertFileFromFolders(filename) {
+    const result = { local: false, server: false };
+    
+    if (certsFolderHandle) {
+        try {
+            await certsFolderHandle.removeEntry(filename);
+            result.local = true;
+        } catch (e) {
+            console.warn('Không xóa được cert LOCAL:', e.message);
+        }
+    }
+    
+    if (serverCertsFolderHandle) {
+        try {
+            await serverCertsFolderHandle.removeEntry(filename);
+            result.server = true;
+        } catch (e) {
+            console.warn('Không xóa được cert SERVER:', e.message);
+        }
+    }
+    
+    return result;
+}
+
+async function readCertFile(filename) {
+    if (!filename) return null;
+    
+    if (certsFolderHandle) {
+        try {
+            const fh = await certsFolderHandle.getFileHandle(filename);
+            return await fh.getFile();
+        } catch (e) { }
+    }
+    
+    if (serverCertsFolderHandle) {
+        try {
+            const fh = await serverCertsFolderHandle.getFileHandle(filename);
+            return await fh.getFile();
+        } catch (e) { }
+    }
+    
+    return null;
+}
+
+function findCertById(deviceId, certId) {
+    const dev = devices.find(d => d.id === deviceId);
+    if (!dev || !dev.certificates) return null;
+    return dev.certificates.find(c => c.id === certId) || null;
+}
+
+function countAllAlerts() {
+    let deviceAlerts = 0;
+    let certAlerts = 0;
+    const readMarkers = getReadMarkers();
+    
+    devices.filter(d => !d.deleted).forEach(dev => {
+        const st = getInspectionStatus(dev);
+        if (st.code === 'warn' || st.code === 'danger') {
+            const devAlertId = `dev_${dev.id}_${dev.inspectionSummary?.nextDate || 'nodate'}`;
+            if (!isMarkerActive(readMarkers, devAlertId)) {
+                deviceAlerts++;
+            }
+        }
+        
+        (dev.certificates || []).forEach(cert => {
+            const b = getCertBadge(cert);
+            if (b.level === 'expired' || b.level === 'urgent' || b.level === 'warning') {
+                const certAlertId = `cert_${dev.id}_${cert.id}`;
+                if (!isMarkerActive(readMarkers, certAlertId)) {
+                    certAlerts++;
+                }
+            }
+        });
+    });
+    
+    return {
+        device: deviceAlerts,
+        cert: certAlerts,
+        total: deviceAlerts + certAlerts
+    };
+}
+
+function getAllAlerts() {
+    const alerts = [];
+    const readMarkers = getReadMarkers();
+    
+    devices.filter(d => !d.deleted).forEach(dev => {
+        const st = getInspectionStatus(dev);
+        if (st.code === 'warn' || st.code === 'danger') {
+            const devAlertId = `dev_${dev.id}_${dev.inspectionSummary?.nextDate || 'nodate'}`;
+            const isRead = isMarkerActive(readMarkers, devAlertId);
+            
+            alerts.push({
+                id: devAlertId,
+                kind: 'device',
+                level: st.code === 'danger' ? 'expired' : 'warning',
+                title: `${dev.name} (${dev.id})`,
+                meta: `Hạn KĐ: ${formatDateVN(dev.inspectionSummary?.nextDate || '')} • ${st.text}`,
+                location: dev.location || '',
+                deviceId: dev.id,
+                isRead: isRead,
+                priority: st.code === 'danger' ? 4 : 2,
+                daysLeft: st.days
+            });
+        }
+        
+        (dev.certificates || []).forEach(cert => {
+            const b = getCertBadge(cert);
+            if (b.level === 'expired' || b.level === 'urgent' || b.level === 'warning') {
+                const certAlertId = `cert_${dev.id}_${cert.id}`;
+                const isRead = isMarkerActive(readMarkers, certAlertId);
+                
+                alerts.push({
+                    id: certAlertId,
+                    kind: 'cert',
+                    level: b.level,
+                    title: cert.name || 'Giấy chứng nhận',
+                    meta: `Thiết bị: ${dev.id} • ${b.text}`,
+                    location: dev.location || '',
+                    deviceId: dev.id,
+                    certId: cert.id,
+                    isRead: isRead,
+                    priority: b.priority,
+                    daysLeft: b.daysLeft
+                });
+            }
+        });
+    });
+    
+    alerts.sort((a, b) => b.priority - a.priority);
+    return alerts;
+}
+
+function getReadMarkers() {
+    try {
+        const raw = localStorage.getItem('jntc_alert_markers');
+        if (!raw) return {};
+        const markers = JSON.parse(raw);
+        const now = Date.now();
+        const filtered = {};
+        Object.entries(markers).forEach(([key, timestamp]) => {
+            if (now - timestamp < 7 * 24 * 60 * 60 * 1000) {
+                filtered[key] = timestamp;
+            }
+        });
+        return filtered;
+    } catch (e) { return {}; }
+}
+
+function saveReadMarkers(markers) {
+    localStorage.setItem('jntc_alert_markers', JSON.stringify(markers));
+}
+
+function isMarkerActive(markers, alertId) {
+    return !!markers[alertId];
+}
+
+function markAlertAsRead(alertId) {
+    const markers = getReadMarkers();
+    markers[alertId] = Date.now();
+    saveReadMarkers(markers);
+}
 function showDeviceList(typeId, typeName) {
     currentTypeId = typeId;
     currentSort = { key: null, dir: 'asc' };
@@ -2459,6 +3137,10 @@ function getDeviceSortValue(dev, key) {
             const order = { danger: 1, warn: 2, pending: 3, ok: 4 };
             return order[st.code] || 5;
         }
+        case 'cert': {
+            const b = getDeviceCertBadge(dev);
+            return b.priority;
+        }
         case 'spec': {
             const mainSpec = MAIN_SPEC_COLUMN[dev.typeId];
             if (!mainSpec) return '';
@@ -2472,9 +3154,6 @@ function getDeviceSortValue(dev, key) {
     }
 }
 
-// ============================================================
-//  TÌM KIẾM THÔNG MINH
-// ============================================================
 function filterDevicesByKeyword(list, keyword) {
     const kw = keyword.toLowerCase().trim();
     
@@ -2500,6 +3179,9 @@ function filterDevicesByKeyword(list, keyword) {
         if (dev.inspectionSummary?.lastDate) fields.push(formatDateVN(dev.inspectionSummary.lastDate));
         if (dev.inspectionSummary?.nextDate) fields.push(formatDateVN(dev.inspectionSummary.nextDate));
         if (dev.specs) Object.values(dev.specs).forEach(v => fields.push(v));
+        (dev.certificates || []).forEach(c => {
+            fields.push(c.name, c.number, c.issuer, c.note);
+        });
         return fields.some(f => String(f || '').toLowerCase().includes(kw));
     });
 }
@@ -2544,9 +3226,6 @@ function updateSearchUI(keyword, resultCount) {
     }
 }
 
-// ============================================================
-//  HIỂN THỊ DANH SÁCH (có cột Trạng thái KĐ + lọc)
-// ============================================================
 function renderDeviceList() {
     const tbody = document.getElementById('device-list-body');
     tbody.innerHTML = '';
@@ -2583,9 +3262,9 @@ function renderDeviceList() {
     
     if (list.length === 0) {
         if (keyword) {
-            tbody.innerHTML = `<tr><td colspan="13" style="text-align:center;padding:40px;color:#c0392b;"><i class="fas fa-search" style="font-size:40px; margin-bottom:15px; display:block; opacity:0.5;"></i><b style="font-size:16px;">Không tìm thấy thiết bị nào khớp với "${escapeHtml(keyword)}"</b></td></tr>`;
+            tbody.innerHTML = `<tr><td colspan="14" style="text-align:center;padding:40px;color:#c0392b;"><i class="fas fa-search" style="font-size:40px; margin-bottom:15px; display:block; opacity:0.5;"></i><b style="font-size:16px;">Không tìm thấy thiết bị nào khớp với "${escapeHtml(keyword)}"</b></td></tr>`;
         } else {
-            tbody.innerHTML = '<tr><td colspan="13" style="text-align:center;padding:30px;color:#999;">Chưa có thiết bị nào.</td></tr>';
+            tbody.innerHTML = '<tr><td colspan="14" style="text-align:center;padding:30px;color:#999;">Chưa có thiết bị nào.</td></tr>';
         }
         return;
     }
@@ -2593,14 +3272,30 @@ function renderDeviceList() {
     list.forEach((dev, idx) => {
         const status = getInspectionStatus(dev);
         const specVal = mainSpec.key ? (dev.specs?.[mainSpec.key] || '') : '';
+        const certBadge = getDeviceCertBadge(dev);
         const tr = document.createElement('tr');
         const dateCls = status.code === 'ok' ? 'date-ok' : (status.code === 'warn' ? 'date-warn' : 'date-danger');
+        
+        let certCellHTML = '';
+        if (certBadge.level === 'none') {
+            certCellHTML = '<span style="color:#95a5a6; font-size:12px; font-style:italic;">📭 Chưa có</span>';
+        } else {
+            const cnt = certBadge.totalCerts;
+            const warnCount = (certBadge.counts?.expired || 0) + (certBadge.counts?.urgent || 0) + (certBadge.counts?.warning || 0);
+            if (warnCount > 0) {
+                certCellHTML = `<span style="color:${certBadge.color}; font-weight:700; font-size:12px;" title="${certBadge.text}">${certBadge.icon} ${warnCount}/${cnt}</span>`;
+            } else {
+                certCellHTML = `<span style="color:#27ae60; font-weight:700; font-size:12px;" title="${certBadge.text}">✅ ${cnt} OK</span>`;
+            }
+        }
+        
         tr.innerHTML = `
             <td class="col-sticky-1">${idx + 1}</td>
             <td class="col-sticky-2 cell-id">${highlightKeyword(dev.id || '', keyword)}</td>
             <td>${dev.identity?.size ? highlightKeyword(dev.identity.size, keyword) : '<span class="cell-empty">—</span>'}</td>
             <td>${dev.identity?.serial ? highlightKeyword(dev.identity.serial, keyword) : '<span class="cell-empty">—</span>'}</td>
             <td>${getStatusBadgeHTML(status)}</td>
+            <td>${certCellHTML}</td>
             <td class="spec-main-cell">${specVal ? highlightKeyword(specVal, keyword) : '<span class="cell-empty">—</span>'}</td>
             <td class="date-cell">${dev.inspectionSummary?.lastDate ? highlightKeyword(formatDateVN(dev.inspectionSummary.lastDate), keyword) : '<span class="cell-empty">—</span>'}</td>
             <td class="date-cell ${dateCls}">${dev.inspectionSummary?.nextDate ? highlightKeyword(formatDateVN(dev.inspectionSummary.nextDate), keyword) : '<span class="cell-empty">—</span>'}</td>
@@ -2610,7 +3305,7 @@ function renderDeviceList() {
             <td><input type="text" class="note-input" data-dev-id="${escapeHtml(dev.id)}" value="${escapeHtml(dev.note || '')}" placeholder="Nhập ghi chú..."></td>
             <td style="white-space:nowrap;">
                 <button onclick="viewDeviceDetail('${escapeHtml(dev.id)}')" class="btn btn-view"><i class="fas fa-eye"></i> Xem</button>
-                <button onclick="openDeleteModal('${escapeHtml(dev.id)}')" class="btn btn-delete" style="margin-left:4px;"><i class="fas fa-trash-alt"></i> Hủy</button>
+                <button onclick="openDeleteModal('${escapeHtml(dev.id)}')" class="btn btn-delete jntc-admin-only" style="margin-left:4px;"><i class="fas fa-trash-alt"></i> Hủy</button>
             </td>
         `;
         tbody.appendChild(tr);
@@ -2618,6 +3313,7 @@ function renderDeviceList() {
     
     tbody.querySelectorAll('input.note-input').forEach(inp => {
         inp.addEventListener('blur', async function() {
+            if (!can('edit')) return;
             const devId = this.dataset.devId;
             const dev = devices.find(d => d.id === devId);
             if (dev && dev.note !== this.value) {
@@ -2644,9 +3340,6 @@ document.addEventListener('click', function(e) {
     renderDeviceList();
 });
 
-// ============================================================
-//  XUẤT EXCEL ĐANG LỌC
-// ============================================================
 async function exportFilteredList() {
     if (!currentTypeId) return alert('Chưa chọn loại thiết bị!');
     if (currentListFiltered.length === 0) return alert('Không có dữ liệu để xuất!');
@@ -2664,13 +3357,15 @@ async function exportFilteredList() {
     const keyword = searchInput ? searchInput.value.trim() : '';
     if (keyword) filterLabel += ` + Tìm: "${keyword}"`;
     
-    const headers = ['STT', 'Số quản lý', 'Mã hiệu', 'Số chế tạo', mainSpec.label, 'Trạng thái KĐ', 'Ngày KĐ', 'Hạn KĐ', 'Số tem', 'Vị trí', 'Mã hồ sơ', 'Ghi chú'];
+    const headers = ['STT', 'Số quản lý', 'Mã hiệu', 'Số chế tạo', mainSpec.label, 'Trạng thái KĐ', 'Giấy CN', 'Ngày KĐ', 'Hạn KĐ', 'Số tem', 'Vị trí', 'Mã hồ sơ', 'Ghi chú'];
     const rows = currentListFiltered.map((dev, idx) => {
         const specVal = mainSpec.key ? (dev.specs?.[mainSpec.key] || '') : '';
         const status = getInspectionStatus(dev);
+        const certBadge = getDeviceCertBadge(dev);
         return [
             idx + 1, dev.id || '', dev.identity?.size || '', dev.identity?.serial || '', specVal,
             status.text,
+            certBadge.level === 'none' ? 'Chưa có' : `${certBadge.totalCerts} giấy`,
             dev.inspectionSummary?.lastDate ? formatDateVN(dev.inspectionSummary.lastDate) : '',
             dev.inspectionSummary?.nextDate ? formatDateVN(dev.inspectionSummary.nextDate) : '',
             dev.inspectionSummary?.stamp || '',
@@ -2686,7 +3381,7 @@ async function exportFilteredList() {
     ];
     
     const ws = XLSX.utils.aoa_to_sheet(wsData);
-    ws['!cols'] = [{ wch: 6 }, { wch: 16 }, { wch: 14 }, { wch: 16 }, { wch: 16 }, { wch: 16 }, { wch: 14 }, { wch: 14 }, { wch: 14 }, { wch: 16 }, { wch: 12 }, { wch: 26 }];
+    ws['!cols'] = [{ wch: 6 }, { wch: 16 }, { wch: 14 }, { wch: 16 }, { wch: 16 }, { wch: 16 }, { wch: 14 }, { wch: 14 }, { wch: 14 }, { wch: 14 }, { wch: 16 }, { wch: 12 }, { wch: 26 }];
     ws['!merges'] = [
         { s: { r: 0, c: 0 }, e: { r: 0, c: headers.length - 1 } },
         { s: { r: 1, c: 0 }, e: { r: 1, c: headers.length - 1 } },
@@ -2707,11 +3402,13 @@ async function exportDeviceListExcel() {
     await ensureXLSXLoaded();
     const typeName = DEVICE_TYPES.find(t => t.id === currentTypeId)?.name || '';
     const mainSpec = MAIN_SPEC_COLUMN[currentTypeId] || { label: 'Thông số chính', key: null };
-    const headers = ['STT', 'Số quản lý', 'Mã hiệu', 'Số chế tạo', mainSpec.label, 'Trạng thái KĐ', 'Ngày KĐ gần nhất', 'Hạn KĐ', 'Số tem KĐ', 'Vị trí', 'Mã hồ sơ', 'Ghi chú'];
+    const headers = ['STT', 'Số quản lý', 'Mã hiệu', 'Số chế tạo', mainSpec.label, 'Trạng thái KĐ', 'Giấy CN', 'Ngày KĐ gần nhất', 'Hạn KĐ', 'Số tem KĐ', 'Vị trí', 'Mã hồ sơ', 'Ghi chú'];
     const rows = currentListFiltered.map((dev, idx) => {
         const specVal = mainSpec.key ? (dev.specs?.[mainSpec.key] || '') : '';
         const status = getInspectionStatus(dev);
+        const certBadge = getDeviceCertBadge(dev);
         return [idx + 1, dev.id || '', dev.identity?.size || '', dev.identity?.serial || '', specVal, status.text,
+            certBadge.level === 'none' ? 'Chưa có' : `${certBadge.totalCerts} giấy`,
             dev.inspectionSummary?.lastDate ? formatDateVN(dev.inspectionSummary.lastDate) : '',
             dev.inspectionSummary?.nextDate ? formatDateVN(dev.inspectionSummary.nextDate) : '',
             dev.inspectionSummary?.stamp || '', dev.location || '', dev.archiveNo || '', dev.note || ''];
@@ -2722,7 +3419,7 @@ async function exportDeviceListExcel() {
         [], headers, ...rows
     ];
     const ws = XLSX.utils.aoa_to_sheet(wsData);
-    ws['!cols'] = [{ wch: 6 }, { wch: 16 }, { wch: 14 }, { wch: 16 }, { wch: 16 }, { wch: 16 }, { wch: 16 }, { wch: 14 }, { wch: 14 }, { wch: 16 }, { wch: 12 }, { wch: 26 }];
+    ws['!cols'] = [{ wch: 6 }, { wch: 16 }, { wch: 14 }, { wch: 16 }, { wch: 16 }, { wch: 16 }, { wch: 14 }, { wch: 16 }, { wch: 14 }, { wch: 14 }, { wch: 16 }, { wch: 12 }, { wch: 26 }];
     ws['!merges'] = [
         { s: { r: 0, c: 0 }, e: { r: 0, c: headers.length - 1 } },
         { s: { r: 1, c: 0 }, e: { r: 1, c: headers.length - 1 } }
@@ -2743,6 +3440,7 @@ function ensureXLSXLoaded() {
         document.head.appendChild(script);
     });
 }
+
 async function viewDeviceDetail(id) {
     currentDeviceId = id;
     const dev = devices.find(d => d.id === id);
@@ -2761,6 +3459,7 @@ async function viewDeviceDetail(id) {
     document.getElementById('id-price-level').value = dev.priceLevel || 1;
     renderSpecGrid(dev);
     await renderPhotos(dev);
+    renderCertList();
     document.getElementById('insp-last-date').value = dev.inspectionSummary?.lastDate || '';
     document.getElementById('insp-next-date').value = dev.inspectionSummary?.nextDate || '';
     document.getElementById('insp-stamp').value = dev.inspectionSummary?.stamp || '';
@@ -2787,20 +3486,8 @@ async function viewDeviceDetail(id) {
                 <button onclick="openRestoreModal('${escapeHtml(dev.id)}')"><i class="fas fa-undo"></i> Khôi phục</button>
             </div>`;
         sheet.insertBefore(banner, sheet.firstChild);
-        const qrBtn = document.querySelector('#detail-screen .header-actions button.btn-qr');
-        if (qrBtn) qrBtn.style.display = 'none';
-        const printBtn = document.querySelector('#detail-screen .header-actions button.btn-print');
-        if (printBtn) printBtn.style.display = 'none';
-        const saveBtn = document.querySelector('#detail-screen .header-actions button.btn-save');
-        if (saveBtn) saveBtn.style.display = 'none';
     } else {
         sheet.classList.remove('locked');
-        const qrBtn = document.querySelector('#detail-screen .header-actions button.btn-qr');
-        if (qrBtn) qrBtn.style.display = '';
-        const printBtn = document.querySelector('#detail-screen .header-actions button.btn-print');
-        if (printBtn) printBtn.style.display = '';
-        const saveBtn = document.querySelector('#detail-screen .header-actions button.btn-save');
-        if (saveBtn) saveBtn.style.display = '';
     }
     
     showScreen('detail-screen');
@@ -2819,9 +3506,645 @@ function renderSpecGrid(dev) {
     });
 }
 
-// ============================================================
-//  ẢNH THIẾT BỊ - Ghi song song LOCAL + SERVER
-// ============================================================
+function renderCertList() {
+    const container = document.getElementById('jntc-cert-list');
+    if (!container) return;
+    
+    const dev = devices.find(d => d.id === currentDeviceId);
+    if (!dev) {
+        container.innerHTML = '<div class="jntc-cert-empty">Không tìm thấy thiết bị</div>';
+        return;
+    }
+    
+    const certs = dev.certificates || [];
+    
+    if (certs.length === 0) {
+        container.innerHTML = `
+            <div class="jntc-cert-empty">
+                <i class="fas fa-inbox" style="font-size: 32px; display: block; margin-bottom: 8px; opacity: 0.4;"></i>
+                Chưa có giấy chứng nhận nào
+            </div>`;
+        return;
+    }
+    
+    const sorted = [...certs].sort((a, b) => {
+        const ba = getCertBadge(a);
+        const bb = getCertBadge(b);
+        return bb.priority - ba.priority;
+    });
+    
+    container.innerHTML = '';
+    sorted.forEach(cert => {
+        const badge = getCertBadge(cert);
+        const fileInfo = getFileIconInfo(cert.filename);
+        const card = document.createElement('div');
+        card.className = `jntc-cert-card jntc-cert-${badge.level}`;
+        
+        let badgeClass = 'jntc-badge-safe';
+        if (badge.level === 'expired') badgeClass = 'jntc-badge-danger';
+        else if (badge.level === 'urgent') badgeClass = 'jntc-badge-urgent';
+        else if (badge.level === 'warning') badgeClass = 'jntc-badge-warn';
+        else if (badge.level === 'unknown') badgeClass = 'jntc-badge-unknown';
+        
+        card.innerHTML = `
+            <div class="jntc-cert-card-header">
+                <div class="jntc-cert-card-name">
+                    <i class="fas fa-file-certificate"></i>
+                    <span>${escapeHtml(cert.name || 'Không tên')}</span>
+                </div>
+                <span class="jntc-cert-badge ${badgeClass}">
+                    ${badge.icon} ${badge.text}
+                </span>
+            </div>
+            
+            <div class="jntc-cert-meta">
+                ${cert.number ? `<div><b>Số:</b> ${escapeHtml(cert.number)}</div>` : ''}
+                ${cert.issuer ? `<div><b>Đơn vị cấp:</b> ${escapeHtml(cert.issuer)}</div>` : ''}
+                ${cert.issuedDate ? `<div><b>Ngày cấp:</b> ${formatDateCertVN(cert.issuedDate)}</div>` : ''}
+                ${cert.expiryDate ? `<div><b>Hết hạn:</b> ${formatDateCertVN(cert.expiryDate)}</div>` : ''}
+                ${cert.note ? `<div><b>Ghi chú:</b> ${escapeHtml(cert.note)}</div>` : ''}
+            </div>
+            
+            <div class="jntc-cert-file ${fileInfo.class}">
+                <i class="fas ${fileInfo.icon}"></i>
+                <span>${escapeHtml(cert.filename || 'Không có file')}</span>
+                ${cert.fileSize ? `<span style="margin-left:auto; opacity: 0.7;">${formatFileSize(cert.fileSize)}</span>` : ''}
+            </div>
+            
+            <div class="jntc-cert-actions">
+                <button class="jntc-cert-action-btn jntc-view" onclick="viewCertFile('${escapeHtml(dev.id)}', '${escapeHtml(cert.id)}')">
+                    <i class="fas fa-eye"></i> Xem
+                </button>
+                <button class="jntc-cert-action-btn jntc-download" onclick="downloadCertFile('${escapeHtml(dev.id)}', '${escapeHtml(cert.id)}')">
+                    <i class="fas fa-download"></i> Tải
+                </button>
+                <button class="jntc-cert-action-btn jntc-edit jntc-admin-only" onclick="openCertModal('${escapeHtml(cert.id)}')">
+                    <i class="fas fa-edit"></i> Sửa
+                </button>
+                <button class="jntc-cert-action-btn jntc-del jntc-admin-only" onclick="openCertDeleteModal('${escapeHtml(dev.id)}', '${escapeHtml(cert.id)}')">
+                    <i class="fas fa-trash-alt"></i> Xóa
+                </button>
+            </div>
+        `;
+        container.appendChild(card);
+    });
+}
+
+function openCertModal(certId) {
+    if (!can('upload')) {
+        alert('🔒 Bạn không có quyền thêm/sửa giấy chứng nhận!');
+        return;
+    }
+    
+    const dev = devices.find(d => d.id === currentDeviceId);
+    if (!dev) return alert('⚠️ Chưa chọn thiết bị!');
+    
+    jntcCertEditingId = certId || null;
+    jntcCertFileBuffer = null;
+    jntcCertOldFile = null;
+    
+    const titleEl = document.getElementById('jntc-cert-modal-title');
+    const saveLabel = document.getElementById('jntc-cert-save-label');
+    const oldFileBox = document.getElementById('jntc-cert-file-old');
+    const oldFileName = document.getElementById('jntc-cert-file-oldname');
+    const previewBox = document.getElementById('jntc-cert-file-preview');
+    const fileInput = document.getElementById('jntc-cert-file');
+    
+    document.getElementById('jntc-cert-name').value = '';
+    document.getElementById('jntc-cert-type').value = 'hopchuan';
+    document.getElementById('jntc-cert-issuer').value = '';
+    document.getElementById('jntc-cert-number').value = '';
+    document.getElementById('jntc-cert-issued').value = '';
+    document.getElementById('jntc-cert-expiry').value = '';
+    document.getElementById('jntc-cert-note').value = '';
+    fileInput.value = '';
+    previewBox.style.display = 'none';
+    oldFileBox.style.display = 'none';
+    
+    if (certId) {
+        const cert = (dev.certificates || []).find(c => c.id === certId);
+        if (!cert) return alert('⚠️ Không tìm thấy giấy chứng nhận!');
+        
+        titleEl.innerText = 'SỬA GIẤY CHỨNG NHẬN';
+        saveLabel.innerText = 'Cập nhật';
+        
+        document.getElementById('jntc-cert-name').value = cert.name || '';
+        document.getElementById('jntc-cert-type').value = cert.type || 'hopchuan';
+        document.getElementById('jntc-cert-issuer').value = cert.issuer || '';
+        document.getElementById('jntc-cert-number').value = cert.number || '';
+        document.getElementById('jntc-cert-issued').value = cert.issuedDate || '';
+        document.getElementById('jntc-cert-expiry').value = cert.expiryDate || '';
+        document.getElementById('jntc-cert-note').value = cert.note || '';
+        
+        if (cert.filename) {
+            jntcCertOldFile = cert.filename;
+            oldFileName.innerText = cert.filename;
+            oldFileBox.style.display = 'block';
+        }
+    } else {
+        titleEl.innerText = 'THÊM GIẤY CHỨNG NHẬN';
+        saveLabel.innerText = 'Lưu giấy chứng nhận';
+    }
+    
+    document.getElementById('jntc-cert-modal').classList.add('active');
+}
+
+function closeCertModal() {
+    document.getElementById('jntc-cert-modal').classList.remove('active');
+    jntcCertEditingId = null;
+    jntcCertFileBuffer = null;
+    jntcCertOldFile = null;
+}
+
+function handleCertFileSelect(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+    
+    const v = validateCertFile(file);
+    if (!v.ok) {
+        alert('⚠️ ' + v.error);
+        event.target.value = '';
+        return;
+    }
+    
+    jntcCertFileBuffer = file;
+    
+    const previewBox = document.getElementById('jntc-cert-file-preview');
+    const iconEl = document.getElementById('jntc-cert-file-icon');
+    const nameEl = document.getElementById('jntc-cert-file-name');
+    const sizeEl = document.getElementById('jntc-cert-file-size');
+    
+    const info = getFileIconInfo(file.name);
+    iconEl.className = 'fas ' + info.icon;
+    nameEl.innerText = file.name;
+    sizeEl.innerText = formatFileSize(file.size);
+    previewBox.style.display = 'block';
+}
+
+function clearCertFileSelection() {
+    jntcCertFileBuffer = null;
+    document.getElementById('jntc-cert-file').value = '';
+    document.getElementById('jntc-cert-file-preview').style.display = 'none';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const drop = document.getElementById('jntc-cert-drop');
+    if (!drop) return;
+    
+    ['dragenter', 'dragover'].forEach(evt => {
+        drop.addEventListener(evt, e => {
+            e.preventDefault();
+            e.stopPropagation();
+            drop.style.background = '#fff0d5';
+            drop.style.borderColor = '#d35400';
+        });
+    });
+    
+    ['dragleave', 'drop'].forEach(evt => {
+        drop.addEventListener(evt, e => {
+            e.preventDefault();
+            e.stopPropagation();
+            drop.style.background = '';
+            drop.style.borderColor = '';
+        });
+    });
+    
+    drop.addEventListener('drop', e => {
+        const files = e.dataTransfer.files;
+        if (files.length > 0) {
+            const fakeEvent = { target: { files: files } };
+            handleCertFileSelect(fakeEvent);
+            try {
+                const dt = new DataTransfer();
+                dt.items.add(files[0]);
+                document.getElementById('jntc-cert-file').files = dt.files;
+            } catch (err) { }
+        }
+    });
+});
+
+async function saveCert() {
+    if (!can('upload')) {
+        alert('🔒 Bạn không có quyền thêm/sửa giấy chứng nhận!');
+        return;
+    }
+    
+    const dev = devices.find(d => d.id === currentDeviceId);
+    if (!dev) return alert('⚠️ Không tìm thấy thiết bị!');
+    
+    const name = document.getElementById('jntc-cert-name').value.trim();
+    const type = document.getElementById('jntc-cert-type').value;
+    const issuer = document.getElementById('jntc-cert-issuer').value.trim();
+    const number = document.getElementById('jntc-cert-number').value.trim();
+    const issuedDate = document.getElementById('jntc-cert-issued').value;
+    const expiryDate = document.getElementById('jntc-cert-expiry').value;
+    const note = document.getElementById('jntc-cert-note').value.trim();
+    
+    if (!name) return alert('⚠️ Vui lòng nhập tên giấy chứng nhận!');
+    if (!expiryDate) return alert('⚠️ Vui lòng nhập ngày hết hạn!');
+    if (!jntcCertEditingId && !jntcCertFileBuffer) {
+        return alert('⚠️ Vui lòng chọn file đính kèm!');
+    }
+    
+    if (!folderConnected && !serverConnected) {
+        return alert('⚠️ Chưa kết nối thư mục dữ liệu!\nVui lòng kết nối LOCAL hoặc SERVER trước.');
+    }
+    
+    const certId = jntcCertEditingId || ('cert_' + Date.now() + '_' + Math.random().toString(36).substr(2, 6));
+    
+    let finalFilename = jntcCertOldFile;
+    let finalFileSize = null;
+    
+    if (jntcCertFileBuffer) {
+        const newFilename = makeSafeCertFilename(dev.id, certId, jntcCertFileBuffer.name);
+        finalFilename = newFilename;
+        finalFileSize = jntcCertFileBuffer.size;
+    }
+    
+    const existingCert = jntcCertEditingId ? (dev.certificates || []).find(c => c.id === certId) : null;
+    
+    const certData = {
+        id: certId,
+        name, type, issuer, number,
+        issuedDate, expiryDate, note,
+        filename: finalFilename,
+        fileSize: finalFileSize,
+        originalName: jntcCertFileBuffer ? jntcCertFileBuffer.name : (existingCert?.originalName || null),
+        uploadedAt: existingCert?.uploadedAt || new Date().toISOString(),
+        updatedAt: new Date().toISOString(),
+        uploadedBy: (JSON.parse(sessionStorage.getItem('loggedUser') || '{}').username) || 'unknown'
+    };
+    
+    if (jntcCertFileBuffer) {
+        const writeResult = await writeCertFileToFolders(finalFilename, jntcCertFileBuffer);
+        
+        if (!writeResult.local && !writeResult.server) {
+            alert('❌ Không ghi được file vào LOCAL hoặc SERVER!\n\n' + writeResult.errors.join('\n'));
+            return;
+        }
+        
+        if (jntcCertEditingId && jntcCertOldFile && jntcCertOldFile !== finalFilename) {
+            await deleteCertFileFromFolders(jntcCertOldFile);
+        }
+    }
+    
+    if (!dev.certificates) dev.certificates = [];
+    
+    if (jntcCertEditingId) {
+        const idx = dev.certificates.findIndex(c => c.id === certId);
+        if (idx >= 0) {
+            dev.certificates[idx] = certData;
+        } else {
+            dev.certificates.push(certData);
+        }
+    } else {
+        dev.certificates.push(certData);
+    }
+    
+    saveData();
+    renderCertList();
+    updateBellBadge();
+    
+    closeCertModal();
+    alert(jntcCertEditingId ? '✅ Đã cập nhật giấy chứng nhận!' : '✅ Đã thêm giấy chứng nhận!');
+}
+
+function openCertDeleteModal(deviceId, certId) {
+    if (!can('delete')) {
+        alert('🔒 Bạn không có quyền xóa giấy chứng nhận!');
+        return;
+    }
+    const dev = devices.find(d => d.id === deviceId);
+    if (!dev) return;
+    const cert = (dev.certificates || []).find(c => c.id === certId);
+    if (!cert) return alert('⚠️ Không tìm thấy giấy chứng nhận!');
+    
+    jntcCertDeleting = { deviceId, certId };
+    
+    document.getElementById('jntc-cert-del-name').innerText = cert.name || '—';
+    document.getElementById('jntc-cert-del-file').innerText = cert.filename || '—';
+    document.getElementById('jntc-cert-delete-modal').classList.add('active');
+}
+
+function closeCertDeleteModal() {
+    document.getElementById('jntc-cert-delete-modal').classList.remove('active');
+    jntcCertDeleting = null;
+}
+
+async function confirmDeleteCert() {
+    if (!jntcCertDeleting) return;
+    const { deviceId, certId } = jntcCertDeleting;
+    
+    const dev = devices.find(d => d.id === deviceId);
+    if (!dev) return;
+    
+    const certIdx = (dev.certificates || []).findIndex(c => c.id === certId);
+    if (certIdx < 0) return alert('⚠️ Không tìm thấy giấy chứng nhận!');
+    
+    const cert = dev.certificates[certIdx];
+    
+    if (cert.filename) {
+        await deleteCertFileFromFolders(cert.filename);
+    }
+    
+    dev.certificates.splice(certIdx, 1);
+    saveData();
+    renderCertList();
+    updateBellBadge();
+    
+    closeCertDeleteModal();
+    alert('✅ Đã xóa giấy chứng nhận!');
+}
+
+async function viewCertFile(deviceId, certId) {
+    const cert = findCertById(deviceId, certId);
+    if (!cert || !cert.filename) {
+        return alert('⚠️ Không tìm thấy file!');
+    }
+    
+    if (!folderConnected && !serverConnected) {
+        return alert('⚠️ Chưa kết nối thư mục dữ liệu!');
+    }
+    
+    jntcCertViewing = { deviceId, certId, fileName: cert.filename };
+    
+    const modal = document.getElementById('jntc-cert-view-modal');
+    const content = document.getElementById('jntc-cert-view-content');
+    const titleEl = document.getElementById('jntc-cert-view-title');
+    
+    titleEl.innerText = cert.name || cert.filename;
+    content.innerHTML = `
+        <div style="text-align: center; padding: 40px; color: #95a5a6;">
+            <i class="fas fa-spinner fa-spin" style="font-size: 40px;"></i>
+            <p style="margin-top: 15px;">Đang tải file...</p>
+        </div>`;
+    
+    modal.classList.add('active');
+    
+    const file = await readCertFile(cert.filename);
+    if (!file) {
+        content.innerHTML = `
+            <div style="text-align: center; padding: 40px; color: #c0392b;">
+                <i class="fas fa-exclamation-triangle" style="font-size: 50px; margin-bottom: 15px;"></i>
+                <p><b>Không tìm thấy file trên LOCAL hoặc SERVER!</b></p>
+                <p style="font-size: 13px; color: #7f8c8d; margin-top: 8px;">File: ${escapeHtml(cert.filename)}</p>
+            </div>`;
+        return;
+    }
+    
+    const ext = cert.filename.split('.').pop().toLowerCase();
+    const url = URL.createObjectURL(file);
+    
+    if (ext === 'pdf') {
+        content.innerHTML = `<iframe src="${url}" style="width: 100%; height: 100%; min-height: 700px; border: none; border-radius: 8px;"></iframe>`;
+    } else if (['jpg', 'jpeg', 'png', 'gif', 'webp'].includes(ext)) {
+        content.innerHTML = `<img src="${url}" style="max-width: 100%; max-height: 100%; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);">`;
+    } else if (['xls', 'xlsx'].includes(ext)) {
+        content.innerHTML = `
+            <div style="text-align: center; padding: 40px; color: #2c3e50;">
+                <i class="fas fa-file-excel" style="font-size: 70px; color: #16a34a; margin-bottom: 20px;"></i>
+                <p style="font-size: 16px; margin-bottom: 20px;"><b>File Excel không xem trước được trên trình duyệt.</b></p>
+                <p style="color: #7f8c8d; font-size: 13px; margin-bottom: 20px;">Bấm nút "Tải về" ở góc phải để tải xuống và mở bằng Excel.</p>
+                <a href="${url}" download="${cert.filename}" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: #16a34a; color: white; text-decoration: none; border-radius: 8px; font-weight: 700;">
+                    <i class="fas fa-download"></i> Tải file Excel
+                </a>
+            </div>`;
+    } else {
+        content.innerHTML = `
+            <div style="text-align: center; padding: 40px; color: #7f8c8d;">
+                <i class="fas fa-file" style="font-size: 70px; margin-bottom: 20px;"></i>
+                <p>Định dạng này không xem trước được.</p>
+                <a href="${url}" download="${cert.filename}" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: #3498db; color: white; text-decoration: none; border-radius: 8px; font-weight: 700; margin-top: 20px;">
+                    <i class="fas fa-download"></i> Tải file
+                </a>
+            </div>`;
+    }
+}
+
+function closeCertViewModal() {
+    const modal = document.getElementById('jntc-cert-view-modal');
+    modal.classList.remove('active');
+    
+    const content = document.getElementById('jntc-cert-view-content');
+    content.querySelectorAll('img, iframe').forEach(el => {
+        if (el.src && el.src.startsWith('blob:')) {
+            URL.revokeObjectURL(el.src);
+        }
+    });
+    
+    jntcCertViewing = null;
+}
+
+async function downloadCertFile(deviceId, certId) {
+    const cert = findCertById(deviceId, certId);
+    if (!cert || !cert.filename) return alert('⚠️ Không tìm thấy file!');
+    
+    if (!folderConnected && !serverConnected) {
+        return alert('⚠️ Chưa kết nối thư mục dữ liệu!');
+    }
+    
+    const file = await readCertFile(cert.filename);
+    if (!file) return alert('❌ Không tìm thấy file trên LOCAL hoặc SERVER!');
+    
+    const url = URL.createObjectURL(file);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = cert.originalName || cert.filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+async function downloadCurrentCertFile() {
+    if (!jntcCertViewing) return;
+    await downloadCertFile(jntcCertViewing.deviceId, jntcCertViewing.certId);
+}
+
+function toggleBellDropdown(event) {
+    if (event) event.stopPropagation();
+    const dd = document.getElementById('jntc-bell-dropdown');
+    if (dd.classList.contains('jntc-open')) {
+        closeBellDropdown();
+    } else {
+        dd.classList.add('jntc-open');
+        renderBellDropdown();
+    }
+}
+
+function closeBellDropdown() {
+    const dd = document.getElementById('jntc-bell-dropdown');
+    if (dd) dd.classList.remove('jntc-open');
+}
+
+document.addEventListener('click', function(e) {
+    const wrapper = document.getElementById('jntc-bell-wrapper');
+    if (wrapper && !wrapper.contains(e.target)) {
+        closeBellDropdown();
+    }
+});
+
+function updateBellBadge() {
+    const btn = document.getElementById('jntc-bell-btn');
+    const countEl = document.getElementById('jntc-bell-count');
+    if (!btn || !countEl) return;
+    
+    const counts = countAllAlerts();
+    const total = counts.total;
+    
+    btn.classList.remove('jntc-bell-safe', 'jntc-bell-warn', 'jntc-bell-urgent', 'jntc-bell-danger');
+    
+    const alerts = getAllAlerts();
+    let highest = 'safe';
+    alerts.forEach(a => {
+        if (a.level === 'expired') highest = 'danger';
+        else if (a.level === 'urgent' && highest !== 'danger') highest = 'urgent';
+        else if (a.level === 'warning' && highest !== 'danger' && highest !== 'urgent') highest = 'warn';
+    });
+    
+    btn.classList.add('jntc-bell-' + highest);
+    
+    if (total > 0) {
+        countEl.style.display = 'flex';
+        countEl.innerText = total > 99 ? '99+' : total;
+    } else {
+        countEl.style.display = 'none';
+    }
+    
+    const footerInfo = document.getElementById('jntc-bell-footer-info');
+    if (footerInfo) {
+        footerInfo.innerText = 'Cập nhật: ' + new Date().toLocaleTimeString('vi-VN');
+    }
+    
+    const dd = document.getElementById('jntc-bell-dropdown');
+    if (dd && dd.classList.contains('jntc-open')) {
+        renderBellDropdown();
+    }
+}
+
+function renderBellDropdown() {
+    const body = document.getElementById('jntc-bell-body');
+    const totalEl = document.getElementById('jntc-bell-total');
+    const allCount = document.getElementById('jntc-bell-filter-all-count');
+    const deviceCount = document.getElementById('jntc-bell-filter-device-count');
+    const certCount = document.getElementById('jntc-bell-filter-cert-count');
+    
+    if (!body) return;
+    
+    const allAlerts = getAllAlerts();
+    
+    if (totalEl) totalEl.innerText = allAlerts.length;
+    if (allCount) allCount.innerText = allAlerts.length;
+    if (deviceCount) deviceCount.innerText = allAlerts.filter(a => a.kind === 'device').length;
+    if (certCount) certCount.innerText = allAlerts.filter(a => a.kind === 'cert').length;
+    
+    let filtered = allAlerts;
+    if (jntcBellFilter === 'device') filtered = allAlerts.filter(a => a.kind === 'device');
+    else if (jntcBellFilter === 'cert') filtered = allAlerts.filter(a => a.kind === 'cert');
+    
+    if (filtered.length === 0) {
+        body.innerHTML = `
+            <div class="jntc-bell-empty">
+                <i class="fas fa-check-circle" style="font-size: 40px; color: #27ae60; display: block; margin-bottom: 10px;"></i>
+                ${allAlerts.length === 0 ? 'Không có cảnh báo nào' : 'Không có cảnh báo trong nhóm này'}
+            </div>`;
+        return;
+    }
+    
+    const groups = { expired: [], urgent: [], warning: [] };
+    filtered.forEach(a => {
+        if (a.level === 'expired') groups.expired.push(a);
+        else if (a.level === 'urgent') groups.urgent.push(a);
+        else if (a.level === 'warning') groups.warning.push(a);
+    });
+    
+    let html = '';
+    
+    if (groups.expired.length > 0) {
+        html += `<div class="jntc-bell-group-title jntc-group-danger">🔴 HẾT HẠN (${groups.expired.length})</div>`;
+        groups.expired.forEach(a => { html += renderBellItem(a); });
+    }
+    if (groups.urgent.length > 0) {
+        html += `<div class="jntc-bell-group-title jntc-group-urgent">🟠 GẤP — ≤30 NGÀY (${groups.urgent.length})</div>`;
+        groups.urgent.forEach(a => { html += renderBellItem(a); });
+    }
+    if (groups.warning.length > 0) {
+        html += `<div class="jntc-bell-group-title jntc-group-warn">🟡 CẢNH BÁO — 31-90 NGÀY (${groups.warning.length})</div>`;
+        groups.warning.forEach(a => { html += renderBellItem(a); });
+    }
+    
+    body.innerHTML = html;
+}
+
+function renderBellItem(a) {
+    let iconClass = 'jntc-icon-warn';
+    if (a.level === 'expired') iconClass = 'jntc-icon-danger';
+    else if (a.level === 'urgent') iconClass = 'jntc-icon-urgent';
+    
+    const icon = a.kind === 'device' ? 'fa-tools' : 'fa-file-certificate';
+    
+    return `
+        <div class="jntc-bell-item">
+            <div class="jntc-bell-item-icon ${iconClass}">
+                <i class="fas ${icon}"></i>
+            </div>
+            <div class="jntc-bell-item-content">
+                <div class="jntc-bell-item-title">${escapeHtml(a.title)}</div>
+                <div class="jntc-bell-item-meta">${escapeHtml(a.meta)}${a.location ? ' • 📍 ' + escapeHtml(a.location) : ''}</div>
+                <div class="jntc-bell-item-actions">
+                    <button class="jntc-bell-item-btn" onclick="gotoDeviceFromBell('${escapeHtml(a.deviceId)}')">
+                        <i class="fas fa-eye"></i> Xem thiết bị
+                    </button>
+                    <button class="jntc-bell-item-btn jntc-btn-done" onclick="markBellAlertDone('${escapeHtml(a.id)}')">
+                        <i class="fas fa-check"></i> Đã xử lý
+                    </button>
+                </div>
+            </div>
+        </div>`;
+}
+
+function gotoDeviceFromBell(deviceId) {
+    closeBellDropdown();
+    viewDeviceDetail(deviceId);
+}
+
+function markBellAlertDone(alertId) {
+    markAlertAsRead(alertId);
+    updateBellBadge();
+    renderBellDropdown();
+}
+
+function filterBellAlerts(filter) {
+    jntcBellFilter = filter;
+    document.querySelectorAll('.jntc-bell-filter-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.bellFilter === filter);
+    });
+    renderBellDropdown();
+}
+
+function markAllAlertsAsRead() {
+    if (!confirm('Ẩn tất cả cảnh báo trong 7 ngày?\n\nCảnh báo sẽ hiện lại sau 7 ngày nếu chưa xử lý.')) return;
+    
+    const alerts = getAllAlerts();
+    const markers = getReadMarkers();
+    const now = Date.now();
+    alerts.forEach(a => {
+        markers[a.id] = now;
+    });
+    saveReadMarkers(markers);
+    
+    updateBellBadge();
+    renderBellDropdown();
+    
+    alert('✅ Đã đánh dấu tất cả cảnh báo đã xem.');
+}
+
+function startBellAutoRefresh() {
+    if (jntcBellAutoRefreshTimer) clearInterval(jntcBellAutoRefreshTimer);
+    jntcBellAutoRefreshTimer = setInterval(() => {
+        updateBellBadge();
+    }, 5 * 60 * 1000);
+}
 async function renderPhotos(dev) {
     for (let i = 1; i <= 2; i++) {
         const img = document.getElementById(`photo-img-${i}`);
@@ -2830,7 +4153,6 @@ async function renderPhotos(dev) {
         const filename = dev.photos?.[i-1];
         
         if (filename && (folderConnected || serverConnected)) {
-            // Ưu tiên đọc từ LOCAL, nếu không có thì đọc từ SERVER
             let loaded = false;
             
             if (uploadsFolderHandle) {
@@ -2845,7 +4167,7 @@ async function renderPhotos(dev) {
                     label.style.display = 'none';
                     remove.style.display = 'flex';
                     loaded = true;
-                } catch (e) { /* Không có trong local → thử server */ }
+                } catch (e) { }
             }
             
             if (!loaded && serverUploadsFolderHandle) {
@@ -2860,7 +4182,7 @@ async function renderPhotos(dev) {
                     label.style.display = 'none';
                     remove.style.display = 'flex';
                     loaded = true;
-                } catch (e) { /* Không có cả 2 */ }
+                } catch (e) { }
             }
             
             if (!loaded) {
@@ -2877,6 +4199,12 @@ async function renderPhotos(dev) {
 }
 
 async function uploadPhoto(event, slot) {
+    if (!can('upload')) {
+        alert('🔒 Bạn không có quyền upload ảnh!');
+        event.target.value = '';
+        return;
+    }
+    
     const file = event.target.files[0];
     if (!file) return;
     
@@ -2898,7 +4226,6 @@ async function uploadPhoto(event, slot) {
         
         let localOK = false, serverOK = false;
         
-        // 1. Ghi LOCAL
         if (uploadsFolderHandle) {
             try {
                 const fh = await uploadsFolderHandle.getFileHandle(filename, { create: true });
@@ -2906,11 +4233,9 @@ async function uploadPhoto(event, slot) {
                 await writable.write(compressed);
                 await writable.close();
                 localOK = true;
-                console.log(`✅ Ảnh LOCAL: ${filename}`);
             } catch (e) { console.warn('Lỗi ảnh local:', e); }
         }
         
-        // 2. Ghi SERVER
         if (serverUploadsFolderHandle) {
             try {
                 const fh = await serverUploadsFolderHandle.getFileHandle(filename, { create: true });
@@ -2918,7 +4243,6 @@ async function uploadPhoto(event, slot) {
                 await writable.write(compressed);
                 await writable.close();
                 serverOK = true;
-                console.log(`✅ Ảnh SERVER: ${filename}`);
             } catch (e) { console.warn('Lỗi ảnh server:', e); }
         }
         
@@ -2939,6 +4263,11 @@ async function uploadPhoto(event, slot) {
 
 async function removePhoto(event, slot) {
     event.stopPropagation();
+    if (!can('delete')) {
+        alert('🔒 Bạn không có quyền xóa ảnh!');
+        return;
+    }
+    
     const dev = devices.find(d => d.id === currentDeviceId);
     if (!dev || !dev.photos) return;
     
@@ -2946,13 +4275,11 @@ async function removePhoto(event, slot) {
     if (filename) {
         if (!confirm('Xóa ảnh này?')) return;
         
-        // Xóa LOCAL
         if (uploadsFolderHandle) {
-            try { await uploadsFolderHandle.removeEntry(filename); } catch (e) { console.warn(e); }
+            try { await uploadsFolderHandle.removeEntry(filename); } catch (e) { }
         }
-        // Xóa SERVER
         if (serverUploadsFolderHandle) {
-            try { await serverUploadsFolderHandle.removeEntry(filename); } catch (e) { console.warn(e); }
+            try { await serverUploadsFolderHandle.removeEntry(filename); } catch (e) { }
         }
     }
     
@@ -2961,9 +4288,6 @@ async function removePhoto(event, slot) {
     await renderPhotos(dev);
 }
 
-// ============================================================
-//  KIỂM ĐỊNH
-// ============================================================
 function renderInspections(dev) {
     const tbody = document.getElementById('inspection-tbody');
     tbody.innerHTML = '';
@@ -2983,7 +4307,12 @@ function renderInspections(dev) {
 }
 
 function addInspection() {
+    if (!can('edit')) {
+        alert('🔒 Bạn không có quyền thêm kiểm định!');
+        return;
+    }
     const dev = devices.find(d => d.id === currentDeviceId);
+    if (!dev) return;
     const date = document.getElementById('insp-date').value;
     const unit = document.getElementById('insp-unit').value;
     const expiry = document.getElementById('insp-expiry').value;
@@ -3001,6 +4330,7 @@ function addInspection() {
     document.getElementById('insp-next-date').value = dev.inspectionSummary.nextDate;
     document.getElementById('insp-stamp').value = dev.inspectionSummary.stamp;
     renderInspections(dev);
+    updateBellBadge();
     document.getElementById('insp-date').value = '';
     document.getElementById('insp-unit').value = '';
     document.getElementById('insp-expiry').value = '';
@@ -3009,6 +4339,10 @@ function addInspection() {
 }
 
 function deleteInspection(idx) {
+    if (!can('delete')) {
+        alert('🔒 Bạn không có quyền xóa kiểm định!');
+        return;
+    }
     if (!confirm('Xóa kỳ kiểm định này?')) return;
     const dev = devices.find(d => d.id === currentDeviceId);
     dev.inspections.splice(idx, 1);
@@ -3025,11 +4359,9 @@ function deleteInspection(idx) {
     document.getElementById('insp-next-date').value = dev.inspectionSummary.nextDate;
     document.getElementById('insp-stamp').value = dev.inspectionSummary.stamp;
     renderInspections(dev);
+    updateBellBadge();
 }
 
-// ============================================================
-//  BẢO DƯỠNG - Ảnh lưu song song
-// ============================================================
 async function renderMaintenances(dev) {
     const list = document.getElementById('maintenance-list');
     list.innerHTML = '';
@@ -3078,8 +4410,13 @@ async function renderMaintenances(dev) {
     }
 }
 
-async function addMaintenance() {
+async function addMaintenance(evt) {
+    if (!can('edit')) {
+        alert('🔒 Bạn không có quyền thêm bảo dưỡng!');
+        return;
+    }
     const dev = devices.find(d => d.id === currentDeviceId);
+    if (!dev) return;
     const date = document.getElementById('maint-date').value;
     const person = document.getElementById('maint-person').value;
     const content = document.getElementById('maint-content').value;
@@ -3092,10 +4429,10 @@ async function addMaintenance() {
     }
     
     let imgs = [];
-    const btn = event.target;
-    const txt = btn.innerHTML;
+    const btn = evt ? evt.target : null;
+    const txt = btn ? btn.innerHTML : '';
     
-    if (fileInput.files.length > 0) {
+    if (fileInput.files.length > 0 && btn) {
         btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Đang xử lý ảnh...';
         btn.disabled = true;
         
@@ -3106,7 +4443,6 @@ async function addMaintenance() {
                 const ts = Date.now();
                 const filename = `maint_${dev.id.replace(/[^a-zA-Z0-9-]/g, '_')}_${ts}_${i}.jpg`;
                 
-                // Ghi LOCAL
                 if (uploadsFolderHandle) {
                     try {
                         const fh = await uploadsFolderHandle.getFileHandle(filename, { create: true });
@@ -3116,7 +4452,6 @@ async function addMaintenance() {
                     } catch (e) { console.warn(e); }
                 }
                 
-                // Ghi SERVER
                 if (serverUploadsFolderHandle) {
                     try {
                         const fh = await serverUploadsFolderHandle.getFileHandle(filename, { create: true });
@@ -3140,11 +4475,15 @@ async function addMaintenance() {
     document.getElementById('maint-person').value = '';
     document.getElementById('maint-content').value = '';
     document.getElementById('maint-image').value = '';
-    btn.innerHTML = txt; btn.disabled = false;
+    if (btn) { btn.innerHTML = txt; btn.disabled = false; }
     alert('✅ Đã thêm lịch sử bảo dưỡng!');
 }
 
 async function deleteMaintenance(idx) {
+    if (!can('delete')) {
+        alert('🔒 Bạn không có quyền xóa bảo dưỡng!');
+        return;
+    }
     if (!confirm('Xóa lần bảo dưỡng này?')) return;
     const dev = devices.find(d => d.id === currentDeviceId);
     const m = dev.maintenances[idx];
@@ -3165,10 +4504,11 @@ async function deleteMaintenance(idx) {
     await renderMaintenances(dev);
 }
 
-// ============================================================
-//  LƯU TẤT CẢ THAY ĐỔI
-// ============================================================
 function saveAllChanges() {
+    if (!can('edit')) {
+        alert('🔒 Bạn không có quyền chỉnh sửa thiết bị!');
+        return;
+    }
     const dev = devices.find(d => d.id === currentDeviceId);
     if (!dev) return;
     if (dev.deleted) return alert('⚠️ Thiết bị đã hủy — không thể cập nhật!');
@@ -3203,13 +4543,24 @@ function saveAllChanges() {
     };
     saveData();
     renderDashboard();
+    updateBellBadge();
     alert('✅ Đã lưu toàn bộ thông tin thiết bị!');
 }
 
-function openAddDeviceModal() { document.getElementById('add-modal').classList.add('active'); }
+function openAddDeviceModal() {
+    if (!can('add')) {
+        alert('🔒 Bạn không có quyền thêm thiết bị!');
+        return;
+    }
+    document.getElementById('add-modal').classList.add('active');
+}
 function closeModal() { document.getElementById('add-modal').classList.remove('active'); }
 
 function saveNewDevice() {
+    if (!can('add')) {
+        alert('🔒 Bạn không có quyền thêm thiết bị!');
+        return;
+    }
     const id = document.getElementById('new-dev-id').value.trim();
     const name = document.getElementById('new-dev-name').value.trim();
     const location = document.getElementById('new-dev-location').value.trim();
@@ -3225,6 +4576,7 @@ function saveNewDevice() {
         archiveNo: archive ? parseInt(archive) : null, note: '',
         identity: {}, specs: {}, photos: [null, null],
         inspectionSummary: {}, inspections: [], maintenances: [],
+        certificates: [],
         deleted: false
     });
     saveData(); closeModal();
@@ -3237,9 +4589,6 @@ function saveNewDevice() {
     document.getElementById('new-dev-archive').value = '';
 }
 
-// ============================================================
-//  OVERVIEW
-// ============================================================
 function getPriceLevel(dev) { return dev.priceLevel || 1; }
 function getUnitPrice(typeId, level) {
     const typePrices = priceConfig[typeId];
@@ -3248,11 +4597,11 @@ function getUnitPrice(typeId, level) {
 }
 
 function renderOverview() {
-    let total = 0, ok = 0, warn = 0, danger = 0, pending = 0;
+    let total = 0, ok = 0, warn = 0, danger = 0, pending = 0, certAlertTotal = 0;
     const typeStats = {};
     DEVICE_TYPES.forEach(t => {
         const list = devices.filter(d => d.typeId === t.id && !d.deleted);
-        const stats = { total: list.length, ok: 0, warn: 0, danger: 0, pending: 0, byLevel: {1:0,2:0,3:0,4:0,5:0}, cost: 0 };
+        const stats = { total: list.length, ok: 0, warn: 0, danger: 0, pending: 0, certAlert: 0, byLevel: {1:0,2:0,3:0,4:0,5:0}, cost: 0 };
         list.forEach(dev => {
             const st = getInspectionStatus(dev);
             if (st.code === 'ok') stats.ok++;
@@ -3262,15 +4611,26 @@ function renderOverview() {
             const level = getPriceLevel(dev);
             stats.byLevel[level] = (stats.byLevel[level] || 0) + 1;
             if (st.code === 'warn' || st.code === 'danger' || st.code === 'pending') stats.cost += getUnitPrice(t.id, level);
+            
+            (dev.certificates || []).forEach(c => {
+                const b = getCertBadge(c);
+                if (b.level === 'expired' || b.level === 'urgent' || b.level === 'warning') {
+                    stats.certAlert++;
+                }
+            });
         });
         typeStats[t.id] = stats;
         total += stats.total; ok += stats.ok; warn += stats.warn; danger += stats.danger; pending += stats.pending;
+        certAlertTotal += stats.certAlert;
     });
     document.getElementById('kpi-total').innerText = total;
     document.getElementById('kpi-ok').innerText = ok;
     document.getElementById('kpi-warn').innerText = warn;
     document.getElementById('kpi-pending').innerText = pending;
     document.getElementById('kpi-danger').innerText = danger;
+    const kpiCertEl = document.getElementById('kpi-cert-alert');
+    if (kpiCertEl) kpiCertEl.innerText = certAlertTotal;
+    
     const tbody = document.getElementById('tracking-tbody');
     tbody.innerHTML = '';
     let totalCost = 0;
@@ -3292,6 +4652,7 @@ function renderOverview() {
             <td><span class="badge badge-warn">${s.warn}</span></td>
             <td><span class="badge badge-pending">${s.pending}</span></td>
             <td><span class="badge badge-danger">${s.danger}</span></td>
+            <td><span class="badge badge-cert">${s.certAlert}</span></td>
             <td style="text-align:left;">${levelDetail || '<span style="color:#999; font-size:12px;">Chưa có dữ liệu</span>'}</td>
             <td><span class="badge badge-cost">${s.cost > 0 ? formatMoney(s.cost) + ' đ' : '0 đ'}</span></td>`;
         tbody.appendChild(tr);
@@ -3301,9 +4662,12 @@ function renderOverview() {
     document.getElementById('foot-warn').innerText = warn;
     document.getElementById('foot-pending').innerText = pending;
     document.getElementById('foot-danger').innerText = danger;
+    const footCertEl = document.getElementById('foot-cert');
+    if (footCertEl) footCertEl.innerText = certAlertTotal;
     document.getElementById('foot-cost').innerText = formatMoney(totalCost) + ' đ';
     document.getElementById('total-cost-display').innerText = formatMoney(totalCost) + ' đ';
     renderPriceTable();
+    updateBellBadge();
 }
 
 function renderPriceTable() {
@@ -3316,7 +4680,8 @@ function renderPriceTable() {
         for (let lv = 1; lv <= 5; lv++) {
             const val = typePrices[lv] || '';
             const filled = val ? 'filled' : '';
-            cellsHtml += `<td><input type="number" class="price-input-cell ${filled}" data-type="${t.id}" data-level="${lv}" placeholder="0" value="${val}" onchange="updatePriceLevel('${t.id}', ${lv}, this.value)" oninput="this.classList.toggle('filled', this.value > 0)"></td>`;
+            const disabled = !can('edit') ? 'disabled' : '';
+            cellsHtml += `<td><input type="number" class="price-input-cell ${filled}" data-type="${t.id}" data-level="${lv}" placeholder="0" value="${val}" onchange="updatePriceLevel('${t.id}', ${lv}, this.value)" oninput="this.classList.toggle('filled', this.value > 0)" ${disabled}></td>`;
         }
         tr.innerHTML = cellsHtml;
         tbody.appendChild(tr);
@@ -3324,21 +4689,22 @@ function renderPriceTable() {
 }
 
 function updatePriceLevel(typeId, level, value) {
+    if (!can('edit')) return;
     if (!priceConfig[typeId]) priceConfig[typeId] = {};
     priceConfig[typeId][level] = parseInt(value) || 0;
 }
 
 function saveAllPrices() {
+    if (!can('edit')) {
+        alert('🔒 Bạn không có quyền lưu bảng giá!');
+        return;
+    }
     saveData();
     renderOverview();
     alert('✅ Đã lưu bảng giá!');
 }
 
-// ============================================================
-//  ⭐ MÀN HÌNH CÀI ĐẶT
-// ============================================================
 function renderSettings() {
-    // Trạng thái LOCAL
     const localStatus = document.getElementById('settings-local-status');
     if (localStatus) {
         if (folderConnected) {
@@ -3348,7 +4714,6 @@ function renderSettings() {
         }
     }
     
-    // Trạng thái SERVER
     const serverStatus = document.getElementById('settings-server-status');
     if (serverStatus) {
         if (serverConnected) {
@@ -3358,19 +4723,16 @@ function renderSettings() {
         }
     }
     
-    // Số thiết bị + văn bản
     const deviceCountEl = document.getElementById('settings-device-count');
     if (deviceCountEl) deviceCountEl.innerText = devices.filter(d => !d.deleted).length;
     const legalCountEl = document.getElementById('settings-legal-count');
     if (legalCountEl) legalCountEl.innerText = legalDocs.length;
     
-    // Cập nhật cuối
     const lastUpdateEl = document.getElementById('settings-last-update');
     if (lastUpdateEl) {
         lastUpdateEl.innerText = new Date().toLocaleString('vi-VN');
     }
     
-    // Cập nhật số backup
     updateBackupCount();
 }
 
@@ -3390,9 +4752,6 @@ async function updateBackupCount() {
     }
 }
 
-// ============================================================
-//  ⭐ DANH SÁCH BACKUP
-// ============================================================
 async function loadBackupList() {
     const container = document.getElementById('backup-list-container');
     const sourceSelect = document.getElementById('backup-source-select');
@@ -3420,6 +4779,11 @@ async function loadBackupList() {
         `;
         container.appendChild(div);
     });
+    
+    const modal = document.getElementById('backup-list-modal');
+    if (modal && !modal.classList.contains('active')) {
+        modal.classList.add('active');
+    }
 }
 
 function openBackupListModal() {
@@ -3431,18 +4795,21 @@ function closeBackupListModal() {
     document.getElementById('backup-list-modal').classList.remove('active');
 }
 
-// ============================================================
-//  ⭐ KHÔI PHỤC TỪ BACKUP
-// ============================================================
 function openRestoreBackupModal() {
+    if (!can('backup')) {
+        alert('🔒 Bạn không có quyền khôi phục backup!');
+        return;
+    }
     document.getElementById('restore-backup-modal').classList.add('active');
     selectedBackupToRestore = null;
+    currentRestoreData = null;
     loadRestoreBackupList();
 }
 
 function closeRestoreBackupModal() {
     document.getElementById('restore-backup-modal').classList.remove('active');
     selectedBackupToRestore = null;
+    currentRestoreData = null;
 }
 
 async function loadRestoreBackupList() {
@@ -3481,13 +4848,8 @@ async function loadRestoreBackupList() {
     if (confirmBtn) { confirmBtn.disabled = true; confirmBtn.style.opacity = '0.5'; confirmBtn.style.cursor = 'not-allowed'; }
 }
 
-let currentRestoreData = null;
-let currentRestoreSource = null;
-
 function selectBackupForRestore(idx, item, source) {
-    // Bỏ chọn cũ
     document.querySelectorAll('#restore-backup-container .backup-item').forEach(el => el.classList.remove('selected'));
-    // Chọn mới
     document.querySelectorAll('#restore-backup-container .backup-item')[idx].classList.add('selected');
     
     currentRestoreData = item;
@@ -3532,15 +4894,17 @@ async function confirmRestoreBackup() {
     renderLegalList();
     renderDeletedList();
     renderSettings();
+    updateBellBadge();
     
     closeRestoreBackupModal();
     alert('✅ Đã khôi phục thành công từ backup!');
 }
 
-// ============================================================
-//  HỦY / KHÔI PHỤC THIẾT BỊ
-// ============================================================
 function openDeleteModal(deviceId) {
+    if (!can('delete')) {
+        alert('🔒 Bạn không có quyền hủy thiết bị!');
+        return;
+    }
     const dev = devices.find(d => d.id === deviceId);
     if (!dev) return;
     if (dev.deleted) return alert('Thiết bị này đã bị hủy rồi!');
@@ -3580,10 +4944,15 @@ function confirmDeleteDevice() {
     const t = DEVICE_TYPES.find(x => x.id === dev.typeId);
     showDeviceList(dev.typeId, t.name);
     renderDashboard();
+    updateBellBadge();
     alert(`✅ Đã chuyển thiết bị "${dev.id}" sang mục "Đã hủy".`);
 }
 
 function openRestoreModal(deviceId) {
+    if (!can('edit')) {
+        alert('🔒 Bạn không có quyền khôi phục thiết bị!');
+        return;
+    }
     const dev = devices.find(d => d.id === deviceId);
     if (!dev) return;
     restoringDeviceId = deviceId;
@@ -3609,6 +4978,7 @@ function confirmRestoreDevice() {
     alert(`✅ Đã khôi phục thiết bị "${dev.id}" về danh sách chính.`);
     renderDashboard();
     renderDeletedList();
+    updateBellBadge();
 }
 
 function populateDeletedTypeFilter() {
@@ -3691,15 +5061,12 @@ function renderDeletedList() {
             <td class="cell-reason">${escapeHtml(dev.deletedReason || '—')}</td>
             <td style="white-space:nowrap;">
                 <button onclick="viewDeviceDetail('${escapeHtml(dev.id)}')" class="btn btn-view"><i class="fas fa-eye"></i> Xem</button>
-                <button onclick="openRestoreModal('${escapeHtml(dev.id)}')" class="btn btn-restore" style="margin-left:4px;"><i class="fas fa-undo"></i> Khôi phục</button>
+                <button onclick="openRestoreModal('${escapeHtml(dev.id)}')" class="btn btn-restore jntc-admin-only" style="margin-left:4px;"><i class="fas fa-undo"></i> Khôi phục</button>
             </td>`;
         tbody.appendChild(tr);
     });
 }
 
-// ============================================================
-//  PHÁP LUẬT
-// ============================================================
 function getLegalTypeBadgeClass(loai) {
     const map = {
         'Luật': 'luat',
@@ -3748,14 +5115,18 @@ function renderLegalList() {
             <td>${fileHtml}</td>
             <td style="white-space:nowrap;">
                 <button onclick="viewLegalDoc(${idx})" class="btn btn-view" title="Xem"><i class="fas fa-eye"></i></button>
-                <button onclick="editLegalDoc(${idx})" class="btn btn-save" style="margin-left:4px; padding:6px 12px; font-size:13px;" title="Sửa"><i class="fas fa-edit"></i></button>
-                <button onclick="deleteLegalDoc(${idx})" class="btn btn-delete" style="margin-left:4px;" title="Xóa"><i class="fas fa-trash"></i></button>
+                <button onclick="editLegalDoc(${idx})" class="btn btn-save jntc-admin-only" style="margin-left:4px; padding:6px 12px; font-size:13px;" title="Sửa"><i class="fas fa-edit"></i></button>
+                <button onclick="deleteLegalDoc(${idx})" class="btn btn-delete jntc-admin-only" style="margin-left:4px;" title="Xóa"><i class="fas fa-trash"></i></button>
             </td>`;
         tbody.appendChild(tr);
     });
 }
 
 function openLegalModal(index) {
+    if (!can('edit')) {
+        alert('🔒 Bạn không có quyền thêm/sửa văn bản!');
+        return;
+    }
     editingLegalIndex = (typeof index === 'number') ? index : -1;
     const titleEl = document.getElementById('legal-modal-title');
     
@@ -3808,6 +5179,10 @@ document.addEventListener('change', function(e) {
 });
 
 async function saveLegalDoc() {
+    if (!can('edit')) {
+        alert('🔒 Bạn không có quyền lưu văn bản!');
+        return;
+    }
     const soHieu = document.getElementById('legal-sohieu').value.trim();
     const ten = document.getElementById('legal-ten').value.trim();
     const loai = document.getElementById('legal-loai').value;
@@ -3841,7 +5216,6 @@ async function saveLegalDoc() {
             const ext = file.name.split('.').pop();
             const safeName = soHieu.replace(/[^a-zA-Z0-9-]/g, '_') + '.' + ext;
             
-            // Xóa file cũ nếu đang sửa
             if (editingLegalIndex >= 0) {
                 const oldFileName = legalDocs[editingLegalIndex]?.fileName;
                 if (oldFileName && oldFileName !== safeName) {
@@ -3850,7 +5224,6 @@ async function saveLegalDoc() {
                 }
             }
             
-            // Ghi LOCAL
             if (legalDocsFolderHandle) {
                 try {
                     const fh = await legalDocsFolderHandle.getFileHandle(safeName, { create: true });
@@ -3860,7 +5233,6 @@ async function saveLegalDoc() {
                 } catch (e) { console.warn('Lỗi ghi file pháp luật LOCAL:', e); }
             }
             
-            // Ghi SERVER
             if (serverLegalDocsFolderHandle) {
                 try {
                     const fh = await serverLegalDocsFolderHandle.getFileHandle(safeName, { create: true });
@@ -3917,6 +5289,10 @@ function closeLegalViewModal() {
 function editLegalDoc(index) { openLegalModal(index); }
 
 async function deleteLegalDoc(index) {
+    if (!can('delete')) {
+        alert('🔒 Bạn không có quyền xóa văn bản!');
+        return;
+    }
     const doc = legalDocs[index];
     if (!doc) return;
     if (!confirm(`Xóa văn bản "${doc.soHieu}"?\n\n${doc.fileName ? '⚠️ File đính kèm cũng sẽ bị xóa.' : ''}`)) return;
@@ -3960,9 +5336,6 @@ async function downloadLegalFile(fileName) {
     }
 }
 
-// ============================================================
-//  QR CODE
-// ============================================================
 function getQrUrl(deviceId) {
     let base;
     if (window.location.origin.includes('pages.dev')) {
@@ -4085,9 +5458,6 @@ async function printSelectedQr() {
     }, 1000);
 }
 
-// ============================================================
-//  LOGIN QR
-// ============================================================
 function handleQrLogin() {
     const u = document.getElementById('qr-username').value.trim();
     const p = document.getElementById('qr-password').value.trim();
@@ -4214,9 +5584,6 @@ function exitQrView() {
     `;
 }
 
-// ============================================================
-//  ⭐ KHÓA PHIÊN QR
-// ============================================================
 let qrLockInterval = null;
 
 function lockQrSession(deviceId) {
@@ -4242,10 +5609,11 @@ function lockQrSession(deviceId) {
     }, 500);
 }
 
-// ============================================================
-//  ⭐ XUẤT data.json (để upload lên GitHub)
-// ============================================================
 async function exportDeployPackage() {
+    if (!can('export')) {
+        alert('🔒 Bạn không có quyền xuất data.json!');
+        return;
+    }
     if (!folderConnected && !serverConnected) {
         if (!confirm('⚠️ Chưa kết nối thư mục dữ liệu!\n\nVẫn muốn xuất data.json với dữ liệu hiện tại trong bộ nhớ?')) return;
     }
@@ -4290,9 +5658,6 @@ async function exportDeployPackage() {
     }, 300);
 }
 
-// ============================================================
-//  ĐỔI MẬT KHẨU
-// ============================================================
 function openChangePassModal() {
     const lu = sessionStorage.getItem('loggedUser');
     if (!lu) return alert('Vui lòng đăng nhập trước!');
@@ -4385,10 +5750,6 @@ function changeQrPassword() {
         alert(`✅ Đổi mật khẩu QR thành công!\n\nCông nhân sẽ dùng:\n• Tên: jntc_at\n• Mật khẩu: ${newPass}`);
     }, 1200);
 }
-
-// ============================================================
-//  KHỞI TẠO
-// ============================================================
 document.addEventListener('DOMContentLoaded', async function() {
     const params = new URLSearchParams(location.search);
     const devParam = params.get('dev');
@@ -4441,9 +5802,12 @@ document.addEventListener('DOMContentLoaded', async function() {
         document.getElementById('company-header').style.display = 'flex';
         document.getElementById('main-nav').style.display = 'flex';
         document.getElementById('current-user').innerText = user.displayName;
+        currentUserRole = user.role || 'admin';
+        applyRoleUI();
         showScreen('dashboard-screen');
         await tryAutoReconnect();
         await tryAutoReconnectServer();
+        setTimeout(() => { updateBellBadge(); startBellAutoRefresh(); }, 600);
     } else {
         await tryAutoReconnect();
         await tryAutoReconnectServer();
@@ -4461,9 +5825,6 @@ window.addEventListener('popstate', function(e) {
     }
 });
 
-// ============================================================
-//  ⭐ NẠP DỮ LIỆU TỪ data.json KHI CHẠY TRÊN SERVER (Cloudflare)
-// ============================================================
 async function loadDataFromServer() {
     if (folderConnected) return false;
     
@@ -4477,6 +5838,7 @@ async function loadDataFromServer() {
         devices = Array.isArray(data.devices) ? data.devices : [];
         legalDocs = Array.isArray(data.legalDocs) ? data.legalDocs : [];
         priceConfig = data.priceConfig || {};
+        migrateCertificateFields();
         console.log(`✅ Nạp từ Cloudflare: ${devices.length} thiết bị, ${legalDocs.length} văn bản`);
         return true;
     } catch (e) {
@@ -4485,10 +5847,11 @@ async function loadDataFromServer() {
     }
 }
 
-// ============================================================
-//  IMPORT EXCEL
-// ============================================================
 function openImportModal() {
+    if (!can('import')) {
+        alert('🔒 Bạn không có quyền import Excel!');
+        return;
+    }
     document.getElementById('import-modal').classList.add('active');
     document.getElementById('import-result').style.display = 'none';
     document.getElementById('import-file').value = '';
@@ -4511,6 +5874,10 @@ function mapTypeNameToId(typeName) {
 }
 
 async function processImport() {
+    if (!can('import')) {
+        alert('🔒 Bạn không có quyền import Excel!');
+        return;
+    }
     const fileInput = document.getElementById('import-file');
     const resultEl = document.getElementById('import-result');
     if (!fileInput.files[0]) {
@@ -4556,12 +5923,15 @@ async function processImport() {
                     priceLevel: Math.max(1, Math.min(5, priceLevel)),
                     inspectionSummary: { lastDate: lastDate || '', nextDate: nextDate || '', stamp: '' },
                     inspections: lastDate ? [{ date: lastDate, unit: 'Import từ Excel', expiry: nextDate || '', stamp: '' }] : [],
-                    maintenances: [], deleted: false
+                    maintenances: [],
+                    certificates: [],
+                    deleted: false
                 });
                 success++;
             } catch (e) { errors.push(`Dòng ${rowNum}: ${e.message}`); error++; }
         });
         saveData(); renderDashboard(); renderOverview();
+        updateBellBadge();
         let html = `<b>✅ Kết quả Import:</b><br>• Thành công: <b style="color:#27ae60;">${success}</b><br>• Bỏ qua: <b style="color:#f39c12;">${skipped}</b><br>• Lỗi: <b style="color:#e74c3c;">${error}</b>`;
         if (errors.length > 0) {
             html += `<br><br><b>Chi tiết lỗi:</b><br>`;
@@ -4663,8 +6033,6 @@ function exportTemplate() {
     link.download = 'Mau_Import_ThietBi.csv';
     link.click();
 }
-
-function formatMoney(num) { return num.toLocaleString('vi-VN'); }
 </script>
 </body>
 </html>
