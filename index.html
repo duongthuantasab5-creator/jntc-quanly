@@ -78,17 +78,19 @@
         .overview-container { max-width: 1400px; margin: 0 auto; }
         .overview-title { text-align: center; color: #1a237e; font-size: 26px; font-weight: 900; margin-bottom: 10px; text-transform: uppercase; }
         .overview-subtitle { text-align: center; color: #7f8c8d; font-size: 14px; margin-bottom: 30px; font-style: italic; }
-        .kpi-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 30px; }
+        .kpi-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 15px; margin-bottom: 30px; }
         .kpi-card { background: white; border-radius: 12px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); border-left: 5px solid; }
         .kpi-card.total { border-color: #3498db; }
         .kpi-card.ok { border-color: #27ae60; }
         .kpi-card.warn { border-color: #f39c12; }
+        .kpi-card.pending { border-color: #95a5a6; }
         .kpi-card.danger { border-color: #e74c3c; }
         .kpi-label { font-size: 12px; color: #7f8c8d; text-transform: uppercase; font-weight: 700; margin-bottom: 8px; }
         .kpi-value { font-size: 32px; font-weight: 900; color: #2c3e50; }
         .kpi-card.total .kpi-value { color: #3498db; }
         .kpi-card.ok .kpi-value { color: #27ae60; }
         .kpi-card.warn .kpi-value { color: #f39c12; }
+        .kpi-card.pending .kpi-value { color: #7f8c8d; }
         .kpi-card.danger .kpi-value { color: #e74c3c; }
         .kpi-note { font-size: 12px; color: #95a5a6; margin-top: 5px; }
         .tracking-table { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.06); margin-bottom: 30px; }
@@ -105,6 +107,7 @@
         .badge-total { background: #e3f2fd; color: #1976d2; }
         .badge-ok { background: #e8f5e9; color: #2e7d32; }
         .badge-warn { background: #fff3e0; color: #ef6c00; }
+        .badge-pending { background: #f5f5f5; color: #757575; }
         .badge-danger { background: #ffebee; color: #c62828; }
         .badge-cost { background: #f3e5f5; color: #7b1fa2; font-weight: 700; }
         .price-section { background: white; border-radius: 12px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); margin-bottom: 30px; }
@@ -571,26 +574,28 @@
             <div class="kpi-row">
                 <div class="kpi-card total"><div class="kpi-label"><i class="fas fa-box"></i> Tổng thiết bị</div><div class="kpi-value" id="kpi-total">0</div><div class="kpi-note">Tất cả 8 loại</div></div>
                 <div class="kpi-card ok"><div class="kpi-label"><i class="fas fa-check-circle"></i> Đã kiểm định</div><div class="kpi-value" id="kpi-ok">0</div><div class="kpi-note">Còn hiệu lực</div></div>
-                <div class="kpi-card warn"><div class="kpi-label"><i class="fas fa-exclamation-triangle"></i> Sắp đến hạn</div><div class="kpi-value" id="kpi-warn">0</div><div class="kpi-note">Trong vòng 30 ngày</div></div>
-                <div class="kpi-card danger"><div class="kpi-label"><i class="fas fa-times-circle"></i> Chưa/Hết hạn</div><div class="kpi-value" id="kpi-danger">0</div><div class="kpi-note">Cần xử lý ngay</div></div>
+                <div class="kpi-card warn"><div class="kpi-label"><i class="fas fa-exclamation-triangle"></i> Sắp đến hạn</div><div class="kpi-value" id="kpi-warn">0</div><div class="kpi-note">Trong vòng 90 ngày</div></div>
+                <div class="kpi-card pending"><div class="kpi-label"><i class="fas fa-clock"></i> Chưa kiểm định</div><div class="kpi-value" id="kpi-pending">0</div><div class="kpi-note">Chưa nhập ngày KĐ</div></div>
+                <div class="kpi-card danger"><div class="kpi-label"><i class="fas fa-times-circle"></i> Hết hạn</div><div class="kpi-value" id="kpi-danger">0</div><div class="kpi-note">Cần xử lý ngay</div></div>
             </div>
 
             <div class="action-bar">
                 <button class="btn btn-import" onclick="openImportModal()"><i class="fas fa-file-import"></i> Import Excel</button>
                 <button class="btn btn-export" onclick="exportTemplate()"><i class="fas fa-file-download"></i> Tải file mẫu</button>
                 <button class="btn btn-save" onclick="saveAllPrices()"><i class="fas fa-save"></i> Lưu bảng giá</button>
-<button class="btn" style="background:#9b59b6; color:white;" onclick="exportDeployPackage()"><i class="fas fa-box-open"></i> Xuất data.json</button>
+                <button class="btn" style="background:#9b59b6; color:white;" onclick="exportDeployPackage()"><i class="fas fa-box-open"></i> Xuất data.json</button>
             </div>
 
             <div class="tracking-table">
                 <table>
-                    <thead><tr><th class="left" style="width:20%;">Loại thiết bị</th><th>Tổng số</th><th>Đã KĐ</th><th>Sắp hạn</th><th>Chưa/Hết hạn</th><th>Chi tiết theo mức</th><th>Chi phí dự kiến</th></tr></thead>
+                    <thead><tr><th class="left" style="width:18%;">Loại thiết bị</th><th>Tổng số</th><th>Đã KĐ</th><th>Sắp hạn (90 ngày)</th><th>Chưa KĐ</th><th>Hết hạn</th><th>Chi tiết theo mức</th><th>Chi phí dự kiến</th></tr></thead>
                     <tbody id="tracking-tbody"></tbody>
                     <tfoot><tr style="background:#f8f9fa; font-weight:700;">
                         <td class="left" style="font-size:15px; color:#2c3e50;"><i class="fas fa-calculator"></i> TỔNG CỘNG</td>
                         <td><span class="badge badge-total" id="foot-total">0</span></td>
                         <td><span class="badge badge-ok" id="foot-ok">0</span></td>
                         <td><span class="badge badge-warn" id="foot-warn">0</span></td>
+                        <td><span class="badge badge-pending" id="foot-pending">0</span></td>
                         <td><span class="badge badge-danger" id="foot-danger">0</span></td>
                         <td>-</td>
                         <td><span class="badge badge-cost" id="foot-cost">0 đ</span></td>
@@ -1680,7 +1685,7 @@ function getInspectionStatus(dev) {
     const today = new Date(); today.setHours(0,0,0,0);
     const diffDays = Math.ceil((nextDate - today) / (1000 * 60 * 60 * 24));
     if (diffDays < 0) return { code: 'danger', text: 'Hết hạn', days: diffDays };
-    if (diffDays <= 30) return { code: 'warn', text: `Sắp hạn (${diffDays} ngày)`, days: diffDays };
+    if (diffDays <= 90) return { code: 'warn', text: `Sắp hạn (${diffDays} ngày)`, days: diffDays };
     return { code: 'ok', text: 'Còn hạn', days: diffDays };
 }
 
@@ -2468,26 +2473,28 @@ function getUnitPrice(typeId, level) {
 }
 
 function renderOverview() {
-    let total = 0, ok = 0, warn = 0, danger = 0;
+    let total = 0, ok = 0, warn = 0, danger = 0, pending = 0;
     const typeStats = {};
     DEVICE_TYPES.forEach(t => {
         const list = devices.filter(d => d.typeId === t.id && !d.deleted);
-        const stats = { total: list.length, ok: 0, warn: 0, danger: 0, byLevel: {1:0,2:0,3:0,4:0,5:0}, cost: 0 };
+        const stats = { total: list.length, ok: 0, warn: 0, danger: 0, pending: 0, byLevel: {1:0,2:0,3:0,4:0,5:0}, cost: 0 };
         list.forEach(dev => {
             const st = getInspectionStatus(dev);
             if (st.code === 'ok') stats.ok++;
             else if (st.code === 'warn') stats.warn++;
             else if (st.code === 'danger') stats.danger++;
+            else if (st.code === 'pending') stats.pending++;
             const level = getPriceLevel(dev);
             stats.byLevel[level] = (stats.byLevel[level] || 0) + 1;
             if (st.code === 'warn' || st.code === 'danger' || st.code === 'pending') stats.cost += getUnitPrice(t.id, level);
         });
         typeStats[t.id] = stats;
-        total += stats.total; ok += stats.ok; warn += stats.warn; danger += stats.danger;
+        total += stats.total; ok += stats.ok; warn += stats.warn; danger += stats.danger; pending += stats.pending;
     });
     document.getElementById('kpi-total').innerText = total;
     document.getElementById('kpi-ok').innerText = ok;
     document.getElementById('kpi-warn').innerText = warn;
+    document.getElementById('kpi-pending').innerText = pending;
     document.getElementById('kpi-danger').innerText = danger;
     const tbody = document.getElementById('tracking-tbody');
     tbody.innerHTML = '';
@@ -2508,6 +2515,7 @@ function renderOverview() {
             <td><span class="badge badge-total">${s.total}</span></td>
             <td><span class="badge badge-ok">${s.ok}</span></td>
             <td><span class="badge badge-warn">${s.warn}</span></td>
+            <td><span class="badge badge-pending">${s.pending}</span></td>
             <td><span class="badge badge-danger">${s.danger}</span></td>
             <td style="text-align:left;">${levelDetail || '<span style="color:#999; font-size:12px;">Chưa có dữ liệu</span>'}</td>
             <td><span class="badge badge-cost">${s.cost > 0 ? formatMoney(s.cost) + ' đ' : '0 đ'}</span></td>`;
@@ -2516,6 +2524,7 @@ function renderOverview() {
     document.getElementById('foot-total').innerText = total;
     document.getElementById('foot-ok').innerText = ok;
     document.getElementById('foot-warn').innerText = warn;
+    document.getElementById('foot-pending').innerText = pending;
     document.getElementById('foot-danger').innerText = danger;
     document.getElementById('foot-cost').innerText = formatMoney(totalCost) + ' đ';
     document.getElementById('total-cost-display').innerText = formatMoney(totalCost) + ' đ';
