@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-29T21:15:19.331Z",
+  "updatedAt": "2026-09-30T19:54:43.031Z",
   "devices": [
     {
       "id": "BCAL_86L",
@@ -49,151 +49,63 @@
       "deleted": false
     },
     {
-      "id": "HTL_91000_01",
-      "typeId": "lanh",
-      "name": "Hệ thống lạnh",
-      "location": "Phòng bơm hút chân không xưởng 1",
+      "id": "PL_0912",
+      "typeId": "palang",
+      "name": "Pa lăng điện",
+      "location": "Phòng dầu CNC xưởng 1",
       "priceLevel": 1,
-      "archiveNo": 58,
-      "note": "",
-      "identity": {
-        "serial": "SWRS009812630",
-        "year": "2017",
-        "manufacturer": "Hàn Quốc",
-        "size": "PA_500A",
-        "weight": ""
-      },
-      "specs": {
-        "dien_ap": "",
-        "nang_suat": "",
-        "nhiet_do": "",
-        "cong_suat": "91000 Kcal",
-        "moi_chat_lanh": "R22",
-        "cao_ap": "",
-        "ha_ap": "",
-        "trung_ap": "",
-        "nhiet_do_kho": "",
-        "so_dan": ""
-      },
-      "photos": [
-        "HTL_91000_01_1.jpg",
-        null
-      ],
-      "inspectionSummary": {
-        "lastDate": "2026-06-10",
-        "nextDate": "2029-06-10",
-        "stamp": "150028"
-      },
-      "inspections": [
-        {
-          "date": "2026-06-10",
-          "unit": "Công ty kiểm định an toàn thiết bị CN 1",
-          "expiry": "2029-06-10",
-          "stamp": "150028"
-        }
-      ],
-      "maintenances": [],
-      "deleted": false
-    },
-    {
-      "id": "TM_01",
-      "typeId": "thangmay",
-      "name": "Thang máy",
-      "location": "Xưởng 3",
-      "priceLevel": 1,
-      "archiveNo": 49,
-      "note": "",
-      "identity": {
-        "serial": "VAT-00001",
-        "year": "2021",
-        "manufacturer": "Hàn Quốc",
-        "size": "TM00987",
-        "weight": ""
-      },
-      "specs": {
-        "dien_ap": "",
-        "nang_suat": "",
-        "nhiet_do": "",
-        "tai_trong_thang": "2000 KG",
-        "so_tang": "",
-        "so_diem_dung": "3",
-        "van_toc_thang": "",
-        "loai_dan_dong": "",
-        "kich_thuoc_cabin": "",
-        "so_nguoi": ""
-      },
-      "photos": [
-        null,
-        null
-      ],
-      "inspectionSummary": {
-        "lastDate": "2025-01-29",
-        "nextDate": "2028-01-29",
-        "stamp": "009801"
-      },
-      "inspections": [
-        {
-          "date": "2025-01-29",
-          "unit": "Công ty ABC",
-          "expiry": "2028-01-29",
-          "stamp": "009801"
-        }
-      ],
-      "maintenances": [],
-      "deleted": false
-    },
-    {
-      "id": "HTL_98000_01",
-      "typeId": "lanh",
-      "name": "Hệ thống lạnh",
-      "location": "Phòng hút chân không số 2 xưởng 1",
-      "priceLevel": 1,
-      "archiveNo": 252,
-      "note": "",
-      "identity": {
-        "serial": "HTL 098788",
-        "year": "2018",
-        "manufacturer": "Hàn Quốc",
-        "size": "",
-        "weight": ""
-      },
-      "specs": {
-        "dien_ap": "",
-        "nang_suat": "",
-        "nhiet_do": "",
-        "cong_suat": "",
-        "moi_chat_lanh": "",
-        "cao_ap": "",
-        "ha_ap": "",
-        "trung_ap": "",
-        "nhiet_do_kho": "",
-        "so_dan": ""
-      },
-      "photos": [
-        null,
-        null
-      ],
-      "inspectionSummary": {
-        "lastDate": "",
-        "nextDate": "",
-        "stamp": ""
-      },
-      "inspections": [],
-      "maintenances": [],
-      "deleted": false
-    },
-    {
-      "id": "BCAL_89_02",
-      "typeId": "binh",
-      "name": "Bình chịu áp lực",
-      "location": "Phòng máy nén khí phụ trợ xưởng 3",
-      "priceLevel": 1,
-      "archiveNo": 254,
+      "archiveNo": 2524,
       "note": "",
       "identity": {
         "serial": "",
-        "year": "",
-        "manufacturer": "",
+        "year": "2022",
+        "manufacturer": "Công ty Minh Anh",
+        "size": "PL 09899876",
+        "weight": "2 Ton"
+      },
+      "specs": {
+        "dien_ap": "",
+        "nang_suat": "",
+        "nhiet_do": "",
+        "tai_trong_nang": "",
+        "chieu_cao_nang": "",
+        "khau_do": "",
+        "van_toc_nang": "",
+        "van_toc_di_chuyen_cau": "",
+        "che_do_lam_viec": ""
+      },
+      "photos": [
+        "PL_0912_1.jpg",
+        null
+      ],
+      "inspectionSummary": {
+        "lastDate": "2026-09-23",
+        "nextDate": "2026-09-30",
+        "stamp": "002528"
+      },
+      "inspections": [
+        {
+          "date": "2026-09-23",
+          "unit": "Công ty cổ phần ANV",
+          "expiry": "2026-09-30",
+          "stamp": "002528"
+        }
+      ],
+      "maintenances": [],
+      "deleted": false
+    },
+    {
+      "id": "fgsgsfb",
+      "typeId": "binh",
+      "name": "rgfbfgsf",
+      "location": "hừé",
+      "priceLevel": 1,
+      "archiveNo": 255,
+      "note": "",
+      "identity": {
+        "serial": "ghfdbfh",
+        "year": "dfhdfhfh",
+        "manufacturer": "gưgfh",
         "size": "",
         "weight": ""
       },
@@ -209,20 +121,154 @@
         "vat_lieu": ""
       },
       "photos": [
+        "fgsgsfb_1.jpg",
+        null
+      ],
+      "inspectionSummary": {
+        "lastDate": "",
+        "nextDate": "",
+        "stamp": ""
+      },
+      "inspections": [],
+      "maintenances": [],
+      "deleted": false
+    },
+    {
+      "id": "HTL_98000_01",
+      "typeId": "lanh",
+      "name": "Hệ thống lạnh",
+      "location": "Xưởng 2",
+      "priceLevel": 1,
+      "archiveNo": 225,
+      "note": "",
+      "identity": {
+        "serial": "VAT-00001",
+        "year": "2016",
+        "manufacturer": "Hàn Quốc",
+        "size": "16-4672",
+        "weight": ""
+      },
+      "specs": {
+        "dien_ap": "",
+        "nang_suat": "",
+        "nhiet_do": "",
+        "cong_suat": "98000 Kcal",
+        "moi_chat_lanh": "R22",
+        "cao_ap": "",
+        "ha_ap": "",
+        "trung_ap": "",
+        "nhiet_do_kho": "",
+        "so_dan": ""
+      },
+      "photos": [
+        "HTL_98000_01_1.jpg",
+        null
+      ],
+      "inspectionSummary": {
+        "lastDate": "2026-01-28",
+        "nextDate": "2026-10-31",
+        "stamp": "001258"
+      },
+      "inspections": [
+        {
+          "date": "2026-01-28",
+          "unit": "Công ty ABC",
+          "expiry": "2026-10-31",
+          "stamp": "001258"
+        }
+      ],
+      "maintenances": [],
+      "deleted": false
+    },
+    {
+      "id": "TM_01",
+      "typeId": "thangmay",
+      "name": "Thang máy",
+      "location": "Xưởng 3",
+      "priceLevel": 1,
+      "archiveNo": 94,
+      "note": "",
+      "identity": {
+        "serial": "0983375",
+        "year": "2021",
+        "manufacturer": "Hàn Quốc",
+        "size": "",
+        "weight": ""
+      },
+      "specs": {
+        "dien_ap": "",
+        "nang_suat": "",
+        "nhiet_do": "",
+        "tai_trong_thang": "4000 Kg",
+        "so_tang": "",
+        "so_diem_dung": "",
+        "van_toc_thang": "",
+        "loai_dan_dong": "",
+        "kich_thuoc_cabin": "",
+        "so_nguoi": ""
+      },
+      "photos": [
+        "TM_01_1.jpg",
+        null
+      ],
+      "inspectionSummary": {
+        "lastDate": "2024-06-06",
+        "nextDate": "2026-10-15",
+        "stamp": "0052147"
+      },
+      "inspections": [
+        {
+          "date": "2024-06-06",
+          "unit": "Công ty HNC",
+          "expiry": "2026-10-15",
+          "stamp": "0052147"
+        }
+      ],
+      "maintenances": [],
+      "deleted": false
+    },
+    {
+      "id": "XN_15T",
+      "typeId": "xenang",
+      "name": "Xe nâng",
+      "location": "Di động",
+      "priceLevel": 1,
+      "archiveNo": 1,
+      "note": "",
+      "identity": {
+        "serial": "XCĐF",
+        "year": "2022",
+        "manufacturer": "Việt nam",
+        "size": "",
+        "weight": ""
+      },
+      "specs": {
+        "dien_ap": "",
+        "nang_suat": "",
+        "nhiet_do": "",
+        "tai_trong_nang": "1500 Kg",
+        "chieu_cao_nang": "",
+        "van_toc_nang": "",
+        "van_toc_di_chuyen": "",
+        "chieu_dai_cang": "",
+        "loai_dong_co": "",
+        "so_banh": ""
+      },
+      "photos": [
         null,
         null
       ],
       "inspectionSummary": {
-        "lastDate": "2026-09-24",
-        "nextDate": "2026-09-26",
-        "stamp": "002585"
+        "lastDate": "2026-10-15",
+        "nextDate": "2026-10-30",
+        "stamp": "005210"
       },
       "inspections": [
         {
-          "date": "2026-09-24",
-          "unit": "Công ty ABC",
-          "expiry": "2026-09-26",
-          "stamp": "002585"
+          "date": "2026-10-15",
+          "unit": "Công ty ACB",
+          "expiry": "2026-10-30",
+          "stamp": "005210"
         }
       ],
       "maintenances": [],
