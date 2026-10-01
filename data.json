@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-30T19:54:43.031Z",
+  "updatedAt": "2026-10-01T23:53:10.168Z",
   "devices": [
     {
       "id": "BCAL_86L",
@@ -46,7 +46,8 @@
         }
       ],
       "maintenances": [],
-      "deleted": false
+      "deleted": false,
+      "certificates": []
     },
     {
       "id": "PL_0912",
@@ -92,7 +93,10 @@
         }
       ],
       "maintenances": [],
-      "deleted": false
+      "deleted": false,
+      "certificates": [],
+      "deletedDate": "",
+      "deletedReason": ""
     },
     {
       "id": "fgsgsfb",
@@ -131,54 +135,74 @@
       },
       "inspections": [],
       "maintenances": [],
-      "deleted": false
+      "deleted": false,
+      "certificates": []
     },
     {
-      "id": "HTL_98000_01",
+      "id": "HTL_90726_02",
       "typeId": "lanh",
       "name": "Hệ thống lạnh",
-      "location": "Xưởng 2",
+      "location": "Vòng ngoài",
       "priceLevel": 1,
-      "archiveNo": 225,
+      "archiveNo": 21,
       "note": "",
       "identity": {
-        "serial": "VAT-00001",
+        "serial": "FAC 02 (Số quản lý)",
         "year": "2016",
-        "manufacturer": "Hàn Quốc",
-        "size": "16-4672",
+        "manufacturer": "LG-Hàn Quốc",
+        "size": "LK - C 3608 H02",
         "weight": ""
       },
       "specs": {
         "dien_ap": "",
         "nang_suat": "",
         "nhiet_do": "",
-        "cong_suat": "98000 Kcal",
+        "cong_suat": "90726 Kcal/h",
         "moi_chat_lanh": "R22",
-        "cao_ap": "",
-        "ha_ap": "",
+        "cao_ap": "30 bar",
+        "ha_ap": "17 bar",
         "trung_ap": "",
         "nhiet_do_kho": "",
         "so_dan": ""
       },
       "photos": [
-        "HTL_98000_01_1.jpg",
+        null,
         null
       ],
       "inspectionSummary": {
-        "lastDate": "2026-01-28",
-        "nextDate": "2026-10-31",
-        "stamp": "001258"
+        "lastDate": "2025-10-10",
+        "nextDate": "2028-10-10",
+        "stamp": "007441"
       },
       "inspections": [
         {
-          "date": "2026-01-28",
-          "unit": "Công ty ABC",
-          "expiry": "2026-10-31",
-          "stamp": "001258"
+          "date": "2025-10-10",
+          "unit": "Công ty cổ phần kiểm định một",
+          "expiry": "2028-10-10",
+          "stamp": "007441"
+        },
+        {
+          "date": "2022-10-10",
+          "unit": "Công ty cổ phần kiểm định một",
+          "expiry": "2025-10-10",
+          "stamp": "005803"
+        },
+        {
+          "date": "2019-10-10",
+          "unit": "Công ty cổ phần kiểm định một",
+          "expiry": "2022-10-10",
+          "stamp": "004709"
+        },
+        {
+          "date": "2016-11-17",
+          "unit": "Công ty kiểm định ATTB công nghiệp",
+          "expiry": "2019-11-17",
+          "stamp": "005340"
         }
       ],
       "maintenances": [],
-      "deleted": false
+      "deleted": false,
+      "certificates": []
     },
     {
       "id": "TM_01",
@@ -213,7 +237,7 @@
       ],
       "inspectionSummary": {
         "lastDate": "2024-06-06",
-        "nextDate": "2026-10-15",
+        "nextDate": "2028-06-22",
         "stamp": "0052147"
       },
       "inspections": [
@@ -225,7 +249,8 @@
         }
       ],
       "maintenances": [],
-      "deleted": false
+      "deleted": false,
+      "certificates": []
     },
     {
       "id": "XN_15T",
@@ -272,9 +297,81 @@
         }
       ],
       "maintenances": [],
+      "deleted": false,
+      "certificates": []
+    },
+    {
+      "id": "HTL_90726_01",
+      "typeId": "lanh",
+      "name": "Hệ thống lạnh",
+      "location": "Ngoài trời",
+      "priceLevel": 1,
+      "archiveNo": 20,
+      "note": "",
+      "identity": {
+        "serial": " FAC01",
+        "year": "2016",
+        "manufacturer": "LG-Hàn Quốc",
+        "size": "LK - C 3608 H02",
+        "weight": ""
+      },
+      "specs": {
+        "dien_ap": "",
+        "nang_suat": "",
+        "nhiet_do": "",
+        "cong_suat": "90726 Kcal/h",
+        "moi_chat_lanh": "R22",
+        "cao_ap": "30 bar",
+        "ha_ap": "17 bar",
+        "trung_ap": "",
+        "nhiet_do_kho": "",
+        "so_dan": ""
+      },
+      "photos": [
+        null,
+        null
+      ],
+      "inspectionSummary": {
+        "lastDate": "2025-10-10",
+        "nextDate": "2028-10-10",
+        "stamp": "007440"
+      },
+      "inspections": [
+        {
+          "date": "2025-10-10",
+          "unit": "Công ty cổ phần kiểm định một",
+          "expiry": "2028-10-10",
+          "stamp": "007440"
+        },
+        {
+          "date": "2022-10-10",
+          "unit": "Công ty cổ phần kiểm định một",
+          "expiry": "2025-10-10",
+          "stamp": "005802"
+        },
+        {
+          "date": "2019-10-10",
+          "unit": "Công ty cổ phần kiểm định một",
+          "expiry": "2022-10-10",
+          "stamp": "004708"
+        },
+        {
+          "date": "2016-11-17",
+          "unit": "Công ty kiểm định ATTB công nghiệp",
+          "expiry": "2019-11-17",
+          "stamp": "005303"
+        }
+      ],
+      "maintenances": [],
+      "certificates": [],
       "deleted": false
     }
   ],
   "legalDocs": [],
-  "priceConfig": {}
+  "priceConfig": {
+    "binh": {
+      "1": 500000,
+      "2": 800000
+    }
+  }
 }
