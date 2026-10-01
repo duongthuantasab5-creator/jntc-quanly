@@ -625,6 +625,66 @@
         body.jntc-role-qr .btn-import { display: none !important; }
         .jntc-role-indicator { padding: 4px 10px; border-radius: 15px; font-size: 11px; font-weight: 800; text-transform: uppercase; }
 
+        /* ============================================================
+           CSS MỚI: AUTOCOMPLETE SUGGESTIONS
+           ============================================================ */
+        .jntc-ac-wrapper { position: relative; width: 100%; }
+        .jntc-ac-dropdown {
+            position: absolute;
+            top: calc(100% + 2px);
+            left: 0;
+            right: 0;
+            background: white;
+            border: 2px solid #f39c12;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+            z-index: 5000;
+            max-height: 240px;
+            overflow-y: auto;
+            display: none;
+        }
+        .jntc-ac-dropdown.jntc-ac-open { display: block; }
+        .jntc-ac-item {
+            padding: 9px 14px;
+            cursor: pointer;
+            font-size: 13px;
+            color: #2c3e50;
+            border-bottom: 1px solid #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            transition: background 0.15s;
+        }
+        .jntc-ac-item:last-child { border-bottom: none; }
+        .jntc-ac-item:hover,
+        .jntc-ac-item.jntc-ac-active {
+            background: #fff8e1;
+            color: #e67e22;
+        }
+        .jntc-ac-item .jntc-ac-text {
+            flex: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .jntc-ac-item .jntc-ac-count {
+            background: #f39c12;
+            color: white;
+            font-size: 10.5px;
+            font-weight: 800;
+            padding: 2px 7px;
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
+        .jntc-ac-item .jntc-ac-highlight {
+            background: #fff700;
+            color: #000;
+            font-weight: 700;
+            padding: 0 1px;
+            border-radius: 2px;
+        }
+
         @media (max-width: 1200px) { .kpi-row { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 1100px) { .device-grid { grid-template-columns: repeat(3, 1fr); } }
         @media (max-width: 900px) {
@@ -660,8 +720,7 @@
             body.print-qr-mode #qr-print-area { display: block !important; position: absolute; top: 0; left: 0; width: 100%; }
         }
     </style>
-</head>
-<body>
+</head><body>
     <div id="login-screen">
         <div class="login-box">
             <img src="logo.png" alt="JNTC VINA Logo" class="logo-jntc-real"
@@ -1392,7 +1451,7 @@
             </div>
 
             <div class="form-group">
-                <label>Ngày hủy <span class="required">*</span></label>
+                <label>Ngày hủy <span class="required">*</span> <span style="font-size:11px; color:#7f8c8d; font-weight:400;">(dd/mm/yyyy)</span></label>
                 <input type="date" id="delete-date">
                 <div class="error-msg" id="delete-date-error">⚠️ Vui lòng chọn ngày hủy!</div>
             </div>
@@ -1453,11 +1512,11 @@
 
             <div class="jntc-form-row">
                 <div class="form-group">
-                    <label>Ngày cấp</label>
+                    <label>Ngày cấp <span style="font-size:11px; color:#7f8c8d; font-weight:400;">(dd/mm/yyyy)</span></label>
                     <input type="date" id="jntc-cert-issued">
                 </div>
                 <div class="form-group">
-                    <label>Ngày hết hạn <span class="required">*</span></label>
+                    <label>Ngày hết hạn <span class="required">*</span> <span style="font-size:11px; color:#7f8c8d; font-weight:400;">(dd/mm/yyyy)</span></label>
                     <input type="date" id="jntc-cert-expiry">
                 </div>
             </div>
@@ -1569,7 +1628,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>Ngày ban hành <span class="required">*</span></label>
+                    <label>Ngày ban hành <span class="required">*</span> <span style="font-size:11px; color:#7f8c8d; font-weight:400;">(dd/mm/yyyy)</span></label>
                     <input type="date" id="legal-ngay">
                 </div>
             </div>
@@ -1684,8 +1743,7 @@
         <div class="qr-view-container" id="qr-view-content"></div>
     </div>
 
-    <div id="qr-print-area"></div>
-<script>
+    <div id="qr-print-area"></div><script>
 // ============================================================
 //  CẤU HÌNH
 // ============================================================
@@ -2403,6 +2461,7 @@ function applyData(data) {
     legalDocs = Array.isArray(data.legalDocs) ? data.legalDocs : [];
     priceConfig = data.priceConfig || {};
     migrateCertificateFields();
+    invalidateAcCache();
 }
 
 function migrateCertificateFields() {
@@ -3460,8 +3519,10 @@ async function viewDeviceDetail(id) {
     renderSpecGrid(dev);
     await renderPhotos(dev);
     renderCertList();
-    document.getElementById('insp-last-date').value = dev.inspectionSummary?.lastDate || '';
-    document.getElementById('insp-next-date').value = dev.inspectionSummary?.nextDate || '';
+    attachAllDateInputs();
+    attachAllAutocompletes();
+    setDateISO('insp-last-date', dev.inspectionSummary?.lastDate || '');
+    setDateISO('insp-next-date', dev.inspectionSummary?.nextDate || '');
     document.getElementById('insp-stamp').value = dev.inspectionSummary?.stamp || '';
     renderInspections(dev);
     await renderMaintenances(dev);
@@ -3504,6 +3565,7 @@ function renderSpecGrid(dev) {
             <div class="spec-value"><input type="text" data-spec-key="${f.key}" placeholder="${f.placeholder}" value="${escapeHtml(dev.specs?.[f.key] || '')}"></div>`;
         grid.appendChild(item);
     });
+    attachAllAutocompletes();
 }
 
 function renderCertList() {
@@ -3614,12 +3676,14 @@ function openCertModal(certId) {
     document.getElementById('jntc-cert-type').value = 'hopchuan';
     document.getElementById('jntc-cert-issuer').value = '';
     document.getElementById('jntc-cert-number').value = '';
-    document.getElementById('jntc-cert-issued').value = '';
-    document.getElementById('jntc-cert-expiry').value = '';
     document.getElementById('jntc-cert-note').value = '';
     fileInput.value = '';
     previewBox.style.display = 'none';
     oldFileBox.style.display = 'none';
+    
+    attachAllDateInputs();
+    setDateISO('jntc-cert-issued', '');
+    setDateISO('jntc-cert-expiry', '');
     
     if (certId) {
         const cert = (dev.certificates || []).find(c => c.id === certId);
@@ -3632,9 +3696,10 @@ function openCertModal(certId) {
         document.getElementById('jntc-cert-type').value = cert.type || 'hopchuan';
         document.getElementById('jntc-cert-issuer').value = cert.issuer || '';
         document.getElementById('jntc-cert-number').value = cert.number || '';
-        document.getElementById('jntc-cert-issued').value = cert.issuedDate || '';
-        document.getElementById('jntc-cert-expiry').value = cert.expiryDate || '';
         document.getElementById('jntc-cert-note').value = cert.note || '';
+        
+        setDateISO('jntc-cert-issued', cert.issuedDate || '');
+        setDateISO('jntc-cert-expiry', cert.expiryDate || '');
         
         if (cert.filename) {
             jntcCertOldFile = cert.filename;
@@ -3736,12 +3801,12 @@ async function saveCert() {
     const type = document.getElementById('jntc-cert-type').value;
     const issuer = document.getElementById('jntc-cert-issuer').value.trim();
     const number = document.getElementById('jntc-cert-number').value.trim();
-    const issuedDate = document.getElementById('jntc-cert-issued').value;
-    const expiryDate = document.getElementById('jntc-cert-expiry').value;
+    const issuedDate = getDateISO('jntc-cert-issued');
+    const expiryDate = getDateISO('jntc-cert-expiry');
     const note = document.getElementById('jntc-cert-note').value.trim();
     
     if (!name) return alert('⚠️ Vui lòng nhập tên giấy chứng nhận!');
-    if (!expiryDate) return alert('⚠️ Vui lòng nhập ngày hết hạn!');
+    if (!expiryDate) return alert('⚠️ Vui lòng nhập ngày hết hạn (dd/mm/yyyy)!');
     if (!jntcCertEditingId && !jntcCertFileBuffer) {
         return alert('⚠️ Vui lòng chọn file đính kèm!');
     }
@@ -4313,12 +4378,15 @@ function addInspection() {
     }
     const dev = devices.find(d => d.id === currentDeviceId);
     if (!dev) return;
-    const date = document.getElementById('insp-date').value;
-    const unit = document.getElementById('insp-unit').value;
-    const expiry = document.getElementById('insp-expiry').value;
+    
+    const date = getDateISO('insp-date');
+    const unit = document.getElementById('insp-unit').value.trim();
+    const expiry = getDateISO('insp-expiry');
     const stamp = document.getElementById('insp-stamp-new').value;
-    if (!date || !unit) return alert('⚠️ Nhập ngày và đơn vị kiểm định!');
-    if (!expiry) return alert('⚠️ Nhập hạn kiểm định!');
+    
+    if (!date || !unit) return alert('⚠️ Nhập ngày (dd/mm/yyyy) và đơn vị kiểm định!');
+    if (!expiry) return alert('⚠️ Nhập hạn kiểm định (dd/mm/yyyy)!');
+    
     if (!dev.inspections) dev.inspections = [];
     dev.inspections.unshift({ date, unit, expiry, stamp });
     if (!dev.inspectionSummary) dev.inspectionSummary = {};
@@ -4326,15 +4394,19 @@ function addInspection() {
     dev.inspectionSummary.nextDate = expiry;
     dev.inspectionSummary.stamp = stamp;
     saveData();
-    document.getElementById('insp-last-date').value = dev.inspectionSummary.lastDate;
-    document.getElementById('insp-next-date').value = dev.inspectionSummary.nextDate;
+    invalidateAcCache();
+    
+    setDateISO('insp-last-date', dev.inspectionSummary.lastDate);
+    setDateISO('insp-next-date', dev.inspectionSummary.nextDate);
     document.getElementById('insp-stamp').value = dev.inspectionSummary.stamp;
     renderInspections(dev);
     updateBellBadge();
-    document.getElementById('insp-date').value = '';
+    
+    setDateISO('insp-date', '');
     document.getElementById('insp-unit').value = '';
-    document.getElementById('insp-expiry').value = '';
+    setDateISO('insp-expiry', '');
     document.getElementById('insp-stamp-new').value = '';
+    
     alert('✅ Đã thêm kỳ kiểm định!');
 }
 
@@ -4355,8 +4427,10 @@ function deleteInspection(idx) {
         dev.inspectionSummary = { lastDate: '', nextDate: '', stamp: '' };
     }
     saveData();
-    document.getElementById('insp-last-date').value = dev.inspectionSummary.lastDate;
-    document.getElementById('insp-next-date').value = dev.inspectionSummary.nextDate;
+    invalidateAcCache();
+    
+    setDateISO('insp-last-date', dev.inspectionSummary.lastDate);
+    setDateISO('insp-next-date', dev.inspectionSummary.nextDate);
     document.getElementById('insp-stamp').value = dev.inspectionSummary.stamp;
     renderInspections(dev);
     updateBellBadge();
@@ -4417,11 +4491,13 @@ async function addMaintenance(evt) {
     }
     const dev = devices.find(d => d.id === currentDeviceId);
     if (!dev) return;
-    const date = document.getElementById('maint-date').value;
+    
+    const date = getDateISO('maint-date');
     const person = document.getElementById('maint-person').value;
     const content = document.getElementById('maint-content').value;
     const fileInput = document.getElementById('maint-image');
-    if (!date || !content) return alert('⚠️ Nhập ngày và nội dung bảo dưỡng!');
+    
+    if (!date || !content) return alert('⚠️ Nhập ngày (dd/mm/yyyy) và nội dung bảo dưỡng!');
     
     if (!folderConnected && !serverConnected) {
         alert('⚠️ Chưa kết nối thư mục dữ liệu!');
@@ -4471,7 +4547,7 @@ async function addMaintenance(evt) {
     saveData();
     await renderMaintenances(dev);
     
-    document.getElementById('maint-date').value = '';
+    setDateISO('maint-date', '');
     document.getElementById('maint-person').value = '';
     document.getElementById('maint-content').value = '';
     document.getElementById('maint-image').value = '';
@@ -4512,6 +4588,7 @@ function saveAllChanges() {
     const dev = devices.find(d => d.id === currentDeviceId);
     if (!dev) return;
     if (dev.deleted) return alert('⚠️ Thiết bị đã hủy — không thể cập nhật!');
+    
     const newArchive = document.getElementById('id-archive').value.trim();
     if (newArchive) {
         const dup = devices.find(d => d.id !== dev.id && String(d.archiveNo) === String(newArchive));
@@ -4519,6 +4596,7 @@ function saveAllChanges() {
             if (!confirm(`⚠️ Mã hồ sơ "${newArchive}" đã được dùng cho thiết bị "${dup.id}" (${dup.name}).\nBạn vẫn muốn lưu?`)) return;
         }
     }
+    
     dev.id = document.getElementById('id-code').value.trim() || dev.id;
     dev.archiveNo = newArchive ? parseInt(newArchive) : null;
     dev.name = document.getElementById('id-name').value.trim() || dev.name;
@@ -4537,11 +4615,13 @@ function saveAllChanges() {
         dev.specs[inp.dataset.specKey] = inp.value;
     });
     dev.inspectionSummary = {
-        lastDate: document.getElementById('insp-last-date').value,
-        nextDate: document.getElementById('insp-next-date').value,
+        lastDate: getDateISO('insp-last-date'),
+        nextDate: getDateISO('insp-next-date'),
         stamp: document.getElementById('insp-stamp').value
     };
+    
     saveData();
+    invalidateAcCache();
     renderDashboard();
     updateBellBadge();
     alert('✅ Đã lưu toàn bộ thông tin thiết bị!');
@@ -4579,7 +4659,9 @@ function saveNewDevice() {
         certificates: [],
         deleted: false
     });
-    saveData(); closeModal();
+    saveData();
+    invalidateAcCache();
+    closeModal();
     const t = DEVICE_TYPES.find(x => x.id === currentTypeId);
     showDeviceList(currentTypeId, t.name);
     renderDashboard();
@@ -4913,9 +4995,12 @@ function openDeleteModal(deviceId) {
     document.getElementById('delete-dev-name').innerText = dev.name;
     document.getElementById('delete-dev-type').innerText = DEVICE_TYPES.find(t => t.id === dev.typeId)?.name || '';
     document.getElementById('delete-reason').value = '';
-    document.getElementById('delete-date').value = new Date().toISOString().split('T')[0];
     document.getElementById('delete-reason-error').style.display = 'none';
     document.getElementById('delete-date-error').style.display = 'none';
+    
+    attachAllDateInputs();
+    setDateISO('delete-date', new Date().toISOString().split('T')[0]);
+    
     document.getElementById('delete-modal').classList.add('active');
 }
 
@@ -4927,7 +5012,7 @@ function closeDeleteModal() {
 function confirmDeleteDevice() {
     if (!deletingDeviceId) return;
     const reason = document.getElementById('delete-reason').value.trim();
-    const date = document.getElementById('delete-date').value;
+    const date = getDateISO('delete-date');
     let hasError = false;
     if (!reason) { document.getElementById('delete-reason-error').style.display = 'block'; hasError = true; }
     else { document.getElementById('delete-reason-error').style.display = 'none'; }
@@ -4940,6 +5025,7 @@ function confirmDeleteDevice() {
     dev.deletedDate = date;
     dev.deletedReason = reason;
     saveData();
+    invalidateAcCache();
     closeDeleteModal();
     const t = DEVICE_TYPES.find(x => x.id === dev.typeId);
     showDeviceList(dev.typeId, t.name);
@@ -4974,6 +5060,7 @@ function confirmRestoreDevice() {
     dev.deletedDate = '';
     dev.deletedReason = '';
     saveData();
+    invalidateAcCache();
     closeRestoreModal();
     alert(`✅ Đã khôi phục thiết bị "${dev.id}" về danh sách chính.`);
     renderDashboard();
@@ -5130,15 +5217,17 @@ function openLegalModal(index) {
     editingLegalIndex = (typeof index === 'number') ? index : -1;
     const titleEl = document.getElementById('legal-modal-title');
     
+    attachAllDateInputs();
+    
     if (editingLegalIndex >= 0) {
         titleEl.innerText = 'SỬA VĂN BẢN PHÁP LUẬT';
         const doc = legalDocs[editingLegalIndex];
         document.getElementById('legal-sohieu').value = doc.soHieu || '';
         document.getElementById('legal-ten').value = doc.ten || '';
         document.getElementById('legal-loai').value = doc.loai || 'Nghị định';
-        document.getElementById('legal-ngay').value = doc.ngayBanHanh || '';
         document.getElementById('legal-coquan').value = doc.coQuan || '';
         document.getElementById('legal-tomtat').value = doc.tomTat || '';
+        setDateISO('legal-ngay', doc.ngayBanHanh || '');
         document.getElementById('legal-file-hint').innerHTML = doc.fileName 
             ? `📎 File hiện tại: <b>${escapeHtml(doc.fileName)}</b> (chọn file mới để thay thế)`
             : 'Chưa có file';
@@ -5147,9 +5236,9 @@ function openLegalModal(index) {
         document.getElementById('legal-sohieu').value = '';
         document.getElementById('legal-ten').value = '';
         document.getElementById('legal-loai').value = 'Nghị định';
-        document.getElementById('legal-ngay').value = new Date().toISOString().split('T')[0];
         document.getElementById('legal-coquan').value = '';
         document.getElementById('legal-tomtat').value = '';
+        setDateISO('legal-ngay', new Date().toISOString().split('T')[0]);
         document.getElementById('legal-file-hint').innerHTML = 'Chưa chọn file';
     }
     document.getElementById('legal-file').value = '';
@@ -5186,13 +5275,13 @@ async function saveLegalDoc() {
     const soHieu = document.getElementById('legal-sohieu').value.trim();
     const ten = document.getElementById('legal-ten').value.trim();
     const loai = document.getElementById('legal-loai').value;
-    const ngayBanHanh = document.getElementById('legal-ngay').value;
+    const ngayBanHanh = getDateISO('legal-ngay');
     const coQuan = document.getElementById('legal-coquan').value.trim();
     const tomTat = document.getElementById('legal-tomtat').value.trim();
     const fileInput = document.getElementById('legal-file');
     
     if (!soHieu || !ten || !ngayBanHanh) {
-        alert('⚠️ Vui lòng nhập Số hiệu, Tên văn bản và Ngày ban hành!');
+        alert('⚠️ Vui lòng nhập Số hiệu, Tên văn bản và Ngày ban hành (dd/mm/yyyy)!');
         return;
     }
     
@@ -5750,9 +5839,335 @@ function changeQrPassword() {
         alert(`✅ Đổi mật khẩu QR thành công!\n\nCông nhân sẽ dùng:\n• Tên: jntc_at\n• Mật khẩu: ${newPass}`);
     }, 1200);
 }
+
+// ============================================================
+//  TÍNH NĂNG MỚI 1: AUTOCOMPLETE GỢI Ý DỮ LIỆU
+//  Gợi ý dựa trên dữ liệu đã nhập ở các thiết bị CÙNG LOẠI
+// ============================================================
+
+let _jntcAcCache = { typeId: null, suggestions: {} };
+
+function buildAcSuggestions(typeId) {
+    if (_jntcAcCache.typeId === typeId) return _jntcAcCache.suggestions;
+    
+    const counters = {};
+    
+    const bump = (fieldKey, val) => {
+        if (val === null || val === undefined) return;
+        const s = String(val).trim();
+        if (!s) return;
+        if (!counters[fieldKey]) counters[fieldKey] = new Map();
+        counters[fieldKey].set(s, (counters[fieldKey].get(s) || 0) + 1);
+    };
+    
+    devices
+        .filter(d => d.typeId === typeId)
+        .forEach(dev => {
+            bump('id-manufacturer', dev.identity?.manufacturer);
+            bump('id-year',         dev.identity?.year);
+            bump('id-size',         dev.identity?.size);
+            bump('id-weight',       dev.identity?.weight);
+            bump('id-location',     dev.location);
+            
+            if (dev.specs) {
+                Object.entries(dev.specs).forEach(([k, v]) => {
+                    bump('spec:' + k, v);
+                });
+            }
+        });
+    
+    const suggestions = {};
+    Object.entries(counters).forEach(([k, map]) => {
+        suggestions[k] = [...map.entries()]
+            .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'vi'))
+            .map(([value, count]) => ({ value, count }));
+    });
+    
+    _jntcAcCache = { typeId, suggestions };
+    return suggestions;
+}
+
+function invalidateAcCache() {
+    _jntcAcCache = { typeId: null, suggestions: {} };
+}
+
+function attachAutocomplete(inputEl, fieldKey) {
+    if (!inputEl || inputEl.dataset.jntcAcAttached === '1') return;
+    inputEl.dataset.jntcAcAttached = '1';
+    inputEl.dataset.jntcAcField = fieldKey;
+    
+    if (!inputEl.parentElement.classList.contains('jntc-ac-wrapper')) {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'jntc-ac-wrapper';
+        inputEl.parentNode.insertBefore(wrapper, inputEl);
+        wrapper.appendChild(inputEl);
+        
+        const dd = document.createElement('div');
+        dd.className = 'jntc-ac-dropdown';
+        dd.id = 'jntc-ac-dd-' + Math.random().toString(36).slice(2, 8);
+        wrapper.appendChild(dd);
+        inputEl.dataset.jntcAcDd = dd.id;
+    }
+    
+    const dd = document.getElementById(inputEl.dataset.jntcAcDd);
+    let activeIdx = -1;
+    
+    const closeDd = () => {
+        dd.classList.remove('jntc-ac-open');
+        activeIdx = -1;
+    };
+    
+    const renderDd = () => {
+        const typeId = devices.find(d => d.id === currentDeviceId)?.typeId;
+        if (!typeId) return closeDd();
+        
+        const all = buildAcSuggestions(typeId)[fieldKey] || [];
+        const kw = inputEl.value.trim().toLowerCase();
+        
+        let matches = all;
+        if (kw) {
+            matches = all.filter(x => x.value.toLowerCase().includes(kw));
+        }
+        
+        const current = inputEl.value.trim().toLowerCase();
+        matches = matches.filter(x => x.value.toLowerCase() !== current);
+        
+        if (matches.length === 0) return closeDd();
+        
+        const top = matches.slice(0, 12);
+        
+        dd.innerHTML = top.map((x, i) => {
+            let display = escapeHtml(x.value);
+            if (kw) {
+                const kwEsc = kw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                display = display.replace(new RegExp('(' + kwEsc + ')', 'gi'), '<span class="jntc-ac-highlight">$1</span>');
+            }
+            return `<div class="jntc-ac-item" data-val="${escapeHtml(x.value)}" data-idx="${i}">
+                <span class="jntc-ac-text">${display}</span>
+                <span class="jntc-ac-count">×${x.count}</span>
+            </div>`;
+        }).join('');
+        
+        dd.classList.add('jntc-ac-open');
+        activeIdx = -1;
+        
+        dd.querySelectorAll('.jntc-ac-item').forEach(item => {
+            item.addEventListener('mousedown', e => {
+                e.preventDefault();
+                inputEl.value = item.dataset.val;
+                inputEl.dispatchEvent(new Event('input', { bubbles: true }));
+                inputEl.dispatchEvent(new Event('change', { bubbles: true }));
+                closeDd();
+            });
+        });
+    };
+    
+    const setActive = (idx) => {
+        const items = dd.querySelectorAll('.jntc-ac-item');
+        if (!items.length) return;
+        if (idx < 0) idx = items.length - 1;
+        if (idx >= items.length) idx = 0;
+        items.forEach(it => it.classList.remove('jntc-ac-active'));
+        items[idx].classList.add('jntc-ac-active');
+        items[idx].scrollIntoView({ block: 'nearest' });
+        activeIdx = idx;
+    };
+    
+    inputEl.addEventListener('focus', () => { renderDd(); });
+    inputEl.addEventListener('input', renderDd);
+    inputEl.addEventListener('blur', () => { setTimeout(closeDd, 150); });
+    
+    inputEl.addEventListener('keydown', e => {
+        if (!dd.classList.contains('jntc-ac-open')) {
+            if (e.key === 'ArrowDown') { renderDd(); }
+            return;
+        }
+        if (e.key === 'ArrowDown') { e.preventDefault(); setActive(activeIdx + 1); }
+        else if (e.key === 'ArrowUp') { e.preventDefault(); setActive(activeIdx - 1); }
+        else if (e.key === 'Enter') {
+            const items = dd.querySelectorAll('.jntc-ac-item');
+            if (activeIdx >= 0 && items[activeIdx]) {
+                e.preventDefault();
+                inputEl.value = items[activeIdx].dataset.val;
+                inputEl.dispatchEvent(new Event('input', { bubbles: true }));
+                inputEl.dispatchEvent(new Event('change', { bubbles: true }));
+                closeDd();
+            }
+        } else if (e.key === 'Escape') {
+            closeDd();
+        }
+    });
+}
+
+function attachAllAutocompletes() {
+    const identityMap = {
+        'id-year':         'id-year',
+        'id-manufacturer': 'id-manufacturer',
+        'id-size':         'id-size',
+        'id-weight':       'id-weight',
+        'id-location':     'id-location'
+    };
+    Object.entries(identityMap).forEach(([elId, fieldKey]) => {
+        const el = document.getElementById(elId);
+        if (el) attachAutocomplete(el, fieldKey);
+    });
+    
+    document.querySelectorAll('#spec-grid input[data-spec-key]').forEach(inp => {
+        attachAutocomplete(inp, 'spec:' + inp.dataset.specKey);
+    });
+}
+
+// ============================================================
+//  TÍNH NĂNG MỚI 2: DATE INPUT dd/mm/yyyy TỰ ĐÁNH TAY
+//  Hiển thị: dd/mm/yyyy  |  Lưu trữ: yyyy-mm-dd (ISO)
+// ============================================================
+
+function ddmmyyyyToISO(display) {
+    if (!display) return '';
+    const m = String(display).match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+    if (!m) return '';
+    const d = parseInt(m[1]);
+    const mo = parseInt(m[2]);
+    const y = parseInt(m[3]);
+    if (y < 1900 || y > 2200 || mo < 1 || mo > 12 || d < 1 || d > 31) return '';
+    const dt = new Date(y, mo - 1, d);
+    if (dt.getFullYear() !== y || dt.getMonth() !== mo - 1 || dt.getDate() !== d) return '';
+    return `${y}-${String(mo).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+}
+
+function isoToDdmmyyyy(iso) {
+    if (!iso) return '';
+    const m = String(iso).match(/^(\d{4})-(\d{2})-(\d{2})$/);
+    if (!m) return String(iso);
+    return `${m[3]}/${m[2]}/${m[1]}`;
+}
+
+function attachDateInput(el) {
+    if (!el || el.dataset.jntcDateAttached === '1') return;
+    el.dataset.jntcDateAttached = '1';
+    el.setAttribute('inputmode', 'numeric');
+    el.setAttribute('autocomplete', 'off');
+    el.setAttribute('maxlength', '10');
+    if (!el.placeholder || el.type === 'date') el.placeholder = 'dd/mm/yyyy';
+    el.type = 'text';
+    
+    if (el.value && /^\d{4}-\d{2}-\d{2}$/.test(el.value)) {
+        el.value = isoToDdmmyyyy(el.value);
+    }
+    el.dataset.iso = ddmmyyyyToISO(el.value);
+    
+    const setValid = (ok) => {
+        if (ok) {
+            el.style.borderColor = '#27ae60';
+            el.style.background = '#e8f5e9';
+        } else {
+            el.style.borderColor = '#e74c3c';
+            el.style.background = '#ffebee';
+        }
+    };
+    
+    const resetStyle = () => {
+        el.style.borderColor = '';
+        el.style.background = '';
+    };
+    
+    el.addEventListener('input', () => {
+        const digits = el.value.replace(/\D/g, '');
+        let formatted = '';
+        if (digits.length <= 2) formatted = digits;
+        else if (digits.length <= 4) formatted = digits.slice(0,2) + '/' + digits.slice(2);
+        else formatted = digits.slice(0,2) + '/' + digits.slice(2,4) + '/' + digits.slice(4,8);
+        
+        if (el.value !== formatted) {
+            const pos = el.selectionStart;
+            const beforeLen = el.value.length;
+            el.value = formatted;
+            const delta = formatted.length - beforeLen;
+            try { el.setSelectionRange(pos + delta, pos + delta); } catch(_) {}
+        }
+        
+        if (formatted.length === 10) {
+            const iso = ddmmyyyyToISO(formatted);
+            el.dataset.iso = iso;
+            setValid(!!iso);
+        } else {
+            el.dataset.iso = '';
+            resetStyle();
+        }
+    });
+    
+    el.addEventListener('blur', () => {
+        const v = el.value.trim();
+        if (!v) { el.dataset.iso = ''; resetStyle(); return; }
+        const iso = ddmmyyyyToISO(v);
+        if (iso) {
+            el.dataset.iso = iso;
+            el.value = isoToDdmmyyyy(iso);
+            setValid(true);
+        } else {
+            el.dataset.iso = '';
+            setValid(false);
+        }
+    });
+}
+
+function attachAllDateInputs() {
+    ['insp-last-date','insp-next-date'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) attachDateInput(el);
+    });
+    ['insp-date','insp-expiry'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) attachDateInput(el);
+    });
+    const md = document.getElementById('maint-date');
+    if (md) attachDateInput(md);
+    const dd = document.getElementById('delete-date');
+    if (dd) attachDateInput(dd);
+    ['jntc-cert-issued','jntc-cert-expiry'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) attachDateInput(el);
+    });
+    const lg = document.getElementById('legal-ngay');
+    if (lg) attachDateInput(lg);
+}
+
+function getDateISO(elId) {
+    const el = document.getElementById(elId);
+    if (!el) return '';
+    if (el.dataset.jntcDateAttached === '1') {
+        if (el.dataset.iso) return el.dataset.iso;
+        return ddmmyyyyToISO(el.value);
+    }
+    return el.value || '';
+}
+
+function setDateISO(elId, iso) {
+    const el = document.getElementById(elId);
+    if (!el) return;
+    if (el.dataset.jntcDateAttached === '1') {
+        el.value = isoToDdmmyyyy(iso || '');
+        el.dataset.iso = ddmmyyyyToISO(el.value);
+        el.style.borderColor = '';
+        el.style.background = '';
+        if (el.dataset.iso) {
+            el.style.borderColor = '#27ae60';
+            el.style.background = '#e8f5e9';
+        }
+    } else {
+        el.value = iso || '';
+    }
+}
+
+// ============================================================
+//  KHỞI ĐỘNG & SỰ KIỆN TOÀN CỤC
+// ============================================================
+
 document.addEventListener('DOMContentLoaded', async function() {
     const params = new URLSearchParams(location.search);
     const devParam = params.get('dev');
+    
+    attachAllDateInputs();
     
     await loadDataFromServer();
     
@@ -5839,6 +6254,7 @@ async function loadDataFromServer() {
         legalDocs = Array.isArray(data.legalDocs) ? data.legalDocs : [];
         priceConfig = data.priceConfig || {};
         migrateCertificateFields();
+        invalidateAcCache();
         console.log(`✅ Nạp từ Cloudflare: ${devices.length} thiết bị, ${legalDocs.length} văn bản`);
         return true;
     } catch (e) {
@@ -5930,7 +6346,10 @@ async function processImport() {
                 success++;
             } catch (e) { errors.push(`Dòng ${rowNum}: ${e.message}`); error++; }
         });
-        saveData(); renderDashboard(); renderOverview();
+        saveData();
+        invalidateAcCache();
+        renderDashboard();
+        renderOverview();
         updateBellBadge();
         let html = `<b>✅ Kết quả Import:</b><br>• Thành công: <b style="color:#27ae60;">${success}</b><br>• Bỏ qua: <b style="color:#f39c12;">${skipped}</b><br>• Lỗi: <b style="color:#e74c3c;">${error}</b>`;
         if (errors.length > 0) {
