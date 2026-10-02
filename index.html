@@ -194,20 +194,49 @@
         .btn-export-filtered { background: #8e44ad; color: white; }
         .table-container { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
 
-        .device-list-wrap { background: white; border-radius: 12px; overflow-x: auto; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        /* ============================================================
+           SỬA LỖI: CỐ ĐỊNH HEADER BẢNG DANH SÁCH KHI CUỘN
+           - Container có max-height + overflow: auto
+           - thead + th có position: sticky để cố định
+           ============================================================ */
+        .device-list-wrap {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            max-height: calc(100vh - 380px);
+            min-height: 400px;
+            overflow: auto;
+            position: relative;
+        }
+        
         table.device-list { width: 100%; border-collapse: collapse; min-width: 1800px; font-size: 13px; }
         table.device-list th, table.device-list td { padding: 10px 8px; border-bottom: 1px solid #eee; text-align: center; vertical-align: middle; }
-        table.device-list th { background: #f39c12; color: white; font-weight: 700; font-size: 12px; text-transform: uppercase; position: sticky; top: 0; z-index: 5; white-space: nowrap; }
-        table.device-list th.col-sticky-1 { position: sticky; left: 0; z-index: 6; background: #e67e22; }
-        table.device-list th.col-sticky-2 { position: sticky; left: 50px; z-index: 6; background: #e67e22; }
+        table.device-list th { background: #f39c12; color: white; font-weight: 700; font-size: 12px; text-transform: uppercase; position: sticky; top: 0; z-index: 10; white-space: nowrap; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        
+        /* Header cố định cả khi cuộn dọc */
+        table.device-list thead { position: sticky; top: 0; z-index: 10; }
+        table.device-list thead tr { position: sticky; top: 0; z-index: 10; }
+        
+        /* Cột sticky trái */
+        table.device-list th.col-sticky-1 { position: sticky; left: 0; top: 0; z-index: 12; background: #e67e22; }
+        table.device-list th.col-sticky-2 { position: sticky; left: 50px; top: 0; z-index: 12; background: #e67e22; }
         table.device-list td.col-sticky-1 { position: sticky; left: 0; background: white; z-index: 3; }
         table.device-list td.col-sticky-2 { position: sticky; left: 50px; background: white; z-index: 3; }
+        
         table.device-list tr:hover td { background: #fff8e1; }
         table.device-list tr:hover td.col-sticky-1,
         table.device-list tr:hover td.col-sticky-2 { background: #fff8e1; }
+        
         table.device-list td input.note-input { width: 100%; min-width: 140px; padding: 6px 8px; border: 1px solid #ddd; border-radius: 6px; font-size: 13px; background: #fffef7; }
         table.device-list td input.note-input:focus { border-color: #f39c12; outline: none; background: #fff8e1; }
         table.device-list td input.note-input.saved { background: #e8f5e9; border-color: #27ae60; transition: all 0.3s; }
+        
+        /* Thanh cuộn đẹp */
+        .device-list-wrap::-webkit-scrollbar { width: 10px; height: 10px; }
+        .device-list-wrap::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 5px; }
+        .device-list-wrap::-webkit-scrollbar-thumb { background: #f39c12; border-radius: 5px; }
+        .device-list-wrap::-webkit-scrollbar-thumb:hover { background: #e67e22; }
+        
         .cell-id { font-weight: 700; color: #c0392b; white-space: nowrap; }
         .cell-archive { font-weight: 700; color: #2980b9; }
         .cell-empty { color: #bdc3c7; font-style: italic; }
@@ -704,6 +733,7 @@
             .process-divider { display: none; }
             .tracking-table { overflow-x: auto; }
             .tracking-table table { min-width: 800px; }
+            .device-list-wrap { max-height: calc(100vh - 320px); }
         }
         @media (max-width: 700px) {
             .jntc-bell-dropdown { width: 92vw; right: -10px; }
@@ -720,8 +750,7 @@
             body.print-qr-mode #qr-print-area { display: block !important; position: absolute; top: 0; left: 0; width: 100%; }
         }
     </style>
-</head><body>
-    <div id="login-screen">
+</head><body>    <div id="login-screen">
         <div class="login-box">
             <img src="logo.png" alt="JNTC VINA Logo" class="logo-jntc-real"
                  onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 300 100%22><text y=%2265%22 font-size=%2260%22 font-weight=%22bold%22 fill=%22%23f39c12%22>JNTC</text><text x=%22200%22 y=%2280%22 font-size=%2225%22 font-weight=%22bold%22 fill=%22%23666%22>VINA</text></svg>'">
@@ -4482,9 +4511,7 @@ async function renderMaintenances(dev) {
             <div class="maintenance-images">${imgs || '<span style="color:#999;font-size:13px;">Không có ảnh</span>'}</div>`;
         list.appendChild(card);
     }
-}
-
-async function addMaintenance(evt) {
+}async function addMaintenance(evt) {
     if (!can('edit')) {
         alert('🔒 Bạn không có quyền thêm bảo dưỡng!');
         return;
