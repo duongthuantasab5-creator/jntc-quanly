@@ -1,21 +1,21 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-01T23:53:10.168Z",
+  "updatedAt": "2026-10-03T00:27:47.870Z",
   "devices": [
     {
-      "id": "BCAL_86L",
+      "id": "BCAL_8000L_02",
       "typeId": "binh",
       "name": "Bình chịu áp lực",
-      "location": "Xưởng 1",
+      "location": "Phòng máy nén khí số 2 xưởng 1",
       "priceLevel": 1,
-      "archiveNo": 15,
+      "archiveNo": 3,
       "note": "",
       "identity": {
-        "serial": "BCAL 15",
+        "serial": "16-0672",
         "year": "2016",
         "manufacturer": "Hàn Quốc",
-        "size": "",
-        "weight": "1.5 tấn"
+        "size": "YJAT - 8000L",
+        "weight": ""
       },
       "specs": {
         "dien_ap": "",
@@ -29,20 +29,38 @@
         "vat_lieu": ""
       },
       "photos": [
-        "BCAL_86L_1.jpg",
+        null,
         null
       ],
       "inspectionSummary": {
-        "lastDate": "2025-02-28",
-        "nextDate": "2027-02-28",
-        "stamp": "002142"
+        "lastDate": "2025-10-15",
+        "nextDate": "2028-10-15",
+        "stamp": "008541"
       },
       "inspections": [
         {
-          "date": "2025-02-28",
-          "unit": "Công ty cổ phần kiểm định 1",
-          "expiry": "2027-02-28",
-          "stamp": "002142"
+          "date": "2025-10-15",
+          "unit": "Công ty cổ phần kiểm định một",
+          "expiry": "2028-10-15",
+          "stamp": "008541"
+        },
+        {
+          "date": "2022-10-15",
+          "unit": "Công ty cổ phần kiểm định một",
+          "expiry": "2025-10-15",
+          "stamp": "005890"
+        },
+        {
+          "date": "2019-10-15",
+          "unit": "Công ty cổ phần kiểm định một",
+          "expiry": "2022-10-15",
+          "stamp": "004785"
+        },
+        {
+          "date": "2016-10-24",
+          "unit": "Công ty kiểm định ATTB CN",
+          "expiry": "2019-10-24",
+          "stamp": "005380"
         }
       ],
       "maintenances": [],
@@ -99,18 +117,18 @@
       "deletedReason": ""
     },
     {
-      "id": "fgsgsfb",
+      "id": "BCAL_8000L_01",
       "typeId": "binh",
-      "name": "rgfbfgsf",
-      "location": "hừé",
+      "name": "Bình chịu áp lực",
+      "location": "Phòng máy nén khí số 1 xưởng 1",
       "priceLevel": 1,
-      "archiveNo": 255,
+      "archiveNo": 4,
       "note": "",
       "identity": {
-        "serial": "ghfdbfh",
-        "year": "dfhdfhfh",
-        "manufacturer": "gưgfh",
-        "size": "",
+        "serial": "16-0687",
+        "year": "2016",
+        "manufacturer": "Hàn Quốc",
+        "size": "YJAT - 8000L",
         "weight": ""
       },
       "specs": {
@@ -129,11 +147,217 @@
         null
       ],
       "inspectionSummary": {
-        "lastDate": "",
-        "nextDate": "",
-        "stamp": ""
+        "lastDate": "2025-10-15",
+        "nextDate": "2028-10-15",
+        "stamp": "007483"
       },
-      "inspections": [],
+      "inspections": [
+        {
+          "date": "2025-10-15",
+          "unit": "Công ty cổ phần kiểm định một",
+          "expiry": "2028-10-15",
+          "stamp": "007483"
+        },
+        {
+          "date": "2022-10-15",
+          "unit": "Công ty cổ phần kiểm định một",
+          "expiry": "2025-10-15",
+          "stamp": "005891"
+        },
+        {
+          "date": "2019-10-15",
+          "unit": "Công ty cổ phần kiểm định một",
+          "expiry": "2022-10-15",
+          "stamp": "004786"
+        },
+        {
+          "date": "2016-10-24",
+          "unit": "Công ty kiểm định ATTB CN",
+          "expiry": "2019-10-24",
+          "stamp": "005376"
+        }
+      ],
+      "maintenances": [],
+      "deleted": false,
+      "certificates": []
+    },
+    {
+      "id": "HTL_90726_01",
+      "typeId": "lanh",
+      "name": "Hệ thống lạnh",
+      "location": "Ngoài trời",
+      "priceLevel": 1,
+      "archiveNo": 20,
+      "note": "",
+      "identity": {
+        "serial": "FAC 01 (Số quản lý)",
+        "year": "2016",
+        "manufacturer": "LG-Hàn Quốc",
+        "size": "LK - C 3608 H02",
+        "weight": ""
+      },
+      "specs": {
+        "dien_ap": "",
+        "nang_suat": "",
+        "nhiet_do": "",
+        "cong_suat": "90726 Kcal/h",
+        "moi_chat_lanh": "R22",
+        "cao_ap": "30 bar",
+        "ha_ap": "17 bar",
+        "trung_ap": "",
+        "nhiet_do_kho": "",
+        "so_dan": ""
+      },
+      "photos": [
+        null,
+        null
+      ],
+      "inspectionSummary": {
+        "lastDate": "2025-10-10",
+        "nextDate": "2028-10-10",
+        "stamp": "007440"
+      },
+      "inspections": [
+        {
+          "date": "2025-10-10",
+          "unit": "Công ty cổ phần kiểm định một",
+          "expiry": "2028-10-10",
+          "stamp": "007440"
+        },
+        {
+          "date": "2022-10-10",
+          "unit": "Công ty cổ phần kiểm định một",
+          "expiry": "2025-10-10",
+          "stamp": "005802"
+        },
+        {
+          "date": "2019-10-10",
+          "unit": "Công ty cổ phần kiểm định một",
+          "expiry": "2022-10-10",
+          "stamp": "004708"
+        },
+        {
+          "date": "2016-11-17",
+          "unit": "Công ty kiểm định ATTB công nghiệp",
+          "expiry": "2019-11-17",
+          "stamp": "005303"
+        }
+      ],
+      "maintenances": [],
+      "deleted": false,
+      "certificates": []
+    },
+    {
+      "id": "TM_01",
+      "typeId": "thangmay",
+      "name": "Thang máy số 1",
+      "location": "Văn phòng Xưởng 3",
+      "priceLevel": 1,
+      "archiveNo": 245,
+      "note": "",
+      "identity": {
+        "serial": "M21122394",
+        "year": "2021",
+        "manufacturer": "Hàn Quốc",
+        "size": "G1900F-JNTC2TON",
+        "weight": "2000 Kg"
+      },
+      "specs": {
+        "dien_ap": "380V/17A",
+        "nang_suat": "",
+        "nhiet_do": "",
+        "tai_trong_thang": "2000 Kg",
+        "so_tang": "3",
+        "so_diem_dung": "3",
+        "van_toc_thang": "30m/ph",
+        "loai_dan_dong": "Cáp kéo",
+        "kich_thuoc_cabin": "1800x2000x2200 mm",
+        "so_nguoi": ""
+      },
+      "photos": [
+        null,
+        null
+      ],
+      "inspectionSummary": {
+        "lastDate": "2025-07-06",
+        "nextDate": "2027-07-06",
+        "stamp": "004900"
+      },
+      "inspections": [
+        {
+          "date": "2025-07-06",
+          "unit": "Công ty cổ phần kiểm định một",
+          "expiry": "2027-07-06",
+          "stamp": "004900"
+        },
+        {
+          "date": "2023-07-06",
+          "unit": "Công ty cổ phần kiểm định một",
+          "expiry": "2025-07-06",
+          "stamp": "003792"
+        }
+      ],
+      "maintenances": [
+        {
+          "date": "2023-09-07",
+          "person": "Nhà thầu Shinhan",
+          "content": "Kiểm tra, bảo dưỡng, sửa chữa định kỳ",
+          "images": []
+        },
+        {
+          "date": "2023-07-06",
+          "person": "Nhà thầu Shinhan",
+          "content": "Kiểm tra, bảo dưỡng, sửa chữa định kỳ",
+          "images": []
+        }
+      ],
+      "deleted": false,
+      "certificates": []
+    },
+    {
+      "id": "XN_15T",
+      "typeId": "xenang",
+      "name": "Xe nâng",
+      "location": "Di động",
+      "priceLevel": 1,
+      "archiveNo": 1,
+      "note": "",
+      "identity": {
+        "serial": "XCĐF",
+        "year": "2022",
+        "manufacturer": "Việt nam",
+        "size": "",
+        "weight": ""
+      },
+      "specs": {
+        "dien_ap": "",
+        "nang_suat": "",
+        "nhiet_do": "",
+        "tai_trong_nang": "1500 Kg",
+        "chieu_cao_nang": "",
+        "van_toc_nang": "",
+        "van_toc_di_chuyen": "",
+        "chieu_dai_cang": "",
+        "loai_dong_co": "",
+        "so_banh": ""
+      },
+      "photos": [
+        null,
+        null
+      ],
+      "inspectionSummary": {
+        "lastDate": "2026-10-15",
+        "nextDate": "2026-10-30",
+        "stamp": "005210"
+      },
+      "inspections": [
+        {
+          "date": "2026-10-15",
+          "unit": "Công ty ACB",
+          "expiry": "2026-10-30",
+          "stamp": "005210"
+        }
+      ],
       "maintenances": [],
       "deleted": false,
       "certificates": []
@@ -142,12 +366,12 @@
       "id": "HTL_90726_02",
       "typeId": "lanh",
       "name": "Hệ thống lạnh",
-      "location": "Vòng ngoài",
+      "location": "Ngoài trời",
       "priceLevel": 1,
       "archiveNo": 21,
       "note": "",
       "identity": {
-        "serial": "FAC 02 (Số quản lý)",
+        "serial": " FAC02 (Số quản lý)",
         "year": "2016",
         "manufacturer": "LG-Hàn Quốc",
         "size": "LK - C 3608 H02",
@@ -201,115 +425,19 @@
         }
       ],
       "maintenances": [],
-      "deleted": false,
-      "certificates": []
+      "certificates": [],
+      "deleted": false
     },
     {
-      "id": "TM_01",
-      "typeId": "thangmay",
-      "name": "Thang máy",
-      "location": "Xưởng 3",
-      "priceLevel": 1,
-      "archiveNo": 94,
-      "note": "",
-      "identity": {
-        "serial": "0983375",
-        "year": "2021",
-        "manufacturer": "Hàn Quốc",
-        "size": "",
-        "weight": ""
-      },
-      "specs": {
-        "dien_ap": "",
-        "nang_suat": "",
-        "nhiet_do": "",
-        "tai_trong_thang": "4000 Kg",
-        "so_tang": "",
-        "so_diem_dung": "",
-        "van_toc_thang": "",
-        "loai_dan_dong": "",
-        "kich_thuoc_cabin": "",
-        "so_nguoi": ""
-      },
-      "photos": [
-        "TM_01_1.jpg",
-        null
-      ],
-      "inspectionSummary": {
-        "lastDate": "2024-06-06",
-        "nextDate": "2028-06-22",
-        "stamp": "0052147"
-      },
-      "inspections": [
-        {
-          "date": "2024-06-06",
-          "unit": "Công ty HNC",
-          "expiry": "2026-10-15",
-          "stamp": "0052147"
-        }
-      ],
-      "maintenances": [],
-      "deleted": false,
-      "certificates": []
-    },
-    {
-      "id": "XN_15T",
-      "typeId": "xenang",
-      "name": "Xe nâng",
-      "location": "Di động",
-      "priceLevel": 1,
-      "archiveNo": 1,
-      "note": "",
-      "identity": {
-        "serial": "XCĐF",
-        "year": "2022",
-        "manufacturer": "Việt nam",
-        "size": "",
-        "weight": ""
-      },
-      "specs": {
-        "dien_ap": "",
-        "nang_suat": "",
-        "nhiet_do": "",
-        "tai_trong_nang": "1500 Kg",
-        "chieu_cao_nang": "",
-        "van_toc_nang": "",
-        "van_toc_di_chuyen": "",
-        "chieu_dai_cang": "",
-        "loai_dong_co": "",
-        "so_banh": ""
-      },
-      "photos": [
-        null,
-        null
-      ],
-      "inspectionSummary": {
-        "lastDate": "2026-10-15",
-        "nextDate": "2026-10-30",
-        "stamp": "005210"
-      },
-      "inspections": [
-        {
-          "date": "2026-10-15",
-          "unit": "Công ty ACB",
-          "expiry": "2026-10-30",
-          "stamp": "005210"
-        }
-      ],
-      "maintenances": [],
-      "deleted": false,
-      "certificates": []
-    },
-    {
-      "id": "HTL_90726_01",
+      "id": "HTL_90726_03",
       "typeId": "lanh",
       "name": "Hệ thống lạnh",
       "location": "Ngoài trời",
       "priceLevel": 1,
-      "archiveNo": 20,
+      "archiveNo": 22,
       "note": "",
       "identity": {
-        "serial": " FAC01",
+        "serial": "FAC 03 (Số quản lý)",
         "year": "2016",
         "manufacturer": "LG-Hàn Quốc",
         "size": "LK - C 3608 H02",
@@ -334,34 +462,795 @@
       "inspectionSummary": {
         "lastDate": "2025-10-10",
         "nextDate": "2028-10-10",
-        "stamp": "007440"
+        "stamp": "007442"
       },
       "inspections": [
         {
           "date": "2025-10-10",
           "unit": "Công ty cổ phần kiểm định một",
           "expiry": "2028-10-10",
-          "stamp": "007440"
+          "stamp": "007442"
         },
         {
           "date": "2022-10-10",
           "unit": "Công ty cổ phần kiểm định một",
           "expiry": "2025-10-10",
-          "stamp": "005802"
+          "stamp": "005804"
         },
         {
           "date": "2019-10-10",
           "unit": "Công ty cổ phần kiểm định một",
           "expiry": "2022-10-10",
-          "stamp": "004708"
+          "stamp": "004710"
         },
         {
           "date": "2016-11-17",
           "unit": "Công ty kiểm định ATTB công nghiệp",
           "expiry": "2019-11-17",
-          "stamp": "005303"
+          "stamp": "005339"
         }
       ],
+      "maintenances": [],
+      "certificates": [],
+      "deleted": false
+    },
+    {
+      "id": "HTL_90726_04",
+      "typeId": "lanh",
+      "name": "Hệ thống lạnh",
+      "location": "Ngoài trời",
+      "priceLevel": 1,
+      "archiveNo": 23,
+      "note": "",
+      "identity": {},
+      "specs": {},
+      "photos": [
+        null,
+        null
+      ],
+      "inspectionSummary": {},
+      "inspections": [],
+      "maintenances": [],
+      "certificates": [],
+      "deleted": false
+    },
+    {
+      "id": "HTL_90726_05",
+      "typeId": "lanh",
+      "name": "Hệ thống lạnh",
+      "location": "Ngoài trời",
+      "priceLevel": 1,
+      "archiveNo": 24,
+      "note": "",
+      "identity": {},
+      "specs": {},
+      "photos": [
+        null,
+        null
+      ],
+      "inspectionSummary": {},
+      "inspections": [],
+      "maintenances": [],
+      "certificates": [],
+      "deleted": false
+    },
+    {
+      "id": "HTL_90726_06",
+      "typeId": "lanh",
+      "name": "Hệ thống lạnh",
+      "location": "Ngoài trời",
+      "priceLevel": 1,
+      "archiveNo": 25,
+      "note": "",
+      "identity": {},
+      "specs": {},
+      "photos": [
+        null,
+        null
+      ],
+      "inspectionSummary": {},
+      "inspections": [],
+      "maintenances": [],
+      "certificates": [],
+      "deleted": false
+    },
+    {
+      "id": "HTL_90726_07",
+      "typeId": "lanh",
+      "name": "Hệ thống lạnh",
+      "location": "Ngoài trời",
+      "priceLevel": 1,
+      "archiveNo": 26,
+      "note": "",
+      "identity": {},
+      "specs": {},
+      "photos": [
+        null,
+        null
+      ],
+      "inspectionSummary": {},
+      "inspections": [],
+      "maintenances": [],
+      "certificates": [],
+      "deleted": false
+    },
+    {
+      "id": "HTL_90726_08",
+      "typeId": "lanh",
+      "name": "Hệ thống lạnh",
+      "location": "Ngoài trời",
+      "priceLevel": 1,
+      "archiveNo": 27,
+      "note": "",
+      "identity": {},
+      "specs": {},
+      "photos": [
+        null,
+        null
+      ],
+      "inspectionSummary": {},
+      "inspections": [],
+      "maintenances": [],
+      "certificates": [],
+      "deleted": false
+    },
+    {
+      "id": "HTL_90726_09",
+      "typeId": "lanh",
+      "name": "Hệ thống lạnh",
+      "location": "Ngoài trời",
+      "priceLevel": 1,
+      "archiveNo": 28,
+      "note": "",
+      "identity": {},
+      "specs": {},
+      "photos": [
+        null,
+        null
+      ],
+      "inspectionSummary": {},
+      "inspections": [],
+      "maintenances": [],
+      "certificates": [],
+      "deleted": false
+    },
+    {
+      "id": "HTL_90726_10",
+      "typeId": "lanh",
+      "name": "Hệ thống lạnh",
+      "location": "Ngoài trời",
+      "priceLevel": 1,
+      "archiveNo": 29,
+      "note": "",
+      "identity": {},
+      "specs": {},
+      "photos": [
+        null,
+        null
+      ],
+      "inspectionSummary": {},
+      "inspections": [],
+      "maintenances": [],
+      "certificates": [],
+      "deleted": false
+    },
+    {
+      "id": "HTL_90726_11",
+      "typeId": "lanh",
+      "name": "Hệ thống lạnh",
+      "location": "Ngoài trời",
+      "priceLevel": 1,
+      "archiveNo": 30,
+      "note": "",
+      "identity": {},
+      "specs": {},
+      "photos": [
+        null,
+        null
+      ],
+      "inspectionSummary": {},
+      "inspections": [],
+      "maintenances": [],
+      "certificates": [],
+      "deleted": false
+    },
+    {
+      "id": "HTL_90726_12",
+      "typeId": "lanh",
+      "name": "Hệ thống lạnh",
+      "location": "Ngoài trời",
+      "priceLevel": 1,
+      "archiveNo": 31,
+      "note": "",
+      "identity": {},
+      "specs": {},
+      "photos": [
+        null,
+        null
+      ],
+      "inspectionSummary": {},
+      "inspections": [],
+      "maintenances": [],
+      "certificates": [],
+      "deleted": false
+    },
+    {
+      "id": "HTL_90726_13",
+      "typeId": "lanh",
+      "name": "Hệ thống lạnh",
+      "location": "Ngoài trời",
+      "priceLevel": 1,
+      "archiveNo": 32,
+      "note": "",
+      "identity": {},
+      "specs": {},
+      "photos": [
+        null,
+        null
+      ],
+      "inspectionSummary": {},
+      "inspections": [],
+      "maintenances": [],
+      "certificates": [],
+      "deleted": false
+    },
+    {
+      "id": "HTL_90726_14",
+      "typeId": "lanh",
+      "name": "Hệ thống lạnh",
+      "location": "Ngoài trời",
+      "priceLevel": 1,
+      "archiveNo": 33,
+      "note": "",
+      "identity": {},
+      "specs": {},
+      "photos": [
+        null,
+        null
+      ],
+      "inspectionSummary": {},
+      "inspections": [],
+      "maintenances": [],
+      "certificates": [],
+      "deleted": false
+    },
+    {
+      "id": "HTL_90726_15",
+      "typeId": "lanh",
+      "name": "Hệ thống lạnh",
+      "location": "Ngoài trời",
+      "priceLevel": 1,
+      "archiveNo": 34,
+      "note": "",
+      "identity": {},
+      "specs": {},
+      "photos": [
+        null,
+        null
+      ],
+      "inspectionSummary": {},
+      "inspections": [],
+      "maintenances": [],
+      "certificates": [],
+      "deleted": false
+    },
+    {
+      "id": "HTL_90726_16",
+      "typeId": "lanh",
+      "name": "Hệ thống lạnh",
+      "location": "Ngoài trời",
+      "priceLevel": 1,
+      "archiveNo": 35,
+      "note": "",
+      "identity": {},
+      "specs": {},
+      "photos": [
+        null,
+        null
+      ],
+      "inspectionSummary": {},
+      "inspections": [],
+      "maintenances": [],
+      "certificates": [],
+      "deleted": false
+    },
+    {
+      "id": "HTL_90726_17",
+      "typeId": "lanh",
+      "name": "Hệ thống lạnh",
+      "location": "Ngoài trời",
+      "priceLevel": 1,
+      "archiveNo": 36,
+      "note": "",
+      "identity": {},
+      "specs": {},
+      "photos": [
+        null,
+        null
+      ],
+      "inspectionSummary": {},
+      "inspections": [],
+      "maintenances": [],
+      "certificates": [],
+      "deleted": false
+    },
+    {
+      "id": "HTL_90726_18",
+      "typeId": "lanh",
+      "name": "Hệ thống lạnh",
+      "location": "Ngoài trời",
+      "priceLevel": 1,
+      "archiveNo": 37,
+      "note": "",
+      "identity": {},
+      "specs": {},
+      "photos": [
+        null,
+        null
+      ],
+      "inspectionSummary": {},
+      "inspections": [],
+      "maintenances": [],
+      "certificates": [],
+      "deleted": false
+    },
+    {
+      "id": "HTL_90726_19",
+      "typeId": "lanh",
+      "name": "Hệ thống lạnh",
+      "location": "Ngoài trời",
+      "priceLevel": 1,
+      "archiveNo": 38,
+      "note": "",
+      "identity": {},
+      "specs": {},
+      "photos": [
+        null,
+        null
+      ],
+      "inspectionSummary": {},
+      "inspections": [],
+      "maintenances": [],
+      "certificates": [],
+      "deleted": false
+    },
+    {
+      "id": "HTL_90726_20",
+      "typeId": "lanh",
+      "name": "Hệ thống lạnh",
+      "location": "Ngoài trời",
+      "priceLevel": 1,
+      "archiveNo": 39,
+      "note": "",
+      "identity": {},
+      "specs": {},
+      "photos": [
+        null,
+        null
+      ],
+      "inspectionSummary": {},
+      "inspections": [],
+      "maintenances": [],
+      "certificates": [],
+      "deleted": false
+    },
+    {
+      "id": "TM_02",
+      "typeId": "thangmay",
+      "name": "Thang máy số 2",
+      "location": "Xưởng 3",
+      "priceLevel": 1,
+      "archiveNo": 246,
+      "note": "Thang máy chở hàng kèm người",
+      "identity": {
+        "serial": "2021BT0305",
+        "year": "2021",
+        "manufacturer": "Hàn Quốc",
+        "size": "G1900F-JNTC4TON",
+        "weight": "4000 Kg"
+      },
+      "specs": {
+        "dien_ap": "380V/42.2A",
+        "nang_suat": "",
+        "nhiet_do": "",
+        "tai_trong_thang": "4000 Kg",
+        "so_tang": "4",
+        "so_diem_dung": "4",
+        "van_toc_thang": "30m/ph",
+        "loai_dan_dong": "Cáp kéo",
+        "kich_thuoc_cabin": "3000x2400x2600 mm",
+        "so_nguoi": ""
+      },
+      "photos": [
+        null,
+        null
+      ],
+      "inspectionSummary": {
+        "lastDate": "2025-07-06",
+        "nextDate": "2027-07-06",
+        "stamp": "004905"
+      },
+      "inspections": [
+        {
+          "date": "2025-07-06",
+          "unit": "Công ty cổ phần kiểm định một",
+          "expiry": "2027-07-06",
+          "stamp": "004905"
+        },
+        {
+          "date": "2023-07-06",
+          "unit": "Công ty cổ phần kiểm định một",
+          "expiry": "2025-07-06",
+          "stamp": "003793"
+        }
+      ],
+      "maintenances": [],
+      "certificates": [],
+      "deleted": false
+    },
+    {
+      "id": "TM_03",
+      "typeId": "thangmay",
+      "name": "Thang máy số 3",
+      "location": "Xưởng 3",
+      "priceLevel": 1,
+      "archiveNo": 247,
+      "note": "Thang máy chở hàng kèm người",
+      "identity": {
+        "serial": "2022BT0312",
+        "year": "2021",
+        "manufacturer": "Hàn Quốc",
+        "size": "G1900F-JNTC4TON",
+        "weight": "4000 Kg"
+      },
+      "specs": {
+        "dien_ap": "380V/42.2A",
+        "nang_suat": "",
+        "nhiet_do": "",
+        "tai_trong_thang": "4000 Kg",
+        "so_tang": "3",
+        "so_diem_dung": "3",
+        "van_toc_thang": "30m/ph",
+        "loai_dan_dong": "Cáp kéo",
+        "kich_thuoc_cabin": "3000x2400x2600 mm",
+        "so_nguoi": ""
+      },
+      "photos": [
+        null,
+        null
+      ],
+      "inspectionSummary": {
+        "lastDate": "2025-07-06",
+        "nextDate": "2027-07-06",
+        "stamp": " 004904"
+      },
+      "inspections": [
+        {
+          "date": "2025-07-06",
+          "unit": "Công ty cổ phần kiểm định một",
+          "expiry": "2027-07-06",
+          "stamp": " 004904"
+        },
+        {
+          "date": "2023-07-06",
+          "unit": "Công ty cổ phần kiểm định một",
+          "expiry": "2025-07-06",
+          "stamp": "003788"
+        }
+      ],
+      "maintenances": [],
+      "certificates": [],
+      "deleted": false
+    },
+    {
+      "id": "TM_04",
+      "typeId": "thangmay",
+      "name": "Thang máy số 4",
+      "location": "Xưởng 3",
+      "priceLevel": 1,
+      "archiveNo": 248,
+      "note": "Thang máy chở người",
+      "identity": {
+        "serial": "5D-M21011901",
+        "year": "2021",
+        "manufacturer": "Hàn Quốc",
+        "size": "5D-M21011901",
+        "weight": "1000 Kg"
+      },
+      "specs": {
+        "dien_ap": "380V/9A",
+        "nang_suat": "",
+        "nhiet_do": "",
+        "tai_trong_thang": "1000 Kg",
+        "so_tang": "2",
+        "so_diem_dung": "2",
+        "van_toc_thang": "30m/ph",
+        "loai_dan_dong": "Cáp kéo",
+        "kich_thuoc_cabin": "1400x1400x2100 mm",
+        "so_nguoi": ""
+      },
+      "photos": [
+        null,
+        null
+      ],
+      "inspectionSummary": {
+        "lastDate": "2025-07-06",
+        "nextDate": "2027-07-06",
+        "stamp": "004903"
+      },
+      "inspections": [
+        {
+          "date": "2025-07-06",
+          "unit": "Công ty cổ phần kiểm định một",
+          "expiry": "2027-07-06",
+          "stamp": "004903"
+        },
+        {
+          "date": "2023-07-06",
+          "unit": "Công ty cổ phần kiểm định một",
+          "expiry": "2025-07-06",
+          "stamp": "003789"
+        }
+      ],
+      "maintenances": [],
+      "certificates": [],
+      "deleted": false
+    },
+    {
+      "id": "TM_05",
+      "typeId": "thangmay",
+      "name": "Thang máy số 5",
+      "location": "Xưởng 3",
+      "priceLevel": 1,
+      "archiveNo": 249,
+      "note": "Thang máy chở hàng phục vụ Phòng sạch",
+      "identity": {
+        "serial": "SPC-2108",
+        "year": "2021",
+        "manufacturer": "Hàn Quốc",
+        "size": "G1900F-JNTC3TON",
+        "weight": "3000 Kg"
+      },
+      "specs": {
+        "dien_ap": "380V/39A",
+        "nang_suat": "",
+        "nhiet_do": "",
+        "tai_trong_thang": "3000 Kg",
+        "so_tang": "3",
+        "so_diem_dung": "3",
+        "van_toc_thang": "30m/ph",
+        "loai_dan_dong": "Cáp kéo",
+        "kich_thuoc_cabin": "3000x2400x2500 mm",
+        "so_nguoi": ""
+      },
+      "photos": [
+        null,
+        null
+      ],
+      "inspectionSummary": {
+        "lastDate": "2025-07-06",
+        "nextDate": "2027-07-06",
+        "stamp": "004902"
+      },
+      "inspections": [
+        {
+          "date": "2025-07-06",
+          "unit": "Công ty cổ phần kiểm định một",
+          "expiry": "2027-07-06",
+          "stamp": "004902"
+        },
+        {
+          "date": "2023-07-06",
+          "unit": "Công ty cổ phần kiểm định một",
+          "expiry": "2025-07-06",
+          "stamp": "003791"
+        }
+      ],
+      "maintenances": [],
+      "certificates": [],
+      "deleted": false
+    },
+    {
+      "id": "TM_06",
+      "typeId": "thangmay",
+      "name": "Thang máy số 6",
+      "location": "Xưởng 3",
+      "priceLevel": 1,
+      "archiveNo": 250,
+      "note": "Thang máy chở hàng phục vụ kho Thành phẩm",
+      "identity": {
+        "serial": "SPC-2108-02",
+        "year": "2021",
+        "manufacturer": "Hàn Quốc",
+        "size": "G1900F-JNTC3TON",
+        "weight": "3000 Kg"
+      },
+      "specs": {
+        "dien_ap": "380V/39A",
+        "nang_suat": "",
+        "nhiet_do": "",
+        "tai_trong_thang": "3000 Kg",
+        "so_tang": "3",
+        "so_diem_dung": "3",
+        "van_toc_thang": "30m/ph",
+        "loai_dan_dong": "Cáp kéo",
+        "kich_thuoc_cabin": "2900x2600x2500 mm",
+        "so_nguoi": ""
+      },
+      "photos": [
+        null,
+        null
+      ],
+      "inspectionSummary": {
+        "lastDate": "2025-07-06",
+        "nextDate": "2027-07-06",
+        "stamp": "004901"
+      },
+      "inspections": [
+        {
+          "date": "2025-07-06",
+          "unit": "Công ty cổ phần kiểm định một",
+          "expiry": "2027-07-06",
+          "stamp": "004901"
+        },
+        {
+          "date": "2023-07-06",
+          "unit": "Công ty cổ phần kiểm định một",
+          "expiry": "2025-07-06",
+          "stamp": "003790"
+        }
+      ],
+      "maintenances": [],
+      "certificates": [],
+      "deleted": false
+    },
+    {
+      "id": "TM_07",
+      "typeId": "thangmay",
+      "name": "Thang máy số 7",
+      "location": "Nhà xe xưởng 3",
+      "priceLevel": 1,
+      "archiveNo": null,
+      "note": "",
+      "identity": {},
+      "specs": {},
+      "photos": [
+        null,
+        null
+      ],
+      "inspectionSummary": {
+        "lastDate": "2024-05-22",
+        "nextDate": "2026-05-22",
+        "stamp": "001070"
+      },
+      "inspections": [
+        {
+          "date": "2024-05-22",
+          "unit": "Công ty TNHH kiểm định Thăng Long",
+          "expiry": "2026-05-22",
+          "stamp": "001070"
+        }
+      ],
+      "maintenances": [],
+      "certificates": [],
+      "deleted": false
+    },
+    {
+      "id": "HTL_90726_21",
+      "typeId": "lanh",
+      "name": "Hệ thống lạnh",
+      "location": "Ngoài trời",
+      "priceLevel": 1,
+      "archiveNo": 40,
+      "note": "",
+      "identity": {},
+      "specs": {},
+      "photos": [
+        null,
+        null
+      ],
+      "inspectionSummary": {},
+      "inspections": [],
+      "maintenances": [],
+      "certificates": [],
+      "deleted": false
+    },
+    {
+      "id": "HTL_90726_22",
+      "typeId": "lanh",
+      "name": "Hệ thống lạnh",
+      "location": "Ngoài trời",
+      "priceLevel": 1,
+      "archiveNo": 41,
+      "note": "",
+      "identity": {},
+      "specs": {},
+      "photos": [
+        null,
+        null
+      ],
+      "inspectionSummary": {},
+      "inspections": [],
+      "maintenances": [],
+      "certificates": [],
+      "deleted": false
+    },
+    {
+      "id": "HTL_90726_23",
+      "typeId": "lanh",
+      "name": "Hệ thống lạnh",
+      "location": "Ngoài trời",
+      "priceLevel": 1,
+      "archiveNo": 42,
+      "note": "",
+      "identity": {},
+      "specs": {},
+      "photos": [
+        null,
+        null
+      ],
+      "inspectionSummary": {},
+      "inspections": [],
+      "maintenances": [],
+      "certificates": [],
+      "deleted": false
+    },
+    {
+      "id": "HTL_90726_24",
+      "typeId": "lanh",
+      "name": "Hệ thống lạnh",
+      "location": "Ngoài trời",
+      "priceLevel": 1,
+      "archiveNo": 43,
+      "note": "",
+      "identity": {},
+      "specs": {},
+      "photos": [
+        null,
+        null
+      ],
+      "inspectionSummary": {},
+      "inspections": [],
+      "maintenances": [],
+      "certificates": [],
+      "deleted": false
+    },
+    {
+      "id": "HTL_90726_25",
+      "typeId": "lanh",
+      "name": "Hệ thống lạnh",
+      "location": "Ngoài trời",
+      "priceLevel": 1,
+      "archiveNo": 44,
+      "note": "",
+      "identity": {},
+      "specs": {},
+      "photos": [
+        null,
+        null
+      ],
+      "inspectionSummary": {},
+      "inspections": [],
+      "maintenances": [],
+      "certificates": [],
+      "deleted": false
+    },
+    {
+      "id": "HTL_90726_26",
+      "typeId": "lanh",
+      "name": "Hệ thống lạnh",
+      "location": "Ngoài trời",
+      "priceLevel": 1,
+      "archiveNo": 45,
+      "note": "",
+      "identity": {},
+      "specs": {},
+      "photos": [
+        null,
+        null
+      ],
+      "inspectionSummary": {},
+      "inspections": [],
       "maintenances": [],
       "certificates": [],
       "deleted": false
